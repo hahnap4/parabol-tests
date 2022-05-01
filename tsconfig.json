@@ -1,0 +1,10 @@
+{   
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "sourceMap": true,
+        "outDir": "../testsOut",
+        "resolveJsonModule": true,
+    }
+}
