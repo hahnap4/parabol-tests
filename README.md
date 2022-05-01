@@ -7,6 +7,8 @@ Tests will be based on the test cases listed above, which should reflect real-ti
 
 Critical test cases will be covered in the test files, while the remainder will be covered if needed.
 
+Also, if time permits, I will include visual comparisons to cover UI testing -- and add in API testing.
+
 We are using Playwright for our test automation: https://playwright.dev/docs/intro
 
 As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integration-tests/README.md: We created a test automation that utilizes the POM (Page Object Model) design to test real-time behaviors of users.
