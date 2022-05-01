@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "pretest": "tsc --incremental -p tests/tsconfig.json",
+        "test": "playwright test -c tests-out"
+    },
+    "dependencies": {
+        "faker": "^5.5.3"
+    },
+    "devDependencies": {
+        "@faker-js/faker": "^6.2.0"
+    }
+}
