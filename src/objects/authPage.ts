@@ -4,6 +4,7 @@ export class authPage {
   readonly page: Page;
 
   // General
+  readonly logoIcon: Locator;
   readonly emailField: Locator;
   readonly passwordField: Locator;
 
@@ -25,6 +26,7 @@ export class authPage {
     this.page = page;
 
     // General
+    this.logoIcon = page.locator('.css-1hbr20g');
     this.emailField = page.locator('input[aria-label="Email"]');
     this.passwordField = page.locator('input[aria-label="Password"]');
 
@@ -42,4 +44,10 @@ export class authPage {
     this.privacyPolicy = page.locator('text=Privacy Policy');
     this.signInInstead = page.locator('button:has-text("Sign In")');
   }
+ 
+  async gotoSignUpPage() {
+      await this.page.goto('http://localhost:3000/create-account');  
+  }
+
 }
+
