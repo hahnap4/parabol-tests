@@ -1,4 +1,4 @@
-# parabol-tests
+# Test Automation for Parabol
 Write a test that utilizes multiple page objects to test real-time behaviors.
 
 Informal Test Cases Checklist: https://docs.google.com/spreadsheets/d/1fqCqV9zXq0CMnC-wA6Mjy9G1QZQw_uMMab8nNq-PoAk/edit?usp=sharing
