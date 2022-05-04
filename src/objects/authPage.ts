@@ -31,7 +31,7 @@ export class authPage {
     this.passwordField = page.locator('input[aria-label="Password"]');
 
     // Sign In Page
-    this.signInButton = page.locator('button:has-text("Sign In")');
+    this.signInButton = page.locator('text=EmailPasswordSign In >> button');
     this.signInGoogle = page.locator('button:has-text("Sign in with Google")');
     this.signInSSO = page.locator('button:has-text("Sign in with SSO")');
     this.forgotPassword = page.locator('button:has-text("Forgot your password?")');
@@ -46,7 +46,7 @@ export class authPage {
   }
  
   async gotoSignUpPage() {
-      await this.page.goto('http://localhost:3000/create-account');  
+      await this.page.goto('https://action-staging.parabol.co/create-account');  
   }
 
 }
