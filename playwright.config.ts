@@ -7,8 +7,8 @@ const config: PlaywrightTestConfig = {
   globalSetup: require.resolve('./globalSetup'),
   use: {
     trace: 'retain-on-failure', // If first time fails, then second time will be traced
-    headless: true, // change to true once it's ready for people to use in ci/cd. headless = no browser appearing on screen
-    baseURL: 'http://localhost:3000/',
+    headless: false, // change to true once it's ready for people to use in ci/cd. headless = no browser appearing on screen
+    baseURL: 'https://action-staging.parabol.co/',
   }, 
   projects: [
     {
@@ -16,6 +16,7 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Safari']
       },
+      testIgnore: '**/design/**',
     },
     {
       name: 'Chrome',

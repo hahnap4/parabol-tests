@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export class ProductOnePage {
+export class meetingHomePage {
   readonly page: Page;
 
   // Header

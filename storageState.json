@@ -1,4 +1,143 @@
 {
-  "cookies": [],
-  "origins": []
+  "cookies": [
+    {
+      "sameSite": "Strict",
+      "name": "_dd_s",
+      "value": "rum=1&id=a6b3dfe4-251b-435d-9846-071b67ff9e0f&created=1651633539640&expire=1651634439640",
+      "domain": "action-staging.parabol.co",
+      "path": "/",
+      "expires": 1651634439,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "ajs_anonymous_id",
+      "value": "%223adf1f48-fddd-433b-b8fd-797637204727%22",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1683169540,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "_gcl_au",
+      "value": "1.1.308333137.1651633540",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1659409540,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "None",
+      "name": "_session_id",
+      "value": "471a3e01874650f2babdf89e9b7e9c58",
+      "domain": "tracking.g2crowd.com",
+      "path": "/",
+      "expires": 1652843140.172973,
+      "httpOnly": true,
+      "secure": true
+    },
+    {
+      "sameSite": "None",
+      "name": "__cf_bm",
+      "value": "2fXGR2b74Onu5ICXDIqMG2890BA4Y5yGCWJqlvmZmpw-1651633540-0-ATJbn6UKdMdaWezCuLb9a95thiIOta/vIF5HKjDYya+JOP8gFTzUaqsbFw/sfVltnsp9ZRUdZFQFJs9F3YxIbCY=",
+      "domain": ".g2crowd.com",
+      "path": "/",
+      "expires": 1651635340.173019,
+      "httpOnly": true,
+      "secure": true
+    },
+    {
+      "sameSite": "Lax",
+      "name": "__hstc",
+      "value": "168470334.6fade3e4fbbf80ea67258bd32dd6da67.1651633540238.1651633540238.1651633540238.1",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1667185540,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "hubspotutk",
+      "value": "6fade3e4fbbf80ea67258bd32dd6da67",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1667185540,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "__hssrc",
+      "value": "1",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "__hssc",
+      "value": "168470334.1.1651633540238",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1651635340,
+      "httpOnly": false,
+      "secure": false
+    },
+    {
+      "sameSite": "Lax",
+      "name": "ajs_user_id",
+      "value": "%22local%7Cd48Zb2qiiI%22",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1683169540,
+      "httpOnly": false,
+      "secure": false
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://action-staging.parabol.co",
+      "localStorage": [
+        {
+          "name": "ajs_group_id",
+          "value": "null"
+        },
+        {
+          "name": "ajs_user_id",
+          "value": "\"local|d48Zb2qiiI\""
+        },
+        {
+          "name": "ajs_group_properties",
+          "value": "{}"
+        },
+        {
+          "name": "ajs_user_traits",
+          "value": "{\"email\":\"test@automate.com\"}"
+        },
+        {
+          "name": "Action:token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkNDhaYjJxaWlJIiwidG1zIjpbImQ0OFpiNVB0UnYiXSwiaWF0IjoxNjUxNjMzNTQwLCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjU0MjI1NTQwLCJyb2wiOm51bGx9.0eJrjVJKvvOlBrcgENWBUt3WHWK6nxUA6KEXO5AHUVY"
+        },
+        {
+          "name": "email",
+          "value": "test@automate.com"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"3adf1f48-fddd-433b-b8fd-797637204727\""
+        },
+        {
+          "name": "debug",
+          "value": "undefined"
+        }
+      ]
+    }
+  ]
 }
