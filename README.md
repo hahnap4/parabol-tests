@@ -5,9 +5,7 @@ Informal Test Cases Checklist: https://docs.google.com/spreadsheets/d/1fqCqV9zXq
 
 Tests will be based on the test cases listed above, which should reflect real-time behavior of users.
 
-Critical test cases will be covered in the test files, while the remainder will be covered if needed.
-
-Also, if time permits, I will include visual comparisons to cover UI testing -- and add in API testing.
+Critical test cases, UI tests, and some API tests will be covered in the test files, while the remainder will be covered if needed.
 
 We are using Playwright for our test automation: https://playwright.dev/docs/intro
 
@@ -15,10 +13,7 @@ As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integrat
 
 ## How to get the tests to work...
 
-In order for the tests to work, you must have the dev environment set up. 
-Please follow the instructions listed here: https://github.com/ParabolInc/parabol/blob/master/README.md#installation
-
-Once you have set up your dev environment, you can use the following command to execute all tests: `npx playwright test`
+Please use the following command to execute all tests: `npx playwright test`
 
 If you want to execute one group of tests, then use the following command: `npx playwright test {folder-name}`
 
