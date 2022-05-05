@@ -7,10 +7,11 @@ This test automation will cover most of the checklist items for Release and UI t
 In other words, it will be focused on covering the smoke tests. If time permits, we may create test automation for partial regression.
 
 The only tests we cannot cover are:
- Added Slack, verified meeting notifications (use #t_product_actiontime)
- Added Mattermost, verified meeting notifications (check the test webhook in Parabol Mattermost)
- Added GitHub, verified issue created (use ParabolInc/publictestrepo)
- Added Jira, verified issue created (use parabol-2)
+
+ - Added Slack, verified meeting notifications (use #t_product_actiontime)
+ - Added Mattermost, verified meeting notifications (check the test webhook in Parabol Mattermost)
+ - Added GitHub, verified issue created (use ParabolInc/publictestrepo)
+ - Added Jira, verified issue created (use parabol-2)
 
 We also need to keep in mind that Playwright can emulate mobile devices, but there will still be certain restrictions. 
 
