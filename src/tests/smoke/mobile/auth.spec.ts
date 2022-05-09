@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { authPage } from '../../objects/authPage';
+import { authPage } from '../../../objects/authPage';
 import faker from '@faker-js/faker';
 
 // User creates an account via email and password.
@@ -16,6 +16,3 @@ test.describe.parallel('Account', () => {
     });
 });
 
-// Check if user can create an account with Google.
-
-// Check if user can create an account with SSO.
