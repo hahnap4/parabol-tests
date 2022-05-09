@@ -38,3 +38,17 @@ If you want to execute one group of tests, then use the following command: `npx 
 If you wish to see the tests run headed, then run: `npx playwright test --headed`
 
 We do recommend to run the tests in a headless manner though.
+
+**After running the tests...**
+
+When there is a failure, an HTML report with trace, video, and screenshots, will be made into a .zip file. So you can find the .zip file on Finder (if Mac) and then attach the file in Jira or Slack when needed.
+
+Please be sure to clear out the files in the following folders after running the tests: failedReports, playwright-report, and test-results.
+
+This way, it will keep the repo clean locally for yourself. 
+
+We already have a .gitignore file set up so that the files in those three folders will not be added to the repo commit.
+
+**How to update original snapshots for visual comparison tests**
+
+Use `npx playwright test visualComparison --update-snapshots` to update the original snapshot. And then you can run the tests as usual.

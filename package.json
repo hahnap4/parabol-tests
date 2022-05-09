@@ -4,6 +4,7 @@
         "test": "playwright test -c tests-out"
     },
     "dependencies": {
+        "adm-zip": "^0.5.9",
         "faker": "^5.5.3"
     },
     "devDependencies": {

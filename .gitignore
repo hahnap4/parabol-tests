@@ -1,0 +1,5 @@
+failedReports/**
+
+playwright-report/**
+
+test-results/**
