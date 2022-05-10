@@ -10,6 +10,12 @@ export class meetingHomePage {
   readonly notifBell: Locator;
   readonly userIcon: Locator;
 
+  // User Profile
+  readonly myProfile: Locator;
+  readonly organizationList: Locator;
+  readonly upgradeToPro: Locator;
+  readonly signOut: Locator;
+
   // Side Nav
   readonly meetingsSide: Locator;
   readonly timelineSide: Locator;
@@ -32,6 +38,12 @@ export class meetingHomePage {
     this.helpMenu = page.locator('button[aria-label="Help menu"]');
     this.notifBell = page.locator('button[aria-label="Notifications"]');
     this.userIcon = page.locator('button >> .css-clypkz');
+
+    // User Profile
+    this.myProfile = page.locator('');
+    this.organizationList = page.locator('');
+    this.upgradeToPro = page.locator('');
+    this.signOut = page.locator('');
 
     // Side Nav
     this.meetingsSide = page.locator('button:has-text("Meetings")');

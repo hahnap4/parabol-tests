@@ -11,8 +11,7 @@ test.describe.parallel('Account', () => {
         await AuthPage.emailField.fill(faker.internet.email());
         await AuthPage.passwordField.fill(faker.internet.password());
 
-        //TODO: This is a sample test. 
-        // Will update/edit once objects are all finalized. Need to check it headed as well.
+        //TODO: Will update/edit once objects are all finalized. Need to check it headed as well.
     });
 });
 
