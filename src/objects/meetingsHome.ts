@@ -40,10 +40,10 @@ export class meetingHomePage {
     this.userIcon = page.locator('button >> .css-clypkz');
 
     // User Profile
-    this.myProfile = page.locator('');
-    this.organizationList = page.locator('');
-    this.upgradeToPro = page.locator('');
-    this.signOut = page.locator('');
+    this.myProfile = page.locator('.css-1gdkvb >> text=Profile');
+    this.organizationList = page.locator('.css-1gdkvb >> text=Organizations');
+    this.upgradeToPro = page.locator('.css-1gdkvb >> text=Upgrade to Pro');
+    this.signOut = page.locator('.css-1gdkvb >> text=Sign Out');
 
     // Side Nav
     this.meetingsSide = page.locator('button:has-text("Meetings")');
