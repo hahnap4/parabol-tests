@@ -50,4 +50,4 @@ We already have a .gitignore file set up so that the files in those three folder
 
 **How to update original snapshots for visual comparison tests**
 
-Use `npx playwright test visualComparison --update-snapshots` to update the original snapshot. And then you can run the tests as usual.
+Use `npx playwright test desktop/visualComparison --update-snapshots` or `npx playwright test mobile/visualComparison --update-snapshots` to update the original snapshot. And then you can run the tests as usual.

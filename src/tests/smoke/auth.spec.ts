@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { authPage } from '../../../objects/authPage';
+import { authPage } from '../../objects/authPage';
 import faker from '@faker-js/faker';
 
 // User creates an account via email and password.
 test.describe.parallel('Account', () => {
-    test.skip('Create', async({ page }) => {
+    test('Create', async({ page }) => {
         const AuthPage = new authPage(page);
         await AuthPage.gotoSignUpPage();
         await expect(page.url()).toContain('/create-account'); // extra check during dev

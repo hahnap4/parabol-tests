@@ -1,7 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { meetingHomePage } from '../../objects/meetingsHome'
+import { meetingHomePage } from '../../../objects/meetingsHome'
 
-// TODO: Think about potentially setting up and tearing down fixtures for future tests in this file. 
+// TODO: Think about potentially setting up and tearing down fixtures for other pages in future tests in this file. 
+
+// On Android
 
 test.use({ storageState: 'storageState.json' });
 test.describe.parallel('Current visual snapshot matches original snapshot', () => {

@@ -19,26 +19,43 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Safari']
       },
-      testIgnore: '**/design/**',
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
     },
     {
       name: 'Chrome',
       use: {
         ...devices['Desktop Chrome']
       },
+      testIgnore: '**/design/mobile/**',
     },
     {
       name: 'Edge',
       use: {
           ...devices['Desktop Edge']
-      }
+      },
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
     },
     {
         name: 'Firefox',
         use: {
             ...devices['Desktop Firefox']
-        }
+        },
+        testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
       },
+    {
+        name: 'Android v8.0.0',
+        use: {
+          ...devices['Galaxy S9+']
+        },
+        testIgnore: '**/design/desktop/**',
+    },
+    {
+        name: 'iOS v15.4.1',
+        use: {
+          ...devices['iPhone 13 Pro Max']
+        },
+        testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
+    },
   ],
 };
 
