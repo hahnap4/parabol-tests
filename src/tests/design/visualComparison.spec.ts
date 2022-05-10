@@ -9,7 +9,6 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
    test('For Meetings Homepage', async ({ page }) => {
      const homePage = new meetingHomePage(page);
      await page.goto('/meetings');
-     await homePage.ParabolLogo.isVisible();
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
    });
 
