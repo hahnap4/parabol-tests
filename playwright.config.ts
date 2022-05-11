@@ -2,16 +2,16 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
-  reporter: [ ['html', { open: 'never' }] ], // Use once all test automation has been coded.
+  reporter: [ ['html', { open: 'never' }] ], 
   retries: process.env.CI ? 2 : 0, // Can do 2 retries. 
   globalSetup: require.resolve('./globalSetup'),
   globalTeardown: './globalTeardown.ts',
   use: {
-    trace: 'retain-on-failure', // If first time fails, then second time will be traced
+    trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    headless: true, // change to true once it's ready for people to use in ci/cd. headless = no browser appearing on screen
-    baseURL: 'https://action-staging.parabol.co/', //https://action.parabol.co/
+    headless: true, 
+    baseURL: 'https://action.parabol.co/', //https://action-staging.parabol.co/
   }, 
   projects: [
     {
