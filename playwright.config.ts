@@ -11,7 +11,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: true, // change to true once it's ready for people to use in ci/cd. headless = no browser appearing on screen
-    baseURL: 'https://action.parabol.co/', //https://action-staging.parabol.co/
+    baseURL: 'https://action-staging.parabol.co/', //https://action.parabol.co/
   }, 
   projects: [
     {
@@ -19,13 +19,42 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Safari']
       },
-      testIgnore: '**/design/**',
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
     },
     {
       name: 'Chrome',
       use: {
         ...devices['Desktop Chrome']
       },
+      testIgnore: '**/design/mobile/**',
+    },
+    {
+      name: 'Edge',
+      use: {
+          ...devices['Desktop Edge']
+      },
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
+    },
+    {
+        name: 'Firefox',
+        use: {
+            ...devices['Desktop Firefox']
+        },
+        testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
+      },
+    {
+        name: 'Android v8.0.0',
+        use: {
+          ...devices['Galaxy S9+']
+        },
+        testIgnore: '**/design/desktop/**',
+    },
+    {
+        name: 'iOS v15.4.1',
+        use: {
+          ...devices['iPhone 13 Pro Max']
+        },
+        testIgnore: ['**/design/desktop/**', '**/design/mobile/**'],
     },
   ],
 };
