@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { meetingHomePage } from '../../../objects/meetingsHome';
 import { createMeetingPage } from '../../../objects/createMeeting';
-import { orgListPage } from '../../../objects/orgList';
 
 // On Android
 
