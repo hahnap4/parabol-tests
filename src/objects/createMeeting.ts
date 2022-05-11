@@ -117,6 +117,7 @@ export class createMeetingPage {
   this.removePrompt = page.locator('.css-1vafts8 >> nth=0');
   this.changePromptColor = page.locator('.css-62shka >> nth=0');
   this.editPromptDescription = page.locator('.css-1xz6x59 >> text=Description');
+
   }
 
 }

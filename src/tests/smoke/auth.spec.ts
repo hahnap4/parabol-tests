@@ -4,7 +4,7 @@ import faker from '@faker-js/faker';
 
 // User creates an account via email and password.
 test.describe.parallel('Account', () => {
-    test('Create', async({ page }) => {
+    test.skip('Create', async({ page }) => {
         const AuthPage = new authPage(page);
         await AuthPage.gotoSignUpPage();
         await expect(page.url()).toContain('/create-account'); // extra check during dev
@@ -15,3 +15,14 @@ test.describe.parallel('Account', () => {
     });
 });
 
+/* 
+TODO: Finish the above create account test.
+Write tests for Log in and Log out scenarios.
+
+Requires: 
+ - authPage objects
+ - meetingsHome objects
+ - userProfile objects
+ - use storageState to immediately log in at the start of a test run
+ - teardown fixture for deleting newly created account
+*/

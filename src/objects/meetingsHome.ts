@@ -5,6 +5,7 @@ export class meetingHomePage {
 
   // Header
   readonly hamburgerIcon: Locator;
+  readonly mobileHamburger: Locator;
   readonly ParabolLogo: Locator;
   readonly helpMenu: Locator;
   readonly notifBell: Locator;
@@ -17,6 +18,7 @@ export class meetingHomePage {
   readonly signOut: Locator;
 
   // Side Nav
+  readonly mobileUpgrade: Locator;
   readonly meetingsSide: Locator;
   readonly timelineSide: Locator;
   readonly tasksSide: Locator;
@@ -25,6 +27,7 @@ export class meetingHomePage {
 
   // Meeting
   readonly addMeeting: Locator;
+  readonly mobileAddMeeting: Locator;
   readonly meetingBox: Locator;
   readonly meetingTripleDot: Locator;
   readonly copyInviteLink: Locator;
@@ -34,6 +37,7 @@ export class meetingHomePage {
 
     // Header
     this.hamburgerIcon = page.locator('button[aria-label="Toggle dashboard menu"]');
+    this.mobileHamburger = page.locator('button:has-text("menu")');
     this.ParabolLogo = page.locator('button >> .css-1tiimx7');
     this.helpMenu = page.locator('button[aria-label="Help menu"]');
     this.notifBell = page.locator('button[aria-label="Notifications"]');
@@ -46,14 +50,16 @@ export class meetingHomePage {
     this.signOut = page.locator('.css-1gdkvb >> text=Sign Out');
 
     // Side Nav
+    this.mobileUpgrade = page.locator('.css-c5lc87 >> text=Upgrade to Pro');
     this.meetingsSide = page.locator('button:has-text("Meetings")');
     this.timelineSide = page.locator('button:has-text("Timeline")');
     this.tasksSide = page.locator('button:has-text("Tasks")');
-    this.teamSide = page.locator('button >> .css-11nec0l');
+    this.teamSide = page.locator('.css-17o5cmy >> nth=3');
     this.addTeamSide = page.locator('button:has-text("Add a Team")');
 
     // Meeting
     this.addMeeting = page.locator('button:has-text("Add Meeting")');
+    this.mobileAddMeeting = page.locator('.css-101c1r8')
     this.meetingBox = page.locator('.css-17crg8a');
     this.meetingTripleDot = page.locator('button >> .css-u152qm');
     this.copyInviteLink = page.locator('aria-label=Edit the meeting >> text=Copy invite link');
