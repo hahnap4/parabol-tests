@@ -46,7 +46,11 @@ export class authPage {
   }
  
   async gotoSignUpPage() {
-      await this.page.goto('https://action-staging.parabol.co/create-account');  
+      await this.page.goto('/create-account');  
+  }
+
+  async gotoSignInPage() {
+    await this.page.goto('/');
   }
 
 }

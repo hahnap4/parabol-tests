@@ -41,8 +41,7 @@ export class meetingHomePage {
     this.ParabolLogo = page.locator('button >> .css-1tiimx7');
     this.helpMenu = page.locator('button[aria-label="Help menu"]');
     this.notifBell = page.locator('button[aria-label="Notifications"]');
-    this.userIcon = page.locator('button >> .css-clypkz');
-
+    this.userIcon = page.locator('.css-h6h0jc');
     // User Profile
     this.myProfile = page.locator('.css-1gdkvb >> text=Profile');
     this.organizationList = page.locator('.css-1gdkvb >> text=Organizations');
