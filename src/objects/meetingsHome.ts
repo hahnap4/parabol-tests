@@ -41,12 +41,13 @@ export class meetingHomePage {
     this.ParabolLogo = page.locator('button >> .css-1tiimx7');
     this.helpMenu = page.locator('button[aria-label="Help menu"]');
     this.notifBell = page.locator('button[aria-label="Notifications"]');
-    this.userIcon = page.locator('.css-h6h0jc');
+    this.userIcon = page.locator('text=help_outlinenotifications >> button >> nth=2');
+
     // User Profile
     this.myProfile = page.locator('.css-1gdkvb >> text=Profile');
     this.organizationList = page.locator('.css-1gdkvb >> text=Organizations');
     this.upgradeToPro = page.locator('.css-1gdkvb >> text=Upgrade to Pro');
-    this.signOut = page.locator('.css-1gdkvb >> text=Sign Out');
+    this.signOut = page.locator('text=Sign Out');
 
     // Side Nav
     this.mobileUpgrade = page.locator('.css-c5lc87 >> text=Upgrade to Pro');

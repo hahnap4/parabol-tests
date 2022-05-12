@@ -6,6 +6,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0, // Can do 2 retries. 
   globalSetup: require.resolve('./globalSetup'),
   globalTeardown: './globalTeardown.ts',
+  fullyParallel: true,
   use: {
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',

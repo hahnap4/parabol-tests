@@ -4,7 +4,7 @@ import { meetingHomePage } from '../../objects/meetingsHome'
 import { userProfilePage } from '../../objects/userProfile'
 import faker from '@faker-js/faker';
 
-test.describe.parallel('Account', () => {
+test.describe('Account', () => {
 
     // TODO: Remove skip when staging is fixed again.
 

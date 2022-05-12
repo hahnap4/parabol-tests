@@ -3,10 +3,14 @@ import { meetingHomePage } from '../../../objects/meetingsHome'
 
 test.use({ storageState: 'storageState.json' });
 test.describe('Mobile', () => {
-    // User signs out.
+
+    // User signs out on mobile.
     test('Sign Out', async({ page }) => {
         const homepage = new meetingHomePage(page);
+        await page.goto('/');
         await homepage.signOut.click();
-        await expect(page.url()).toBe('action.parabol.co');
+        await page.waitForLoadState('networkidle');
+        await expect(page.url()).toContain('action.parabol.co');
     });
+    
 });
