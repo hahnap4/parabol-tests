@@ -1,7 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, Page } from '@playwright/test';
 import { authPage } from '../../objects/authPage';
-import { meetingHomePage } from '../../objects/meetingsHome'
-import { userProfilePage } from '../../objects/userProfile'
+import { teardownPage } from '../../fixtures/testTeardown';
 import faker from '@faker-js/faker';
 
 test.describe('Account', () => {
@@ -18,12 +17,8 @@ test.describe('Account', () => {
             await AuthPage.createAccountButton.click();
             await expect(page.url()).toContain('/meetings');
         } finally{
-            const userprofilepage = new userProfilePage(page);
-            await page.goto('/me/profile');
-            await userprofilepage.deleteAccount.click();
-            await userprofilepage.reasonForDelete.fill(faker.internet.color());
-            await userprofilepage.goodbyeForever.click();
-            await expect(page.url()).toContain('/resources');
+            const teardown = new teardownPage(); // TODO: Check if this works once staging is working again.
+            await teardown.deleteAccount();
         }
     });
     
