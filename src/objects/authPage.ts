@@ -1,6 +1,9 @@
 import { Locator, Page } from '@playwright/test';
 
 export class authPage {
+  afterEach(arg0: () => Promise<void>) {
+      throw new Error('Method not implemented.');
+  }
   readonly page: Page;
 
   // General
@@ -46,7 +49,11 @@ export class authPage {
   }
  
   async gotoSignUpPage() {
-      await this.page.goto('https://action-staging.parabol.co/create-account');  
+      await this.page.goto('/create-account');  
+  }
+
+  async gotoSignInPage() {
+    await this.page.goto('/');
   }
 
 }

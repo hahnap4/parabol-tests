@@ -1,19 +1,3 @@
-import { test, expect } from '@playwright/test';
-
-// On Android
-
-test.use({ storageState: 'storageState.json' });
-test.describe.parallel('Current visual snapshot matches original snapshot', () => {
-
-   test('For Meetings Homepage', async ({ page }) => {
-     await page.goto('/meetings');
-     await page.locator('button:has-text("menu")').press('Enter');
-     await page.waitForLoadState('networkidle');
-     await page.pause();
-    });
-
-});
-
 /* 
 TODO: Test the Action meeting aka Check-in Meeting with 2 players.
  - Create 2 isolated browser contexts.
