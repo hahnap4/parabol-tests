@@ -16,13 +16,6 @@ const config: PlaywrightTestConfig = {
   }, 
   projects: [
     {
-      name: 'Safari (webkit)',
-      use: {
-        ...devices['Desktop Safari']
-      },
-      testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/signOut/mobile.spec.ts'],
-    },
-    {
       name: 'Chrome',
       use: {
         ...devices['Desktop Chrome']
@@ -37,25 +30,11 @@ const config: PlaywrightTestConfig = {
       testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/signOut/mobile.spec.ts'],
     },
     {
-        name: 'Firefox',
-        use: {
-            ...devices['Desktop Firefox']
-        },
-        testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/signOut/mobile.spec.ts'],
-      },
-    {
         name: 'Android v8.0.0',
         use: {
           ...devices['Galaxy S9+']
         },
         testIgnore: ['**/design/desktop/**', '**/smoke/signOut/desktop.spec.ts'],
-    },
-    {
-        name: 'iOS v15.4.1',
-        use: {
-          ...devices['iPhone 13 Pro Max']
-        },
-        testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/signOut/desktop.spec.ts'],
     },
   ],
 };

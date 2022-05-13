@@ -1,109 +1,53 @@
-import { test, expect } from '@playwright/test';
+import '@playwright/test';
 import { inMeetingPage } from '../../objects/inMeeting';
+import { test, expect } from '../../fixtures/testSetup';
+import faker from '@faker-js/faker';
 
 test.describe('Unauthenticated Demo', () => {
 
     // Reflect Stage
-    test('Type Anonymous Reflections into Boxes', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
+    test('Type Anonymous Reflections into Boxes', async({ demoReflectPage, page }) => {
         
     });
 
     // Group Stage
-    test('Group Cards Together', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
+    test('Group Cards Together', async({ demoGroupPage, page }) => {
+
     });
 
-    test('Edit Group Name', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
+    test('Edit Group Name', async({ demoGroupPage, page }) => {
+
     });
 
     // Vote Stage
-    test('Anonymously Vote for Topics', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        
+    test('Anonymously Vote for Topics', async({ demoVotePage, page }) => {
+
     });
 
-    test('Cast up to 3 votes for 1 group', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
+    test('Cast up to 3 votes for 1 group', async({ demoVotePage, page }) => {
         
     });
     
-    // Discuss Stage
-    test('Send a Public Comment', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.click();
+    // Discuss Stage 
+    test('Send a Public Comment', async({ demoDiscussPage, page }) => {
 
+    });
 
+    test('Add a New Task', async({ demoDiscussPage, page }) => {
         
     });
 
-    test('Add a New Task', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.click();
+    test('Reply to a Task', async({ demoDiscussPage, page }) => {
 
-
-        
     });
 
-    test('Reply to a Task', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.click();
+    test('Cannot Edit Previous Stages', async({ demoDiscussPage, page }) => {
 
-
-        
-    });
-
-    test('Cannot Edit Previous Stages', async({ page }) => {
-        const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.click();
-
-
-        
     });
 
     // End Demo Stage
-    test('Check Demo Summary after Ending Demo', async({ page }) => {
+    test('Check Demo Summary after Ending Demo', async({ demoDiscussPage, page }) => {
         const demopage = new inMeetingPage(page);
-        await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-        await demopage.startDemo.click();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.dblclick();
-        await demopage.nextBtn.click();
         await demopage.endDemo.dblclick();
         await expect(page.url()).toContain('/retrospective-demo-summary');
     });
