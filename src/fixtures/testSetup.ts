@@ -15,6 +15,9 @@ export const test = base.extend<MyFixtures>({
     const demopage = new inMeetingPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
     await demopage.startDemo.click();
+    await page.waitForLoadState('networkidle');
+    await demopage.tipsPopup.isVisible();
+    await demopage.closeTips.click();
 
     await use(demopage);
   },
@@ -24,6 +27,9 @@ export const test = base.extend<MyFixtures>({
     const demopage = new inMeetingPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
     await demopage.startDemo.click();
+    await page.waitForLoadState('networkidle');
+    await demopage.tipsPopup.isVisible();
+    await demopage.closeTips.click();
     await demopage.nextBtn.dblclick();
 
     await use(demopage);
@@ -34,6 +40,9 @@ export const test = base.extend<MyFixtures>({
     const demopage = new inMeetingPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
     await demopage.startDemo.click();
+    await page.waitForLoadState('networkidle');
+    await demopage.tipsPopup.isVisible();
+    await demopage.closeTips.click();
     await demopage.nextBtn.dblclick();
     await demopage.nextBtn.dblclick();
 
@@ -45,6 +54,9 @@ export const test = base.extend<MyFixtures>({
     const demopage = new inMeetingPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
     await demopage.startDemo.click();
+    await page.waitForLoadState('networkidle');
+    await demopage.tipsPopup.isVisible();
+    await demopage.closeTips.click();
     await demopage.nextBtn.dblclick();
     await demopage.nextBtn.dblclick();
     await demopage.nextBtn.dblclick();
