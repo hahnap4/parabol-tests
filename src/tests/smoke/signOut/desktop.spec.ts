@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { meetingHomePage } from '../../../objects/meetingsHome'
+import { meetingHomePage } from '@pages/meetingsHome'
 
 test.use({ storageState: 'storageState.json' });
 test.describe('Desktop', () => {

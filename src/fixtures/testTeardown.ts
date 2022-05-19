@@ -1,4 +1,4 @@
-import { userProfilePage } from "../objects/userProfile";
+import { userProfilePage } from "@pages/userProfile";
 import { test, expect, Page } from '@playwright/test';
 import faker from '@faker-js/faker';
 

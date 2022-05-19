@@ -1,6 +1,6 @@
 import '@playwright/test';
-import { inMeetingPage } from '../../../objects/inMeeting';
-import { test, expect } from '../../../fixtures/testSetup';
+import { inMeetingPage } from '@pages/inMeeting';
+import { test, expect } from '@fixtures/testSetup';
 import faker from '@faker-js/faker';
 
 test.describe('Unauthenticated Demo - Desktop', () => {

@@ -1,5 +1,5 @@
 import { test as base } from '@playwright/test';
-import { inMeetingPage } from '../objects/inMeeting';
+import { inMeetingPage } from '@pages/inMeeting';
 
 type MyFixtures = {
   demoReflectPage: inMeetingPage;

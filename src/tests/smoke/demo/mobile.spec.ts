@@ -1,6 +1,6 @@
 import '@playwright/test';
-import { inMeetingPage } from '../../../objects/inMeeting';
-import { test, expect } from '../../../fixtures/testSetup';
+import { inMeetingPage } from '@pages/inMeeting';
+import { test, expect } from '@fixtures/testSetup';
 import faker from '@faker-js/faker';
 
 test.describe('Unauthenticated Demo - Mobile', () => {
@@ -27,7 +27,7 @@ test.describe('Unauthenticated Demo - Mobile', () => {
 
     // Group Stage
     test('Group Cards Together', async({ demoGroupPage, page }) => {
-
+        
     });
 
     test.skip('Edit Group Name', async({ demoGroupPage, page }) => {
