@@ -1,10 +1,20 @@
 {   
     "compilerOptions": {
         "target": "ESNext",
+        "strict": true,
         "module": "commonjs",
         "moduleResolution": "Node",
         "sourceMap": true,
         "outDir": "../testsOut",
         "resolveJsonModule": true,
+        "baseUrl": ".",
+        "paths": {
+            "@pages/*": [
+                "src/objects/*"
+            ],
+            "@fixtures/*": [
+                "src/fixtures/*"
+            ]
+        }
     }
 }

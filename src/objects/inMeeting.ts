@@ -4,23 +4,13 @@ export class inMeetingPage {
   readonly page: Page;
 
 // General
-  readonly tipsBtn: Locator;
   readonly tipsPopup: Locator;
   readonly closeTips: Locator;
   readonly nextBtn: Locator;
-  readonly endMeeting: Locator;
-  readonly teamName: Locator;
-  readonly parabolLogo: Locator;
-  readonly meetingName: Locator;
-  readonly addUserToTeamMeeting: Locator;
 
 // Ice Breaker (Sprint Poker and Retro)
-  readonly editIcebreaker: Locator;
-  readonly getNewIcebreaker: Locator;
 
 // After Meeting Ends (for all types of meetings)
-  readonly seeMeetingDiscussion: Locator;
-  readonly reviewMeetingSummary: Locator;
 
 // Sprint Poker
 
