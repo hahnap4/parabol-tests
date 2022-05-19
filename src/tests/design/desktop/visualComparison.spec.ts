@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { meetingHomePage } from '@pages/meetingsHome';
-import { createMeetingPage } from '@pages/createMeeting';
+import { createMeetingPage, meetingHomePage } from 'src/index';
 
 // On Chrome
 
