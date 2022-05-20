@@ -1,5 +1,5 @@
-import { test, expect } from '@playwright/test';
-import { meetingHomePage, createMeetingPage } from '@index';
+import '@playwright/test';
+import { test, expect, meetingHomePage, createMeetingPage, timelinePage, upgradeToProPage } from '@index';
 
 // On Android
 
@@ -85,6 +85,30 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
    });
 
+   test('For Timeline Webpage', async ({ page }) => {
+    const timelinepage = new timelinePage(page);
+    const homePage = new meetingHomePage(page);
+    await page.goto('/');
+    await homePage.timelineSide.click();
+    await homePage.mobileHamburger.press('Enter');
+    await page.waitForLoadState('networkidle');
+    const maskedScreenshot = await page.screenshot(
+      {
+        mask: [timelinepage.daysAgo]
+      });
+    expect(await maskedScreenshot).toMatchSnapshot('timeline.png');
+   });
+
+   test.only('For Upgrade to Pro Webpage', async ({ mobileUpgradePage, page }) => {
+    const upgradepage = new upgradeToProPage(page);
+    await page.waitForLoadState('networkidle');
+    const maskedScreenshot = await page.screenshot(
+      {
+        mask: [upgradepage.quoteBox]
+      });
+    expect(await maskedScreenshot).toMatchSnapshot('upgrade.png');
+   });
+
 });
 
 /* Potential TODO:
@@ -92,9 +116,5 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
  - Retro Meeting Page
  - Check-In Meeting Page
  - Demo Page
-
- Cannot Do:
- - Timeline (due to time changes)
- - Upgrade to Pro (due to changing quotes)
 
  for the visual comparisons test (aka UI tests).*/
