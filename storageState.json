@@ -1,16 +1,6 @@
 {
   "cookies": [
     {
-      "sameSite": "Strict",
-      "name": "_dd_s",
-      "value": "rum=1&id=85d5bfb9-c7c8-43f0-8599-91e6c6b14823&created=1652993860613&expire=1652994760613",
-      "domain": "action.parabol.co",
-      "path": "/",
-      "expires": 1652994760,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
       "sameSite": "Lax",
       "name": "amplitude_idundefinedparabol.co",
       "value": "eyJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOm51bGwsImxhc3RFdmVudFRpbWUiOm51bGwsImV2ZW50SWQiOjAsImlkZW50aWZ5SWQiOjAsInNlcXVlbmNlTnVtYmVyIjowfQ==",
@@ -23,192 +13,82 @@
     {
       "sameSite": "Lax",
       "name": "_gcl_au",
-      "value": "1.1.1515957426.1652993861",
+      "value": "1.1.2000402528.1653083329",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1660769860,
+      "expires": 1660859328,
       "httpOnly": false,
       "secure": false
     },
     {
       "sameSite": "Lax",
       "name": "ajs_anonymous_id",
-      "value": "%22e4fc1acb-4c1b-4d55-bbba-ed30a2db6744%22",
+      "value": "%22466eda96-cf2f-4aec-8feb-abb4a56711b6%22",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1684529861,
+      "expires": 1684619329,
       "httpOnly": false,
       "secure": false
     },
     {
       "sameSite": "Strict",
       "name": "_rdt_uuid",
-      "value": "1652993860929.045ec64a-0dba-4e6d-ae25-6aeecd5274ae",
+      "value": "1653083328745.d6bf8977-4c0a-4c7b-8387-5cef55946143",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1660769860,
+      "expires": 1660859328,
       "httpOnly": false,
+      "secure": true
+    },
+    {
+      "sameSite": "None",
+      "name": "__cf_bm",
+      "value": "LEjEaTc5pBlEuslaDJVlJvtj7_vHif7JHyPxf0IH5tY-1653083328-0-ATKbVkkOsqepgRp13F32sa5IaRsuCX1XNPw+lfaEKlKMJkb2AX2wG5yiy/ZzZ3Tbq1PTaaYTQTWQZSVxKfCAEhY=",
+      "domain": ".hubspot.com",
+      "path": "/",
+      "expires": 1653085128.803808,
+      "httpOnly": true,
       "secure": true
     },
     {
       "sameSite": "None",
       "name": "_session_id",
-      "value": "11e24e73a9984d757d730b74035300a2",
+      "value": "1c16c98f64ed947fb135113587824f6f",
       "domain": "tracking.g2crowd.com",
       "path": "/",
-      "expires": 1654203460.990891,
+      "expires": 1654292928.812599,
       "httpOnly": true,
       "secure": true
     },
     {
       "sameSite": "None",
       "name": "__cf_bm",
-      "value": "FJq6tgbYOdYSrLAxo2cEbr.JLoqVQPIjvHsPy5zH4mA-1652993861-0-AYZuq24xeCzTF6sYMXeIpUD9RZe/k/YytqI6GfQ8t4f5u8/no1PDUPb4dbzeox+NjyeiYaR21LsFZoLt600hXec=",
+      "value": "AW7o14yrbB7vBtYWeVoBgcm4f8AR491ptBoc8HXrp4s-1653083328-0-AXKJ1d/m7lrcsTb7OIv5ebkseWty/b13lWccK4njY0KeWmKVDQpioXoXjDxHZNZKdZZ/2tjhKXnwuX92thxzhHw=",
       "domain": ".g2crowd.com",
       "path": "/",
-      "expires": 1652995660.990927,
-      "httpOnly": true,
-      "secure": true
-    },
-    {
-      "sameSite": "Lax",
-      "name": "__hstc",
-      "value": "168470334.e0ddb89d126cfead637921b0547df3a4.1652993861098.1652993861098.1652993861098.1",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1668545861,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
-      "sameSite": "Lax",
-      "name": "hubspotutk",
-      "value": "e0ddb89d126cfead637921b0547df3a4",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1668545861,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
-      "sameSite": "Lax",
-      "name": "__hssrc",
-      "value": "1",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
-      "sameSite": "Lax",
-      "name": "__hssc",
-      "value": "168470334.1.1652993861099",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1652995661,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
-      "sameSite": "None",
-      "name": "__cf_bm",
-      "value": "DxH7KSXnqhtcKLChMUbPoqoqMpzGYrEh8uJbFwSorwg-1652993861-0-AW2MSC1q/iZ2K4tuZ7g6UE6+jWE68x4AeUhX6/CCthV/aihbkrsxxJ8pE/wNQzazeEiWlzNYA8xrtH/u4vfuO7Y=",
-      "domain": ".hubspot.com",
-      "path": "/",
-      "expires": 1652995661.225391,
+      "expires": 1653085128.812626,
       "httpOnly": true,
       "secure": true
     },
     {
       "sameSite": "None",
-      "name": "IDE",
-      "value": "AHWqTUnHHo7ETVNb3k6Wgh3LL7UpJN7y5D85-NIX8PyJFf8XZT1U1JlTeBUBe0u4",
+      "name": "test_cookie",
+      "value": "CheckForPermission",
       "domain": ".doubleclick.net",
       "path": "/",
-      "expires": 1716065861.230342,
-      "httpOnly": true,
+      "expires": 1653084228.956579,
+      "httpOnly": false,
       "secure": true
     },
     {
-      "sameSite": "Lax",
-      "name": "_fbp",
-      "value": "fb.1.1652993861445.1823622026",
-      "domain": ".parabol.co",
+      "sameSite": "Strict",
+      "name": "_dd_s",
+      "value": "rum=1&id=4a7a890a-f2dc-4948-bb0d-fd6dac53015e&created=1653083328047&expire=1653084229049",
+      "domain": "action.parabol.co",
       "path": "/",
-      "expires": 1660769861,
+      "expires": 1653084229,
       "httpOnly": false,
       "secure": false
-    },
-    {
-      "sameSite": "None",
-      "name": "li_sugr",
-      "value": "aff55d9e-2b37-439a-8c36-e2c225dd4ccf",
-      "domain": ".linkedin.com",
-      "path": "/",
-      "expires": 1660769861.50554,
-      "httpOnly": false,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "lang",
-      "value": "v=2&lang=en-us",
-      "domain": ".ads.linkedin.com",
-      "path": "/",
-      "expires": -1,
-      "httpOnly": false,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "bcookie",
-      "value": "\"v=2&37f10323-16e7-4211-8be4-ef13b8786b1d\"",
-      "domain": ".linkedin.com",
-      "path": "/",
-      "expires": 1716107713.471735,
-      "httpOnly": false,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "lidc",
-      "value": "\"b=TGST01:s=T:r=T:a=T:p=T:g=2834:u=1:x=1:i=1652993861:t=1653080261:v=2:sig=AQG_RKq0jJpwf-jfZTRtuIZl6CDx4bQp\"",
-      "domain": ".linkedin.com",
-      "path": "/",
-      "expires": 1653080261.471748,
-      "httpOnly": false,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "fr",
-      "value": "0SYSi0FvNmgRULygZ..Bihq9F...1.0.Bihq9F.",
-      "domain": ".facebook.com",
-      "path": "/",
-      "expires": 1660769861.474087,
-      "httpOnly": true,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "UserMatchHistory",
-      "value": "AQKFpppOLiXnTQAAAYDeHKesw0N5y5cRXo7dXaYSAEFmt274a-tM1ewrd3x_Bt10MCT4SaiwaRQyaw",
-      "domain": ".linkedin.com",
-      "path": "/",
-      "expires": 1655585861.505564,
-      "httpOnly": false,
-      "secure": true
-    },
-    {
-      "sameSite": "None",
-      "name": "AnalyticsSyncHistory",
-      "value": "AQIJR0g9ukzNeAAAAYDeHKes4C7lXU81LTiSpPrNsrx7OHkKQvyos6zqmqN36zzRTorHltEczK0jgy01V-B2Sg",
-      "domain": ".linkedin.com",
-      "path": "/",
-      "expires": 1655585861.505571,
-      "httpOnly": false,
-      "secure": true
     },
     {
       "sameSite": "Lax",
@@ -216,17 +96,17 @@
       "value": "%22local%7CddVv15EwX6%22",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1684529861,
+      "expires": 1684619329,
       "httpOnly": false,
       "secure": false
     },
     {
       "sameSite": "Lax",
       "name": "amplitude_id_ad454ffc46032dc1d916beed573fa4a2parabol.co",
-      "value": "eyJkZXZpY2VJZCI6IjdjMTkzZmU5LTNmMjktNGM5Yy04YzhhLTU4NDZhYTQ5YjU4NFIiLCJ1c2VySWQiOiJsb2NhbHxkZFZ2MTVFd1g2Iiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNjUyOTkzODYwODYwLCJsYXN0RXZlbnRUaW1lIjoxNjUyOTkzODYxNTEyLCJldmVudElkIjoxLCJpZGVudGlmeUlkIjoxLCJzZXF1ZW5jZU51bWJlciI6Mn0=",
+      "value": "eyJkZXZpY2VJZCI6ImU2YjBlODg5LWJhYjQtNGFkNy04ZWZlLWVkMzE4MTY2MDA1NFIiLCJ1c2VySWQiOiJsb2NhbHxkZFZ2MTVFd1g2Iiwib3B0T3V0IjpmYWxzZSwic2Vzc2lvbklkIjoxNjUzMDgzMzI4Njc1LCJsYXN0RXZlbnRUaW1lIjoxNjUzMDgzMzI5MDcxLCJldmVudElkIjoxLCJpZGVudGlmeUlkIjoxLCJzZXF1ZW5jZU51bWJlciI6Mn0=",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1968353861,
+      "expires": 1968443329,
       "httpOnly": false,
       "secure": false
     }
@@ -236,8 +116,8 @@
       "origin": "https://action.parabol.co",
       "localStorage": [
         {
-          "name": "segmentio.b8f1c149-c6c6-4848-b75e-bf7a9d90af1b.inProgress",
-          "value": "{\"c6c68848-f75e-4f7a-9d90-af1b7912b06f\":{\"item\":{\"url\":\"https://api.segment.io/v1/i\",\"headers\":{\"Content-Type\":\"text/plain\"},\"msg\":{\"timestamp\":\"2022-05-19T20:57:41.510Z\",\"integrations\":{},\"context\":{\"page\":{\"path\":\"/signin\",\"referrer\":\"\",\"search\":\"\",\"title\":\"Sign Up for Free Online Retrospectives | Parabol\",\"url\":\"https://action.parabol.co/signin\"},\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/101.0.4951.15 Safari/537.36\",\"locale\":\"en-US\",\"library\":{\"name\":\"analytics.js\",\"version\":\"4.1.8\"}},\"traits\":{\"email\":\"test@automate.com\"},\"userId\":\"local|ddVv15EwX6\",\"messageId\":\"ajs-4a5e4ede8ec6af3f2522cace142e3fd2\",\"anonymousId\":\"e4fc1acb-4c1b-4d55-bbba-ed30a2db6744\",\"type\":\"identify\",\"writeKey\":\"sZWp1xJSUiw3T5LSqGDGmbzGKBlOx68y\",\"sentAt\":\"2022-05-19T20:57:41.510Z\",\"_metadata\":{\"bundled\":[\"Amplitude\",\"Google AdWords New\",\"Google Tag Manager\",\"HubSpot\",\"Segment.io\"],\"unbundled\":[\"Google Analytics\"],\"bundledIds\":[\"5c6b5f4b7735c8000108a403\",\"5eaa3e19bd33d168e0d12bd6\",\"5eaa3e2be24a42a07bf7353a\",\"59e769b8493d5b0001dcff33\"]}}},\"attemptNumber\":0,\"time\":1652993861511}}"
+          "name": "segmentio.137d2cfb-b2ee-4985-9a47-6bc4222b8997.inProgress",
+          "value": "{\"b2eec985-1a47-4bc4-a22b-8997691193fa\":{\"item\":{\"url\":\"https://api.segment.io/v1/i\",\"headers\":{\"Content-Type\":\"text/plain\"},\"msg\":{\"timestamp\":\"2022-05-20T21:48:49.069Z\",\"integrations\":{},\"context\":{\"page\":{\"path\":\"/signin\",\"referrer\":\"\",\"search\":\"\",\"title\":\"Sign Up for Free Online Retrospectives | Parabol\",\"url\":\"https://action.parabol.co/signin\"},\"userAgent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/101.0.4951.15 Safari/537.36\",\"locale\":\"en-US\",\"library\":{\"name\":\"analytics.js\",\"version\":\"4.1.8\"}},\"traits\":{\"email\":\"test@automate.com\"},\"userId\":\"local|ddVv15EwX6\",\"messageId\":\"ajs-65746327160544a383cb5847fae6d21a\",\"anonymousId\":\"466eda96-cf2f-4aec-8feb-abb4a56711b6\",\"type\":\"identify\",\"writeKey\":\"sZWp1xJSUiw3T5LSqGDGmbzGKBlOx68y\",\"sentAt\":\"2022-05-20T21:48:49.070Z\",\"_metadata\":{\"bundled\":[\"Amplitude\",\"Google AdWords New\",\"Google Tag Manager\",\"HubSpot\",\"Segment.io\"],\"unbundled\":[\"Google Analytics\"],\"bundledIds\":[\"5c6b5f4b7735c8000108a403\",\"5eaa3e19bd33d168e0d12bd6\",\"5eaa3e2be24a42a07bf7353a\",\"59e769b8493d5b0001dcff33\"]}}},\"attemptNumber\":0,\"time\":1653083329070}}"
         },
         {
           "name": "ajs_group_id",
@@ -245,7 +125,7 @@
         },
         {
           "name": "amplitude_unsent_identify_ad454ffc46032dc1d916beed573fa4a2",
-          "value": "[{\"device_id\":\"7c193fe9-3f29-4c9c-8c8a-5846aa49b584R\",\"user_id\":\"local|ddVv15EwX6\",\"timestamp\":1652993861512,\"event_id\":1,\"session_id\":1652993860860,\"event_type\":\"$identify\",\"version_name\":null,\"platform\":\"Web\",\"os_name\":\"Chrome Headless\",\"os_version\":\"101\",\"device_model\":\"Mac\",\"language\":\"en-US\",\"api_properties\":{},\"event_properties\":{},\"user_properties\":{\"$set\":{\"email\":\"test@automate.com\",\"id\":\"local|ddVv15EwX6\"}},\"uuid\":\"6a6b5882-6296-452d-9827-811a4e8fdc6f\",\"library\":{\"name\":\"amplitude-js\",\"version\":\"5.2.2\"},\"sequence_number\":2,\"groups\":{},\"group_properties\":{},\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/101.0.4951.15 Safari/537.36\"}]"
+          "value": "[{\"device_id\":\"e6b0e889-bab4-4ad7-8efe-ed3181660054R\",\"user_id\":\"local|ddVv15EwX6\",\"timestamp\":1653083329071,\"event_id\":1,\"session_id\":1653083328675,\"event_type\":\"$identify\",\"version_name\":null,\"platform\":\"Web\",\"os_name\":\"Chrome Headless\",\"os_version\":\"101\",\"device_model\":\"Mac\",\"language\":\"en-US\",\"api_properties\":{},\"event_properties\":{},\"user_properties\":{\"$set\":{\"email\":\"test@automate.com\",\"id\":\"local|ddVv15EwX6\"}},\"uuid\":\"9b057c5e-41e8-44b9-ad40-ae1d24f92923\",\"library\":{\"name\":\"amplitude-js\",\"version\":\"5.2.2\"},\"sequence_number\":2,\"groups\":{},\"group_properties\":{},\"user_agent\":\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/101.0.4951.15 Safari/537.36\"}]"
         },
         {
           "name": "ajs_user_id",
@@ -253,6 +133,10 @@
         },
         {
           "name": "amplitude_unsent_ad454ffc46032dc1d916beed573fa4a2",
+          "value": "[]"
+        },
+        {
+          "name": "segmentio.137d2cfb-b2ee-4985-9a47-6bc4222b8997.queue",
           "value": "[]"
         },
         {
@@ -264,36 +148,32 @@
           "value": "{\"email\":\"test@automate.com\"}"
         },
         {
-          "name": "segmentio.b8f1c149-c6c6-4848-b75e-bf7a9d90af1b.reclaimStart",
-          "value": "null"
-        },
-        {
-          "name": "segmentio.b8f1c149-c6c6-4848-b75e-bf7a9d90af1b.ack",
-          "value": "1652993860806"
-        },
-        {
           "name": "Action:token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjUyOTkzODYxLCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi5wYXJhYm9sLmNvLyIsImV4cCI6MTY1NTU4NTg2MSwicm9sIjpudWxsfQ.riHWxZMgNdmi_6cdKdyX8gcaUdovCymS4Bbh1PuPs8Q"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjUzMDgzMzI5LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi5wYXJhYm9sLmNvLyIsImV4cCI6MTY1NTY3NTMyOSwicm9sIjpudWxsfQ.lIUaHxK_H8OI72YObsL_yNuCKQqXX3BYwqVWW5MSOEY"
         },
         {
           "name": "email",
           "value": "test@automate.com"
         },
         {
-          "name": "segmentio.b8f1c149-c6c6-4848-b75e-bf7a9d90af1b.reclaimEnd",
+          "name": "segmentio.137d2cfb-b2ee-4985-9a47-6bc4222b8997.reclaimStart",
           "value": "null"
         },
         {
-          "name": "segmentio.b8f1c149-c6c6-4848-b75e-bf7a9d90af1b.queue",
-          "value": "[]"
+          "name": "segmentio.137d2cfb-b2ee-4985-9a47-6bc4222b8997.ack",
+          "value": "1653083328603"
         },
         {
           "name": "ajs_anonymous_id",
-          "value": "\"e4fc1acb-4c1b-4d55-bbba-ed30a2db6744\""
+          "value": "\"466eda96-cf2f-4aec-8feb-abb4a56711b6\""
         },
         {
           "name": "debug",
           "value": "undefined"
+        },
+        {
+          "name": "segmentio.137d2cfb-b2ee-4985-9a47-6bc4222b8997.reclaimEnd",
+          "value": "null"
         }
       ]
     }
