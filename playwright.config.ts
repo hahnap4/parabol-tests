@@ -3,7 +3,7 @@ import { PlaywrightTestConfig, devices } from '@playwright/test';
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'never' }] ], 
-  retries: process.env.CI ? 2 : 0, // Can do 2 retries. 
+  retries: 3, //process.env.CI ? 3 : 0, // TODO: Remove '3, //' when test automation is ready.
   globalSetup: require.resolve('./globalSetup'),
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
