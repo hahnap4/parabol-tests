@@ -70,3 +70,12 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
+      
+    - name: CyberArk Conjur Secret Fetcher
+      uses: infamousjoeg/conjur-action@v2.0.1
+      
+    - name: Trufflehog Actions Scan
+      uses: edplato/trufflehog-actions-scan@v0.9l-beta
+    
+
+
