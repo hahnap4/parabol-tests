@@ -1,5 +1,5 @@
 import '@playwright/test';
-import { inMeetingPage, test, expect } from 'src/index';
+import { inMeetingPage, test, expect } from '@index';
 import faker from '@faker-js/faker';
 
 test.describe('Unauthenticated Demo - Desktop', () => {

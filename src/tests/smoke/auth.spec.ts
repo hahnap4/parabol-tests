@@ -1,5 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-import { authPage, teardownPage } from 'src/index';
+import { authPage, teardownPage } from '@index';
 import faker from '@faker-js/faker';
 
 test.describe('Account', () => {

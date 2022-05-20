@@ -9,6 +9,9 @@
         "resolveJsonModule": true,
         "baseUrl": ".",
         "paths": {
+            "@index": [
+                "src/index"
+            ],
             "@pages/*": [
                 "src/objects/*"
             ],

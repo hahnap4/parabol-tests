@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { meetingHomePage, createMeetingPage } from 'src/index';
+import { meetingHomePage, createMeetingPage } from '@index';
 
 // On Android
 
