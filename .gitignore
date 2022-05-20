@@ -3,5 +3,3 @@ failedReports/**
 playwright-report/**
 
 test-results/**
-
-.github/workflows/**
