@@ -25,8 +25,8 @@ test.describe('Account', () => {
     test('Sign In', async({ page }) => {
         const AuthPage = new authPage(page);
         await page.goto('/');
-        await AuthPage.emailField.fill('test@automate.com');
-        await AuthPage.passwordField.fill('password');
+        await AuthPage.emailField.fill('{{ secret.SECRET_EMAIL }}');
+        await AuthPage.passwordField.fill('{{ secret.SECRET_PASS }}');
         await AuthPage.signInButton.click();
         await page.waitForLoadState('networkidle');
         await expect(page.url()).toContain('/meetings');

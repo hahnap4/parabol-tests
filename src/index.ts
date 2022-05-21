@@ -1,4 +1,3 @@
-import { upgradeToProPage } from './objects/upgradeOrgPlan.page';
 // POM (Page Object Model)
 export { inMeetingPage } from '@pages/inMeeting.page';
 export { userProfilePage } from "@pages/userProfile.page";
