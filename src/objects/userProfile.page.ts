@@ -10,8 +10,8 @@ export class userProfilePage {
   constructor(page: Page) {
     this.page = page;
 
-    this.deleteAccount = page.locator('text=Delete Account');
-    this.reasonForDelete = page.locator('.css-1oswdzm');
+    this.deleteAccount = page.locator('[aria-label="Click to permanently delete your account."]');
+    this.reasonForDelete = page.locator('textarea[name="reason"]');
     this.goodbyeForever = page.locator('button:has-text("Goodbye forever")');
 
 }

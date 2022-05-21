@@ -20,21 +20,21 @@ const config: PlaywrightTestConfig = {
       use: {
         ...devices['Desktop Chrome']
       },
-      testIgnore: ['**/design/mobile/**', '**/smoke/signOut/mobile.spec.ts', '**/smoke/demo/mobile.spec.ts'],
+      testIgnore: ['**/design/mobile/**', '**/smoke/mobile/**'],
     },
     {
       name: 'Edge',
       use: {
           ...devices['Desktop Edge']
       },
-      testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/signOut/mobile.spec.ts', '**/smoke/demo/mobile.spec.ts'],
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/mobile/**'],
     },
     {
         name: 'Android v8.0.0',
         use: {
           ...devices['Galaxy S9+']
         },
-        testIgnore: ['**/design/desktop/**', '**/smoke/signOut/desktop.spec.ts', '**/smoke/demo/desktop.spec.ts'],
+        testIgnore: ['**/design/desktop/**', '**/smoke/desktop/**'],
     },
   ],
 };

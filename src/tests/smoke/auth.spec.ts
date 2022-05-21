@@ -4,7 +4,8 @@ import faker from '@faker-js/faker';
 
 test.describe('Account', () => {
 
-    // TODO: Remove skip when staging is fixed again.
+    // TODO: When Staging is fixed, we should split "Create Account" tests into 2 different tests: mobile vs desktop.
+    // TODO: Check if the teardown works as expected.
 
     // User creates an account via email and password.
     test.skip('Create', async({ page }) => {
@@ -13,16 +14,18 @@ test.describe('Account', () => {
             await AuthPage.gotoSignUpPage();
             await AuthPage.emailField.fill(faker.internet.email());
             await AuthPage.passwordField.fill(faker.internet.password());
-            await AuthPage.createAccountButton.click();
+            await AuthPage.createAccountButton.dblclick();
+            await page.waitForLoadState('networkidle');
             await expect(page.url()).toContain('/meetings');
         } finally{
-            const teardown = new teardownPage(); // TODO: Check if this works once staging is working again.
+            const teardown = new teardownPage(); 
             await teardown.deleteAccount();
         }
     });
     
+    // TODO: Decide what to do for the secrets. Once decision is made, then remove skip.
     // User signs in.
-    test('Sign In', async({ page }) => {
+    test.skip('Sign In', async({ page }) => {
         const AuthPage = new authPage(page);
         await page.goto('/');
         await AuthPage.emailField.fill('{{ secret.SECRET_EMAIL }}');
