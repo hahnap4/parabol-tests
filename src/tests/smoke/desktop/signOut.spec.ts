@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { meetingHomePage } from '@index'
 
-test.use({ storageState: 'storageState.json' });
+test.use({ storageState: 'prodStorageState.json' });
 test.describe('Desktop', () => {
 
     // User signs out on desktop.

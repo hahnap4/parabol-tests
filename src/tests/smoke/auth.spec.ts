@@ -1,6 +1,11 @@
-import { test, expect, Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { authPage, teardownPage } from '@index';
 import faker from '@faker-js/faker';
+
+require('dotenv').config();
+
+const username = process.env.SECRET_EMAIL;
+const password = process.env.SECRET_PASSWORD;
 
 test.describe('Account', () => {
 
@@ -25,11 +30,11 @@ test.describe('Account', () => {
     
     // TODO: Decide what to do for the secrets. Once decision is made, then remove skip.
     // User signs in.
-    test.skip('Sign In', async({ page }) => {
+    test.only('Sign In', async({ page }) => {
         const AuthPage = new authPage(page);
         await page.goto('/');
-        await AuthPage.emailField.fill('{{ secret.SECRET_EMAIL }}');
-        await AuthPage.passwordField.fill('{{ secret.SECRET_PASS }}');
+        await AuthPage.emailField.fill(username);
+        await AuthPage.passwordField.fill(password);
         await AuthPage.signInButton.click();
         await page.waitForLoadState('networkidle');
         await expect(page.url()).toContain('/meetings');

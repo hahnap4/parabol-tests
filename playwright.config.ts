@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: true, 
-    baseURL: 'https://action.parabol.co/', //https://action-staging.parabol.co/
+    baseURL: 'https://action-staging.parabol.co/', //https://action-staging.parabol.co/
   }, 
   projects: [
     {

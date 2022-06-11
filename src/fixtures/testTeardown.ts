@@ -1,6 +1,5 @@
-import { userProfilePage, meetingHomePage } from "@index";
-import { test, expect, Page } from '@playwright/test';
-import faker from '@faker-js/faker';
+import { userProfilePage, meetingHomePage, reason } from "@index";
+import { test, expect, Page } from '@playwright/test'; 
 
 export class teardownPage {
 
@@ -13,7 +12,7 @@ async deleteAccount() {
         await homePage.myProfile.click();
 
         await userprofilepage.deleteAccount.click();
-        await userprofilepage.reasonForDelete.fill(faker.internet.color());
+        await userprofilepage.reasonForDelete.fill(reason);
         await userprofilepage.goodbyeForever.dblclick();
         
         await page.waitForLoadState('networkidle');
