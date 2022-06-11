@@ -4,9 +4,11 @@
         "test": "playwright test -c tests-out"
     },
     "dependencies": {
-        "adm-zip": "^0.5.9"
+        "@testla/screenplay": "^0.2.0",
+        "adm-zip": "^0.5.9",
+        "dotenv": "^16.0.1"
     },
     "devDependencies": {
-        "@faker-js/faker": "^6.2.0"
+        "@faker-js/faker": "^6.3.1"
     }
 }

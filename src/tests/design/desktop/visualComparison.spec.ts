@@ -3,7 +3,7 @@ import { test, expect, createMeetingPage, meetingHomePage, timelinePage, upgrade
 
 // On Chrome
 
-test.use({ storageState: 'storageState.json' });
+test.use({ storageState: 'prodStorageState.json' });
 test.describe.parallel('Current visual snapshot matches original snapshot', () => {
 
    test('For Meetings Homepage', async ({ page }) => {
@@ -83,7 +83,7 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
     expect(await maskedScreenshot).toMatchSnapshot('timeline.png');
    });
 
-   test.only('For Upgrade to Pro Webpage', async ({ upgradePlanPage, page }) => {
+   test('For Upgrade to Pro Webpage', async ({ upgradePlanPage, page }) => {
     const upgradepage = new upgradeToProPage(page);
     await page.waitForLoadState('networkidle');
     const maskedScreenshot = await page.screenshot(

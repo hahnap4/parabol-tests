@@ -1,4 +1,3 @@
-import { upgradeToProPage } from './objects/upgradeOrgPlan.page';
 // POM (Page Object Model)
 export { inMeetingPage } from '@pages/inMeeting.page';
 export { userProfilePage } from "@pages/userProfile.page";
@@ -12,3 +11,6 @@ export { orgListPage } from '@pages/orgList.page';
 // Fixtures
 export { test, expect } from '@fixtures/testSetup';
 export { teardownPage } from '@fixtures/testTeardown';
+
+// Test Data
+export { reason } from './data/test_data.json';

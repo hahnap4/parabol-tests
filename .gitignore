@@ -1,7 +1,7 @@
-hideme.txt
-
 failedReports/**
 
 playwright-report/**
 
 test-results/**
+
+.env
