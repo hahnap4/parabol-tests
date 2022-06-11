@@ -19,7 +19,7 @@ Read more about that here: https://playwright.dev/docs/emulation
 
 We are using Playwright for our test automation: https://playwright.dev/docs/intro
 
-As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integration-tests/README.md: We will create test automation that utilizes the POM (Page Object Model) design to test real-time behavior of users.
+As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integration-tests/README.md: We will create test automation that utilizes the Screenplay patter, instead of POM (Page Object Model) design, to test real-time behavior of users.
 
 ## How to get the tests to work...
 

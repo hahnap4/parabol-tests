@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export class timelinePage {
+export class meetingSummaryPage {
   readonly page: Page;
 
   readonly sideBoxQuote: Locator;

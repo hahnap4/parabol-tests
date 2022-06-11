@@ -1,12 +1,12 @@
 import { test as base } from '@playwright/test';
-import { inMeetingPage, orgListPage, meetingHomePage } from '@index';
+import { generalInMeetingPage, demoSpecificRetroPage, orgListPage, sideNavPage } from '@index';
 
 type MyFixtures = {
-  demoReflectPage: inMeetingPage;
-  demoGroupPage: inMeetingPage;
-  demoVotePage: inMeetingPage;
-  demoDiscussPage: inMeetingPage;
-  endDemoPage: inMeetingPage;
+  demoReflectPage: generalInMeetingPage;
+  demoGroupPage: generalInMeetingPage;
+  demoVotePage: generalInMeetingPage;
+  demoDiscussPage: generalInMeetingPage;
+  endDemoPage: generalInMeetingPage;
 
   upgradePlanPage: orgListPage;
   mobileUpgradePage: orgListPage;
@@ -15,77 +15,81 @@ type MyFixtures = {
 export const test = base.extend<MyFixtures>({
   demoReflectPage: async ({ page }, use) => {
 
-    const demopage = new inMeetingPage(page);
+    const general = new generalInMeetingPage(page);
+    const demoRetro = new demoSpecificRetroPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demopage.startDemo.click();
+    await demoRetro.startDemo.click();
     await page.waitForLoadState('networkidle');
-    await demopage.tipsPopup.isVisible();
-    await demopage.closeTips.click();
+    await general.tipsPopup.isVisible();
+    await general.closeTips.click();
 
-    await use(demopage);
+    await use(general);
   },
 
   demoGroupPage: async ({ page }, use) => {
 
-    const demopage = new inMeetingPage(page);
+    const general = new generalInMeetingPage(page);
+    const demoRetro = new demoSpecificRetroPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demopage.startDemo.click();
+    await demoRetro.startDemo.click();
     await page.waitForLoadState('networkidle');
-    await demopage.tipsPopup.isVisible();
-    await demopage.closeTips.click();
-    await demopage.nextBtn.dblclick();
+    await general.tipsPopup.isVisible();
+    await general.closeTips.click();
+    await general.nextBtn.dblclick();
 
-    await use(demopage);
+    await use(general);
   },
 
   demoVotePage: async ({ page }, use) => {
 
-    const demopage = new inMeetingPage(page);
+    const general = new generalInMeetingPage(page);
+    const demoRetro = new demoSpecificRetroPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demopage.startDemo.click();
+    await demoRetro.startDemo.click();
     await page.waitForLoadState('networkidle');
-    await demopage.tipsPopup.isVisible();
-    await demopage.closeTips.click();
-    await demopage.nextBtn.dblclick();
-    await demopage.nextBtn.dblclick();
+    await general.tipsPopup.isVisible();
+    await general.closeTips.click();
+    await general.nextBtn.dblclick();
+    await general.nextBtn.dblclick();
 
-    await use(demopage);
+    await use(general);
   },
 
   demoDiscussPage: async ({ page }, use) => {
 
-    const demopage = new inMeetingPage(page);
+    const general = new generalInMeetingPage(page);
+    const demoRetro = new demoSpecificRetroPage(page);
     await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demopage.startDemo.click();
+    await demoRetro.startDemo.click();
     await page.waitForLoadState('networkidle');
-    await demopage.tipsPopup.isVisible();
-    await demopage.closeTips.click();
-    await demopage.nextBtn.dblclick();
-    await demopage.nextBtn.dblclick();
-    await demopage.nextBtn.dblclick();
+    await general.tipsPopup.isVisible();
+    await general.closeTips.click();
+    await general.nextBtn.dblclick();
+    await general.nextBtn.dblclick();
+    await general.nextBtn.dblclick();
 
-    await use(demopage);
+    await use(general);
   },
 
   // For Desktop
   upgradePlanPage: async ({ page }, use) => {
-    const orglistpage = new orgListPage(page);
+    const orgList = new orgListPage(page);
     await page.goto('/me/organizations');
-    await orglistpage.upgradeToPro.click();
+    await orgList.upgradeToPro.click();
 
-    await use(orglistpage);
+    await use(orgList);
   },
 
   mobileUpgradePage: async ({ page }, use) => {
-    const orglistpage = new orgListPage(page);
-    const homePage = new meetingHomePage(page);
+    const orgList = new orgListPage(page);
+    const sideNav = new sideNavPage(page);
     await page.goto('/me/organizations');
-    await homePage.mobileUpgrade.click();
-    await orglistpage.upgradeToPro.isVisible();
-    await orglistpage.upgradeToPro.click();
+    await sideNav.mobileUpgrade.click();
+    await orgList.upgradeToPro.isVisible();
+    await orgList.upgradeToPro.click();
     await page.waitForLoadState('networkidle');
 
-    await use(orglistpage);
+    await use(orgList);
   },
 });
 

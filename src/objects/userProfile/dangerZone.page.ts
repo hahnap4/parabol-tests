@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export class userProfilePage {
+export class dangerZonePage {
   readonly page: Page;
 
   readonly deleteAccount: Locator;

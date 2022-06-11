@@ -1,6 +1,6 @@
 import { Locator, Page } from '@playwright/test';
 
-export class teamDashPage {
+export class teamTasksHeaderPage {
   readonly page: Page;
 
   readonly archivedTasks: Locator;
