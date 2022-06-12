@@ -17,6 +17,57 @@
             ],
             "@fixtures/*": [
                 "src/fixtures/*"
+            ],
+            "@addATeam/*": [
+                "src/objects/addATeam/*"
+            ],
+            "@authPage/*": [
+                "src/objects/authPage/*"
+            ],
+            "@createMeeting/*": [
+                "src/objects/createMeeting/*"
+            ],
+            "@inMeeting/*": [
+                "src/objects/inMeeting/*"
+            ],
+            "@meetingsHomepage/*": [
+                "src/objects/meetingsHomepage/*"
+            ],
+            "@myTasks/*": [
+                "src/objects/myTasks/*"
+            ],
+            "@orgList/*": [
+                "src/objects/orgList/*"
+            ],
+            "@settingsAndIntegrations/*": [
+                "src/objects/settingsAndIntegrations/*"
+            ],
+            "@teamTasksDashboard/*": [
+                "src/objects/teamTasksDashboard/*"
+            ],
+            "@timeline/*": [
+                "src/objects/timeline/*"
+            ],
+            "@upgradeOrgPlan/*": [
+                "src/objects/upgradeOrgPlan/*"
+            ],
+            "@userProfile/*": [
+                "src/objects/userProfile/*"
+            ], 
+            "@web/*": [
+                "src/screenplay/web/*"
+            ],
+            "@api/*": [
+                "src/screenplay/api/*"
+            ],
+            "@tasks/*": [
+                "src/screenplay/tasks/*"
+            ],
+            "@screenplay/*": [
+                "src/screenplay/*"
+            ],
+            "@general/*": [
+                "src/objects/general/*"
             ]
         }
     }

@@ -1,5 +1,5 @@
 import '@playwright/test';
-import { test, expect, createMeetingPage, meetingHomePage, timelinePage, upgradeToProPage } from '@index';
+import { test, expect, billingTabPage, meetingsHomePage, sideNavPage, generalCreateMeetingPage, meetingSummaryPage } from '@index';
 
 // On Chrome
 
@@ -19,9 +19,9 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
    });
 
    test('For Team Tasks Webpage', async ({ page }) => {
-    const homePage = new meetingHomePage(page);
+    const sideNav = new sideNavPage(page);
     await page.goto('/');
-    await homePage.teamSide.click();
+    await sideNav.teamTasksButton.click();
     await page.waitForLoadState('networkidle');
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
    });
@@ -45,50 +45,50 @@ test.describe.parallel('Current visual snapshot matches original snapshot', () =
    });
 
    test('For Creating Sprint Poker Meeting Webpage', async ({ page }) => {
-    const homePage = new meetingHomePage(page);
+    const meetings = new meetingsHomePage(page);
     await page.goto('/meetings');
-    await homePage.addMeeting.click();
+    await meetings.addMeetingButton.click();
     await page.waitForLoadState('networkidle');
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
    });
 
    test('For Creating Retro Meeting Webpage', async ({ page }) => {
-    const homePage = new meetingHomePage(page);
-    const createmeetingPage = new createMeetingPage(page);
+    const meetings = new meetingsHomePage(page);
+    const createMeeting = new generalCreateMeetingPage(page);
     await page.goto('/meetings');
-    await homePage.addMeeting.click();
-    await createmeetingPage.rightButton.click();
+    await meetings.addMeetingButton.click();
+    await createMeeting.goRightButton.click();
     await page.waitForLoadState('networkidle');
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
    });
 
    test('For Creating Check-In Meeting Webpage', async ({ page }) => {
-    const homePage = new meetingHomePage(page);
-    const createmeetingPage = new createMeetingPage(page);
+    const meetings = new meetingsHomePage(page);
+    const createMeeting = new generalCreateMeetingPage(page);
     await page.goto('/meetings');
-    await homePage.addMeeting.click();
-    await createmeetingPage.leftButton.click();
+    await meetings.addMeetingButton.click();
+    await createMeeting.goLeftButton.click();
     await page.waitForLoadState('networkidle');
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
    });
    
    test('For Timeline Webpage', async ({ page }) => {
-    const timelinepage = new timelinePage(page);
+    const meetingSummary = new meetingSummaryPage(page);
     await page.goto('/me');
     const maskedScreenshot = await page.screenshot(
       {
-        mask: [timelinepage.sideBoxQuote, timelinepage.daysAgo]
+        mask: [meetingSummary.sideBoxQuote, meetingSummary.daysAgo]
       });
     await page.waitForLoadState('networkidle');
     expect(await maskedScreenshot).toMatchSnapshot('timeline.png');
    });
 
-   test('For Upgrade to Pro Webpage', async ({ upgradePlanPage, page }) => {
-    const upgradepage = new upgradeToProPage(page);
+   test('For Upgrade to Pro Webpage', async ({ page }) => {
+    const billingTab = new billingTabPage(page);
     await page.waitForLoadState('networkidle');
     const maskedScreenshot = await page.screenshot(
       {
-        mask: [upgradepage.quoteBox]
+        mask: [billingTab.quoteBox]
       });
     await page.waitForLoadState('networkidle');
     expect(await maskedScreenshot).toMatchSnapshot('upgrade.png');
