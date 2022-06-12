@@ -1,15 +1,7 @@
-import { Locator, Page } from '@playwright/test';
+// Selectors for the top section of the Team Tasks page
 
-export class teamTasksHeaderPage {
-  readonly page: Page;
+const archivedTasksButton = '[aria-label="Archived Tasks"]';
 
-  readonly archivedTasks: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-
-    this.archivedTasks = page.locator('[aria-label="Archived Tasks"]');
-
-}
-
-}
+export {
+  archivedTasksButton
+};

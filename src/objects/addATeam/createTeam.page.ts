@@ -1,18 +1,6 @@
-import { Locator, Page } from '@playwright/test';
+// General Selectors on Create Team Page
 
-export class createTeamPage {
-  readonly page: Page;
+const teamNameField = '.css-kxtm4u >> name=teamName';
+const createTeamButton = 'button:has-text("Create Team & Org")';
 
-  readonly teamName: Locator;
-  readonly createTeam: Locator;
-  
-  constructor(page: Page) {
-    this.page = page;
-    
-    this.teamName = page.locator('.css-kxtm4u >> name=teamName');
-    this.createTeam = page.locator('button:has-text("Create Team & Org")');
-
-  }
-
-}
-
+export {teamNameField, createTeamButton};

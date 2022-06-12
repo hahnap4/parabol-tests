@@ -1,95 +1,63 @@
-import { test as base } from '@playwright/test';
-import { generalInMeetingPage, demoSpecificRetroPage, orgListPage, sideNavPage } from '@index';
+import { test as base, Page } from '@playwright/test';
+import { 
+  Actor, StartDemoReflectStage, BrowseTheWeb, StartDemoGroupCardsStage,
+  StartDemoVotingStage, StartDemoDiscussionStage, GoToUpgradeToProPage,
+  GoToUpgradeToProPageOnMobile
+} from '@index';
 
 type MyFixtures = {
-  demoReflectPage: generalInMeetingPage;
-  demoGroupPage: generalInMeetingPage;
-  demoVotePage: generalInMeetingPage;
-  demoDiscussPage: generalInMeetingPage;
-  endDemoPage: generalInMeetingPage;
+  demoReflectPage: Page;
+  demoGroupPage: Page;
+  demoVotePage: Page;
+  demoDiscussPage: Page;
+  endDemoPage: Page;
 
-  upgradePlanPage: orgListPage;
-  mobileUpgradePage: orgListPage;
+  upgradePlanPage: Page;
+  mobileUpgradePage: Page;
 };
 
 export const test = base.extend<MyFixtures>({
   demoReflectPage: async ({ page }, use) => {
-
-    const general = new generalInMeetingPage(page);
-    const demoRetro = new demoSpecificRetroPage(page);
-    await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demoRetro.startDemo.click();
-    await page.waitForLoadState('networkidle');
-    await general.tipsPopup.isVisible();
-    await general.closeTips.click();
-
-    await use(general);
+    const actor = Actor.named('Deemo')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(StartDemoReflectStage.toApp());
   },
 
   demoGroupPage: async ({ page }, use) => {
-
-    const general = new generalInMeetingPage(page);
-    const demoRetro = new demoSpecificRetroPage(page);
-    await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demoRetro.startDemo.click();
-    await page.waitForLoadState('networkidle');
-    await general.tipsPopup.isVisible();
-    await general.closeTips.click();
-    await general.nextBtn.dblclick();
-
-    await use(general);
+    const actor = Actor.named('Deemo')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(StartDemoGroupCardsStage.toApp());
   },
 
   demoVotePage: async ({ page }, use) => {
-
-    const general = new generalInMeetingPage(page);
-    const demoRetro = new demoSpecificRetroPage(page);
-    await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demoRetro.startDemo.click();
-    await page.waitForLoadState('networkidle');
-    await general.tipsPopup.isVisible();
-    await general.closeTips.click();
-    await general.nextBtn.dblclick();
-    await general.nextBtn.dblclick();
-
-    await use(general);
+    const actor = Actor.named('Deemo')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(StartDemoVotingStage.toApp());
   },
 
   demoDiscussPage: async ({ page }, use) => {
-
-    const general = new generalInMeetingPage(page);
-    const demoRetro = new demoSpecificRetroPage(page);
-    await page.goto('https://action-staging.parabol.co/retrospective-demo/reflect');
-    await demoRetro.startDemo.click();
-    await page.waitForLoadState('networkidle');
-    await general.tipsPopup.isVisible();
-    await general.closeTips.click();
-    await general.nextBtn.dblclick();
-    await general.nextBtn.dblclick();
-    await general.nextBtn.dblclick();
-
-    await use(general);
+    const actor = Actor.named('Deemo')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(StartDemoDiscussionStage.toApp());
   },
 
   // For Desktop
   upgradePlanPage: async ({ page }, use) => {
-    const orgList = new orgListPage(page);
-    await page.goto('/me/organizations');
-    await orgList.upgradeToPro.click();
-
-    await use(orgList);
+    const actor = Actor.named('Robert')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToUpgradeToProPage.toApp());
   },
 
   mobileUpgradePage: async ({ page }, use) => {
-    const orgList = new orgListPage(page);
-    const sideNav = new sideNavPage(page);
-    await page.goto('/me/organizations');
-    await sideNav.mobileUpgrade.click();
-    await orgList.upgradeToPro.isVisible();
-    await orgList.upgradeToPro.click();
-    await page.waitForLoadState('networkidle');
-
-    await use(orgList);
+    const actor = Actor.named('Robert')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToUpgradeToProPageOnMobile.toApp());
   },
 });
 

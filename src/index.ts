@@ -1,57 +1,176 @@
-// Add a Team Page Objects
-export { createTeamPage } from '@addATeam/createTeam.page';
-export { existingOrgPage } from '@addATeam/existingOrg.page';
-export { newOrgPage } from '@addATeam/newOrg.page';
+// signOut Task
+export { SignOut } from '@tasks/signOut.task';
 
-// Auth Page Objects
-export { createAccountPage } from '@authPage/createAccount.page';
-export { generalAuthPage } from '@authPage/generalAuth.page';
-export { signInPage } from '@authPage/signIn.page';
+// startDemoReflectStage Task
+export { StartDemoReflectStage } from '@tasks/startDemoReflectStage.task';
 
-// Create Meeting Page Objects
-export { createMeetingSettingPage } from '@createMeeting/createMeetingSetting.page';
-export { generalCreateMeetingPage } from '@createMeeting/generalCreateMeeting.page';
-export { generalTemplatesPage } from '@createMeeting/generalTemplates.page';
-export { retroTemplatesPage } from '@createMeeting/retroTemplates.page';
-export { scaleCreationSprintPokerTemplatePage } from '@createMeeting/scaleCreationSprintPokerTemplate.page';
-export { sprintPokerTemplatesPage } from '@createMeeting/sprintPokerTemplates.page';
+// startDemoGroupCardsStage Task
+export { StartDemoGroupCardsStage } from '@tasks/startDemoGroupCardsStage.task';
 
-// In Meeting Page Objects
-export { afterMeetingEndsPage } from '@inMeeting/afterMeetingEnds.page';
-export { checkInPage } from '@inMeeting/checkIn.page';
-export { demoSpecificRetroPage } from '@inMeeting/demoSpecificRetro.page';
-export { generalInMeetingPage } from '@inMeeting/generalInMeeting.page';
-export { iceBreakerPage } from '@inMeeting/iceBreaker.page';
-export { retroPage } from '@inMeeting/retro.page';
-export { retroMobilePage } from '@inMeeting/retroMobile.page';
-export { sprintPokerPage } from '@inMeeting/sprintPoker.page';
+// startDemoVotingStage Task
+export { StartDemoVotingStage } from '@tasks/startDemoVotingStage.task';
 
-// Meetings Homepage Page Objects
-export { headerPage } from '@meetingsHomepage/header.page';
-export { meetingsHomePage } from '@meetingsHomepage/meetingsHome.page';
-export { sideNavPage } from '@meetingsHomepage/sideNav.page';
-export { userMenuDropdownPage } from '@meetingsHomepage/userMenuDropdown.page';
+// startDemoDiscussionsStage Task
+export { StartDemoDiscussionStage } from '@tasks/startDemoDiscussionStage.task';
 
-// Org List Page Objects
-export { orgListPage } from '@orgList/orgList.page';
+// goToUpgradeToProPage Task
+export { GoToUpgradeToProPage } from '@tasks/goToUpgradeToProPage.task';
 
-// Team Tasks Dashboard Page Objects
-export { teamTasksHeaderPage } from '@teamTasksDashboard/teamTasksHeader.page';
+// goToUpgradeToProPageOnMobile Task
+export { GoToUpgradeToProPageOnMobile } from '@tasks/goToUpgradeToProPageOnMobile.task';
 
-// Timeline Page Objects
-export { meetingSummaryPage } from '@timeline/meetingSummary.page';
 
-// Upgrade Org Plan Page Objects
-export { billingTabPage } from '@upgradeOrgPlan/billingTab.page';
 
-// User Profile Page Objects
-export { dangerZonePage } from '@userProfile/dangerZone.page';
+// createTeam Objects
+export { 
+    teamNameField, createTeamButton 
+  } from '@addATeam/createTeam.page';
+
+// existingOrg Objects
+export { 
+    existingOrgRadioButton, openExistingOrgsList, myOrgChoice 
+  } from '@addATeam/existingOrg.page';
+  
+// newOrg Objects
+export { 
+    newOrgRadioButton, newOrgNameField 
+  } from '@addATeam/newOrg.page';
+
+// createAccount Objects
+export { 
+    createAccountButton, signUpWithGoogle, signUpWithSSO, privacyPolicy, 
+    signInInstead 
+  } from '@authPage/createAccount.page';
+
+// generalAuth Objects
+export { 
+    logoIcon, emailField, passwordField 
+  } from '@authPage/generalAuth.page';
+
+// signIn Objects
+export { 
+    signInButton, signInWithGoogle, signInWithSSO, forgotPassword, createAccountInstead 
+  } from '@authPage/signIn.page';
+
+// createMeetingSettingWidget Objects
+export { 
+    openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
+  } from '@createMeeting/createMeetingSettingWidget.page';
+  
+// generalCreateMeeting Objects
+export { 
+    learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
+    backPageButton 
+  } from '@createMeeting/generalCreateMeeting.page';
+
+// generalTemplatesPopup Objects
+export {
+    publicTab, myOrgTab, myTeamTab, createNewTemplate, defaultTemplate, 
+    cloneAndEditTemplate, useTemplateButton, editTemplateTitle, shareWithAllOfMyOrg, 
+    shareWithWorld, shareWithMyTeam, deleteTemplateButton
+  } from '@createMeeting/generalTemplatesPopup.page';
+
+// retroTemplates Objects
+export{
+    addAnotherPromptButton, editPromptTitle, removePrompt, changePromptColor, 
+    editPromptDescription
+  } from '@createMeeting/retroTemplates.page';
+
+// scaleCreationSprintPokerTemplate Objects
+export {
+    editScaleName, addValueButton, editNewScaleValue, removeNewScaleValueButton, 
+    changeScaleValueColor, backToNewTemplate
+  } from '@createMeeting/scaleCreationSprintPokerTemplate.page';
+
+// sprintPokerTemplates Objects
+export {
+    addAnotherDimension, editDimensionTitle, removeFirstDimension, openScaleList, 
+    cloneDefaultScale, tshirtSizesChoice, prioritiesChoice, fibonacciChoice, 
+    fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale
+  } from '@createMeeting/sprintPokerTemplates.page';
+
+// header Objects
+export {
+    hamburgerIcon, hamburgerIconForMobile, ParabolLogo, helpMenu, 
+    notificationBell, userIconButton
+  } from '@general/header.page';
+
+// sideNav Objects
+export {
+    upgradeToProButtonForMobile, meetingsButton, timelineButton, myTasksButton,
+    myTeamTasksButton, addATeamButton
+  } from '@general/sideNav.page';
+
+// userMenuDropdown Objects
+export {
+    signOutButton, goToMyProfileButton, goToOrgListButton, upgradeToProButton
+  } from '@general/userMenuDropdown.page';
+
+// demoSpecific Objects
+export {
+    startDemoButton, endDemoButton
+  } from '@inMeeting/demo/demoSpecific.page';
+
+// general inMeeting Objects
+export {
+    tipsPopupBox, closeTipsButton, nextTopicButton
+  } from '@inMeeting/general/generalInMeeting.page';
+
+// desktopSpecificReflectStage Objects
+export {
+    startField, stopField, continueField
+  } from '@inMeeting/retro/desktopSpecificReflectStage.page';
+
+// mobileSpecificReflectStage Objects
+export {
+    startFieldForMobile, stopFieldForMobile, continueFieldForMobile, goToFirstReflection, 
+    goToSecondReflection, goToThirdReflection
+  } from '@inMeeting/retro/mobileSpecificReflectStage.page';
+  
+// meetingsHome Objects
+export {
+    addMeetingButton, addMeetingButtonForMobile, activeMeetingBox, 
+    tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton
+  } from '@meetingsHomepage/meetingsHome.page';
+
+// orgList Objects
+export {
+    upgradeToProButtonOnOrgList
+  } from '@orgList/orgList.page';  
+
+// teamTasksHeader (Top Section) Objects
+export {
+    archivedTasksButton
+  } from '@teamTasksDashboard/teamTasksHeader.page';
+
+// meetingSummary Objects
+export {
+    sideQuoteBox, daysAgo
+  } from '@timeline/meetingSummary.page';
+
+// billingTab Objects
+export {
+    upgradeNowButton, quoteBox
+  } from '@upgradeOrgPlan/billingTab.page';
+
+// dangerZone Objects
+export {
+    deleteAccountButton, reasonForDeletionField, goodbyeForeverButton
+  } from '@userProfile/dangerZone.page';
+
+
+
+
 
 // Fixtures
 export { test, expect } from '@fixtures/testSetup';
 
 // Test Data
 export { reason } from './data/test_data.json';
+
+
+
+
 
 // Screenplay
 import {

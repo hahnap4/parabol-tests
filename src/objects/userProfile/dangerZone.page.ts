@@ -1,19 +1,9 @@
-import { Locator, Page } from '@playwright/test';
+// Selectors for the Danger Zone Section in the User Profile Page
 
-export class dangerZonePage {
-  readonly page: Page;
+const deleteAccountButton = '[aria-label="Click to permanently delete your account."]';
+const reasonForDeletionField = 'textarea[name="reason"]';
+const goodbyeForeverButton = 'button:has-text("Goodbye forever")';
 
-  readonly deleteAccount: Locator;
-  readonly reasonForDelete: Locator;
-  readonly goodbyeForever: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-
-    this.deleteAccount = page.locator('[aria-label="Click to permanently delete your account."]');
-    this.reasonForDelete = page.locator('textarea[name="reason"]');
-    this.goodbyeForever = page.locator('button:has-text("Goodbye forever")');
-
-}
-
-}
+export {
+  deleteAccountButton, reasonForDeletionField, goodbyeForeverButton
+};

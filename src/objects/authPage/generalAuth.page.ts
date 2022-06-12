@@ -1,30 +1,7 @@
-import { Locator, Page } from '@playwright/test';
+// General Selectors for both Create an Account and Sign In Pages
 
-export class generalAuthPage {
-  afterEach(arg0: () => Promise<void>) {
-      throw new Error('Method not implemented.');
-  }
-  readonly page: Page;
+const logoIcon = '.css-1hbr20g';
+const emailField = 'input[aria-label="Email"]';
+const passwordField = 'input[aria-label="Password"]';
 
-  readonly logoIcon: Locator;
-  readonly emailField: Locator;
-  readonly passwordField: Locator;
-  
-  constructor(page: Page) {
-    this.page = page;
-
-    this.logoIcon = page.locator('.css-1hbr20g');
-    this.emailField = page.locator('input[aria-label="Email"]');
-    this.passwordField = page.locator('input[aria-label="Password"]');
-  }
- 
-  async gotoSignUpPage() {
-      await this.page.goto('/create-account');  
-  }
-
-  async gotoSignInPage() {
-    await this.page.goto('/');
-  }
-
-}
-
+export { logoIcon, emailField, passwordField };

@@ -59,6 +59,15 @@
             ],
             "@api/*": [
                 "src/screenplay/api/*"
+            ],
+            "@tasks/*": [
+                "src/screenplay/tasks/*"
+            ],
+            "@screenplay/*": [
+                "src/screenplay/*"
+            ],
+            "@general/*": [
+                "src/objects/general/*"
             ]
         }
     }

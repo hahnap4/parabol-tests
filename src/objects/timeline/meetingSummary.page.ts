@@ -1,17 +1,8 @@
-import { Locator, Page } from '@playwright/test';
+// Selectors for the meeeting summary message boxes in the timeline page
 
-export class meetingSummaryPage {
-  readonly page: Page;
+const sideQuoteBox = '.css-122zgjr';
+const daysAgo = '.css-12n9j71';
 
-  readonly sideBoxQuote: Locator;
-  readonly daysAgo: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-
-    this.sideBoxQuote = page.locator('.css-122zgjr');
-    this.daysAgo = page.locator('.css-12n9j71');
-}
-
-
-}
+export {
+  sideQuoteBox, daysAgo
+};

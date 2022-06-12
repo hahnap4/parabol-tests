@@ -1,17 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+const radioBtnForNewOrg = '.css-ohjobq >> text=a new organization:';
+const newOrgName = '.css-kxtm4u >> name=orgName';
 
-export class newOrgPage {
-  readonly page: Page;
-
-  readonly radioBtnForNewOrg: Locator;
-  readonly newOrgName: Locator;
-  
-  constructor(page: Page) {
-    this.page = page;
-
-    this.radioBtnForNewOrg = page.locator('.css-ohjobq >> text=a new organization:');
-    this.newOrgName = page.locator('.css-kxtm4u >> name=orgName');
-  }
-
-}
-
+export { radioBtnForNewOrg, newOrgName };

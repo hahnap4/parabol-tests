@@ -1,15 +1,7 @@
-import { Locator, Page } from '@playwright/test';
+// Selectors for the "my Organizations" list page
 
-export class orgListPage {
-  readonly page: Page;
+const upgradeToProButtonOnOrgList = '#main button:has-text("Upgrade to Pro")';
 
-  readonly upgradeToPro: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-
-    this.upgradeToPro = page.locator('#main button:has-text("Upgrade to Pro")');
-
-}
-
-}
+export {
+  upgradeToProButtonOnOrgList
+};

@@ -1,23 +1,12 @@
-import { Locator, Page } from '@playwright/test';
+// Other Common Selectors on all types of meeting creation pages
 
-export class generalCreateMeetingPage {
-  readonly page: Page;
+const learnMore = 'text=Learn More';
+const startMeetingButton = 'text=Start Meeting';
+const nextMeetingTypeButton = '.css-eq76j1 >> nth=2';
+const previousMeetingTypeButton = '.css-eq76j1 >> nth=1';
+const backPageButton = '.css-eq76j1 >> nth=0';
 
-  readonly learnMore: Locator;
-  readonly startMeeting: Locator;
-  readonly rightButton: Locator;
-  readonly leftButton: Locator;
-  readonly backPageButton: Locator;
-
-  constructor(page: Page) {
-    this.page = page;
-
-    this.learnMore = page.locator('text=Learn More');
-    this.startMeeting = page.locator('text=Start Meeting');
-    this.rightButton = page.locator('.css-eq76j1 >> nth=2');
-    this.leftButton = page.locator('.css-eq76j1 >> nth=1');
-    this.backPageButton = page.locator('.css-eq76j1 >> nth=0');
-  }
-
-}
-
+export { 
+  learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
+  backPageButton 
+};
