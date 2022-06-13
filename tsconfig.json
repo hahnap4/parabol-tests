@@ -7,6 +7,8 @@
         "sourceMap": true,
         "outDir": "../testsOut",
         "resolveJsonModule": true,
+        "esModuleInterop":true,
+        "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
         "paths": {
             "@index": [
@@ -25,7 +27,7 @@
                 "src/objects/authPage/*"
             ],
             "@createMeeting/*": [
-                "src/objects/createMeeting/*"
+                "src/objects/setupMeeting/*"
             ],
             "@inMeeting/*": [
                 "src/objects/inMeeting/*"
@@ -68,6 +70,9 @@
             ],
             "@general/*": [
                 "src/objects/general/*"
+            ],
+            "@data/*": [
+                "src/data/*"
             ]
         }
     }

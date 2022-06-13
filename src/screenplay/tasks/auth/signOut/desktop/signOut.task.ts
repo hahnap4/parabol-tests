@@ -14,15 +14,7 @@ export class SignOut extends Task {
         );
 }
 
-    public static toApp(): SignOut {
+    public static ofApp(): SignOut {
         return new SignOut();
     }
 }
-
-//async gotoSignUpPage() {
-//    await this.page.goto('/create-account');  
-//}
-//
-//async gotoSignInPage() {
-//  await this.page.goto('/');
-//}

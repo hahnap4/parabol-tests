@@ -1,6 +1,5 @@
-import { Page, Response, Locator } from '@playwright/test';
-import { Ability, Actor } from '@testla/screenplay';
-import { SelectorOptions, recursiveLocatorLookup } from '@index';
+import { Page, Response, expect, PageScreenshotOptions } from '@playwright/test';
+import { Ability, Actor, SelectorOptions, recursiveLocatorLookup } from '@index';
 
 /**
  * This class represents the actor's ability to use a Browser.
@@ -66,7 +65,7 @@ export class BrowseTheWeb extends Ability {
      * @param selector the selector of the element to hover over.
      * @param options (optional) advanced selector lookup options + Modifier keys to press. Ensures that only these modifiers are pressed during the operation.
      */
-    public async hover(selector: Locator, options?: SelectorOptions & { modifiers?: ('Alt' | 'Control' | 'Meta' | 'Shift')[] }) {
+    public async hover(selector: string, options?: SelectorOptions & { modifiers?: ('Alt' | 'Control' | 'Meta' | 'Shift')[] }) {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .hover({ modifiers: options?.modifiers });
     }
@@ -86,7 +85,7 @@ export class BrowseTheWeb extends Ability {
      * @param selector the selector of the checkbox.
      * @param options (optional) advanced selector lookup options.
      */
-    public async checkBox(selector: Locator, options?: SelectorOptions): Promise<void> {
+    public async checkBox(selector: string, options?: SelectorOptions): Promise<void> {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .check();
     }
@@ -97,7 +96,7 @@ export class BrowseTheWeb extends Ability {
      * @param selector the selector of the element.
      * @param options (optional) advanced selector lookup options.
      */
-    public async waitForSelector(selector: Locator, options?: SelectorOptions) {
+    public async waitForSelector(selector: string, options?: SelectorOptions) {
         return recursiveLocatorLookup({ page: this.page, selector, options });
     }
 
@@ -108,7 +107,7 @@ export class BrowseTheWeb extends Ability {
      * @param targetSelector the selector of the target element.
      * @param options (optional) advanced selector lookup options.
      */
-    public async dragAndDrop(sourceSelector: Locator, targetSelector: Locator, options?: {
+    public async dragAndDrop(sourceSelector: string, targetSelector: string, options?: {
         source?: SelectorOptions;
         target?: SelectorOptions;
     }) {
@@ -124,7 +123,7 @@ export class BrowseTheWeb extends Ability {
      * @param input the input to fill the element with.
      * @param options (optional) advanced selector lookup options.
      */
-    public async fill(selector: Locator, input: string, options?: SelectorOptions) {
+    public async fill(selector: string, input: string, options?: SelectorOptions) {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .fill(input);
     }
@@ -136,7 +135,7 @@ export class BrowseTheWeb extends Ability {
      * @param input the input to type into the element.
      * @param options (optional) advanced selector lookup options.
      */
-    public async type(selector: Locator, input: string, options?: SelectorOptions) {
+    public async type(selector: string, input: string, options?: SelectorOptions) {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .type(input);
     }
@@ -147,7 +146,7 @@ export class BrowseTheWeb extends Ability {
      * @param selector the selector of the element to click.
      * @param options (optional) advanced selector lookup options.
      */
-    public async click(selector: Locator, options?: SelectorOptions) {
+    public async click(selector: string, options?: SelectorOptions) {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .click();
     }
@@ -158,7 +157,7 @@ export class BrowseTheWeb extends Ability {
      * @param selector the selector of the element to double click.
      * @param options (optional) advanced selector lookup options.
      */
-    public async dblclick(selector: Locator, options?: SelectorOptions) {
+    public async dblclick(selector: string, options?: SelectorOptions) {
         return (await recursiveLocatorLookup({ page: this.page, selector, options }))
             .dblclick();
     }
@@ -170,7 +169,7 @@ export class BrowseTheWeb extends Ability {
      * @param options (optional) advanced selector lookup options.
      * @returns true if the locator is visible, false otherwise.
      */
-    public async isVisible(selector: Locator, options?: SelectorOptions): Promise<boolean> {
+    public async isVisible(selector: string, options?: SelectorOptions): Promise<boolean> {
         try {
             await recursiveLocatorLookup({ page: this.page, selector, options });
             return Promise.resolve(true);
@@ -186,7 +185,7 @@ export class BrowseTheWeb extends Ability {
      * @param options (optional) advanced selector lookup options.
      * @returns true if the element is enabled, false otherwise.
      */
-    public async isEnabled(selector: Locator, options?: SelectorOptions): Promise<boolean> {
+    public async isEnabled(selector: string, options?: SelectorOptions): Promise<boolean> {
         try {
             return (await recursiveLocatorLookup({ page: this.page, selector, options }))
                 .isEnabled();

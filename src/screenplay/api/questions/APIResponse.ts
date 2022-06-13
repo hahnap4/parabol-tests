@@ -1,5 +1,8 @@
-import { Actor, Question } from '@testla/screenplay';
-import { UseAPI, Headers, Response as ResponseType, ResponseBodyType } from '@index';
+import {  } from '@testla/screenplay';
+import { 
+    UseAPI, Headers, Response as ResponseType, ResponseBodyType, Actor, 
+    Question 
+} from '@index';
 
 /**
  * Question Class. Get a specified state for a selector like visible or enabled.

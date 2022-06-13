@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Navigate, Click, upgradeToProButtonOnOrgList
+    Actor, Task, Navigate, Wait, Click, upgradeToProButtonOnOrgList
 } from '@index';
 
 export class GoToUpgradeToProPage extends Task {
@@ -8,11 +8,13 @@ export class GoToUpgradeToProPage extends Task {
 
         return actor.attemptsTo(
             Navigate.to('/me/organizations'),
-            Click.on(upgradeToProButtonOnOrgList)
+            Click.on(upgradeToProButtonOnOrgList),
+            Wait.forLoadState('networkidle')
         );
 }
 
-    public static toApp(): GoToUpgradeToProPage {
+    public static onApp(): GoToUpgradeToProPage {{
         return new GoToUpgradeToProPage();
     }
+}
 }

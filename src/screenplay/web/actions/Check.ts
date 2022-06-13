@@ -1,12 +1,10 @@
-import { Action, Actor } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
-import { Locator } from '@playwright/test';
+import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
- * Action Class. Check a checkbox specified by a selector Locator.
+ * Action Class. Check a checkbox specified by a selector string.
  */
 export class Check extends Action {
-    private constructor(private selector: Locator, private options?: SelectorOptions) {
+    private constructor(private selector: string, private options?: SelectorOptions) {
         super();
     }
 
@@ -22,10 +20,10 @@ export class Check extends Action {
     /**
      * specify which element should be clicked on
      *
-     * @param selector the Locator representing the selector.
+     * @param selector the string representing the selector.
      * @param options (optional): advanced selector lookup options.
      */
-    public static element(selector: Locator, options?: SelectorOptions): Check {
+    public static element(selector: string, options?: SelectorOptions): Check {
         return new Check(selector, options);
     }
 }
