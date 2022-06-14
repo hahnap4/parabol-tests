@@ -1,5 +1,4 @@
-import { Action, Actor } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
+import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
  * Action Class. Wait for either a specified loading state or for a selector to become visible/active.

@@ -3,7 +3,7 @@ import {
     addMeetingButtonForMobile, previousMeetingTypeButton
 } from '@index';
 
-export class GoToCheckInSetuponMobile extends Task {
+export class GoToCheckInSetupOnMobile extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
@@ -16,7 +16,7 @@ export class GoToCheckInSetuponMobile extends Task {
         );
 }
 
-    public static toApp(): GoToCheckInSetuponMobile {
-        return new GoToCheckInSetuponMobile();
+    public static onApp(): GoToCheckInSetupOnMobile {
+        return new GoToCheckInSetupOnMobile();
     }
 }

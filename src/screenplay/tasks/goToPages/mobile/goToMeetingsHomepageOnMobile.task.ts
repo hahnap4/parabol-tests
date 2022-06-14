@@ -14,7 +14,7 @@ import {
          );
  }
  
-     public static toApp(): GoToMeetingsHomepageOnMobile {
+     public static onApp(): GoToMeetingsHomepageOnMobile {
          return new GoToMeetingsHomepageOnMobile();
      }
  }

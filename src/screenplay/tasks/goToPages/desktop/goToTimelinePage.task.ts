@@ -12,7 +12,7 @@ export class GoToTimelinePage extends Task {
         );
 }
 
-    public static toApp(): GoToTimelinePage {{
+    public static onApp(): GoToTimelinePage {{
         return new GoToTimelinePage();
     }
 }

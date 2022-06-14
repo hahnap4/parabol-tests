@@ -12,7 +12,7 @@ export class GoToMeetingsHomepage extends Task {
         );
 }
 
-    public static toApp(): GoToMeetingsHomepage {{
+    public static onApp(): GoToMeetingsHomepage {{
         return new GoToMeetingsHomepage();
     }
 }

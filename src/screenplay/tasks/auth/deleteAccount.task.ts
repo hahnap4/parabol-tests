@@ -1,9 +1,8 @@
 import { 
     Actor, Task, Wait, Click, Fill, DoubleClick, userIconButton, 
     goToMyProfileButton, deleteAccountButton, reasonForDeletionField, 
-    goodbyeForeverButton
+    goodbyeForeverButton, reason
 } from '@index';
-import { reason } from '@data/test_data.json';
 
 export class DeleteAccount extends Task {
 

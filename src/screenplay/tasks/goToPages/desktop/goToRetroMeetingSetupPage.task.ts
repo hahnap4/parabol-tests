@@ -14,7 +14,7 @@ export class GoToRetroMeetingCreationPage extends Task {
         );
 }
 
-    public static toApp(): GoToRetroMeetingCreationPage {{
+    public static onApp(): GoToRetroMeetingCreationPage {{
         return new GoToRetroMeetingCreationPage();
     }
 }

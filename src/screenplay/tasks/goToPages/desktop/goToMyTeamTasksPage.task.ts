@@ -13,7 +13,7 @@ export class GoToMyTeamTasksPage extends Task {
         );
 }
 
-    public static toApp(): GoToMyTeamTasksPage {{
+    public static onApp(): GoToMyTeamTasksPage {{
         return new GoToMyTeamTasksPage();
     }
 }

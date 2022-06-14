@@ -14,7 +14,7 @@ export class GoToAddATeamOnMobile extends Task {
         );
 }
 
-    public static toApp(): GoToAddATeamOnMobile {
+    public static onApp(): GoToAddATeamOnMobile {
         return new GoToAddATeamOnMobile();
     }
 }

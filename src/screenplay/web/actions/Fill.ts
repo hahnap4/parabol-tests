@@ -1,12 +1,10 @@
-import { Action, Actor } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
-import { Locator } from '@playwright/test';
+import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
- * Action Class. Fill an element specified by a selector Locator with the specified input.
+ * Action Class. Fill an element specified by a selector string with the specified input.
  */
 export class Fill extends Action {
-    private constructor(private locator: Locator, private input: string, private options?: SelectorOptions) {
+    private constructor(private locator: string, private input: string, private options?: SelectorOptions) {
         super();
     }
 
@@ -26,7 +24,7 @@ export class Fill extends Action {
      * @param input the input.
      * @param options (optional) advanced selector lookup options.
      */
-    public static in(selector: Locator, input: string, options?: SelectorOptions): Fill {
+    public static in(selector: string, input: string, options?: SelectorOptions): Fill {
         return new Fill(selector, input, options);
     }
 }

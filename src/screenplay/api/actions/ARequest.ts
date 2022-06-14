@@ -1,5 +1,4 @@
-import { Actor, Action } from '@testla/screenplay';
-import { Headers } from '@index';
+import { Actor, Action, Headers } from '@index';
 
 /**
  * Abstract parent class for all HTTP request methods. This class extends the testla Action.

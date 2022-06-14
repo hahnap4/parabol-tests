@@ -12,7 +12,7 @@ export class GoToMyTasksPage extends Task {
         );
 }
 
-    public static toApp(): GoToMyTasksPage {{
+    public static onApp(): GoToMyTasksPage {{
         return new GoToMyTasksPage();
     }
 }

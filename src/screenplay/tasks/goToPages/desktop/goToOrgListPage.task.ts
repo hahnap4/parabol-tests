@@ -12,7 +12,7 @@ export class GoToOrgListPage extends Task {
         );
 }
 
-    public static toApp(): GoToOrgListPage {{
+    public static onApp(): GoToOrgListPage {{
         return new GoToOrgListPage();
     }
 }

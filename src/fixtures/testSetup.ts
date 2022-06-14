@@ -50,14 +50,14 @@ export const test = base.extend<MyFixtures>({
     const actor = Actor.named('Robert')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToUpgradeToProPage.toApp());
+    await actor.attemptsTo(GoToUpgradeToProPage.onApp());
   },
 
   mobileUpgradePage: async ({ page }, use) => {
     const actor = Actor.named('Robert')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToUpgradeToProPageOnMobile.toApp());
+    await actor.attemptsTo(GoToUpgradeToProPageOnMobile.onApp());
   },
 });
 

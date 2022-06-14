@@ -1,21 +1,21 @@
 import { 
-    Actor, Task, Fill, Click, continueField, Press
+    Actor, Task, Fill, Click, continueField, Press, randomStatement
 } from '@index';
 
-export class fillOutReflectionInContinueColumn extends Task {
+export class FillOutReflectionInContinueColumn extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
             
             Click.on(continueField),
-            Fill.in(continueField, random),
+            Fill.in(continueField, randomStatement),
             Press.key('Enter'),
             Press.key('Enter')
         );
 }
 
-    public static inApp(): fillOutReflectionInContinueColumn {
-        return new fillOutReflectionInContinueColumn();
+    public static inApp(): FillOutReflectionInContinueColumn {
+        return new FillOutReflectionInContinueColumn();
     }
 }

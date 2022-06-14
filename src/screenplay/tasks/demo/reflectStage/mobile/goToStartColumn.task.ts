@@ -2,7 +2,7 @@ import {
     Actor, Task, Click, goToFirstReflection
 } from '@index';
 
-export class GoToContinueColumn extends Task {
+export class GoToStartColumn extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
@@ -12,7 +12,7 @@ export class GoToContinueColumn extends Task {
         );
 }
 
-    public static inApp(): GoToContinueColumn {
-        return new GoToContinueColumn();
+    public static inApp(): GoToStartColumn {
+        return new GoToStartColumn();
     }
 }

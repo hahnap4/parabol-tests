@@ -5,7 +5,7 @@ import {
 
 test('Check Demo Summary after Ending Demo', async({ demoDiscussPage, page }) => {
 
-    const actor = Actor.named('Robert')
+    const actor = Actor.named('Deemo')
         .can(BrowseTheWeb.using(page));
 
     await actor.attemptsTo(EndDemoRetroMeeting.inApp());

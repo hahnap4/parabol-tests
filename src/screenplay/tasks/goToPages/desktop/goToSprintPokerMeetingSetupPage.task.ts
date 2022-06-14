@@ -13,7 +13,7 @@ export class GoToSprintPokerMeetingCreationPage extends Task {
         );
 }
 
-    public static toApp(): GoToSprintPokerMeetingCreationPage {{
+    public static onApp(): GoToSprintPokerMeetingCreationPage {{
         return new GoToSprintPokerMeetingCreationPage();
     }
 }

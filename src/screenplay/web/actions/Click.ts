@@ -1,5 +1,4 @@
-import { Action, Actor } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
+import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
  * Action Class. Click on an element specified by a selector string.

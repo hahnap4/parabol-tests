@@ -12,7 +12,7 @@ export class GoToMyProfilePage extends Task {
         );
 }
 
-    public static toApp(): GoToMyProfilePage {{
+    public static onApp(): GoToMyProfilePage {{
         return new GoToMyProfilePage();
     }
 }

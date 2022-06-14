@@ -23,7 +23,7 @@ export class CreateAccount extends Task {
         );
 }
 
-    public static toApp(): CreateAccount {
+    public static inApp(): CreateAccount {
         return new CreateAccount();
     }
 }

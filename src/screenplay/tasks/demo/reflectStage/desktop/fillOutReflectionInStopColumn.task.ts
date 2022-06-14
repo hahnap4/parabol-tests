@@ -2,7 +2,7 @@ import {
     Actor, Task, Fill, Click, stopField, Press, randomStatement
 } from '@index';
 
-export class fillOutReflectionInStopColumn extends Task {
+export class FillOutReflectionInStopColumn extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
@@ -15,7 +15,7 @@ export class fillOutReflectionInStopColumn extends Task {
         );
 }
 
-    public static inApp(): fillOutReflectionInStopColumn {
-        return new fillOutReflectionInStopColumn();
+    public static inApp(): FillOutReflectionInStopColumn {
+        return new FillOutReflectionInStopColumn();
     }
 }
