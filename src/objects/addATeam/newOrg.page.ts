@@ -1,4 +1,8 @@
-const radioBtnForNewOrg = '.css-ohjobq >> text=a new organization:';
-const newOrgName = '.css-kxtm4u >> name=orgName';
+// Selectors for the new organization form
 
-export { radioBtnForNewOrg, newOrgName };
+const newOrgRadioButton = '.css-ohjobq >> text=a new organization:';
+const newOrgNameField = '.css-kxtm4u >> name=orgName';
+
+export { 
+  newOrgRadioButton, newOrgNameField 
+};

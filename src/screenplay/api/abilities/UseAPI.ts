@@ -1,7 +1,7 @@
-import { Ability, Actor } from '@testla/screenplay';
 import { APIRequestContext, APIResponse } from '@playwright/test';
 import { 
-    RequestMethod, REQUEST_METHOD, Response, ResponseBodyFormat, ResponseBodyType 
+    RequestMethod, REQUEST_METHOD, Response, ResponseBodyFormat, 
+    ResponseBodyType, Ability, Actor 
 } from '@index';
 
 export class UseAPI extends Ability {

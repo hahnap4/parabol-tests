@@ -16,7 +16,7 @@ export class GoToUpgradeToProPageOnMobile extends Task {
         );
 }
 
-    public static toApp(): GoToUpgradeToProPageOnMobile {
+    public static onApp(): GoToUpgradeToProPageOnMobile {
         return new GoToUpgradeToProPageOnMobile();
     }
 }

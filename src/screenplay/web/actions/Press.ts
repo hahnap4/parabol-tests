@@ -1,5 +1,4 @@
-import { Action, Actor } from '@testla/screenplay';
-import { BrowseTheWeb } from '@index';
+import { Action, Actor, BrowseTheWeb } from '@index';
 
 /**
  * Action Class. Press the specified key on the keyboard.

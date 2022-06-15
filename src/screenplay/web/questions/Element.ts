@@ -1,5 +1,4 @@
-import { Actor, Question } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
+import { Actor, Question, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
  * Question Class. Get a specified state for a selector like visible or enabled.

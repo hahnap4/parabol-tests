@@ -10,4 +10,4 @@ const backToNewTemplate = 'button[aria-label="Back to Template"]';
 export {
   editScaleName, addValueButton, editNewScaleValue, removeNewScaleValueButton, 
   changeScaleValueColor, backToNewTemplate
-}
+};

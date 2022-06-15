@@ -1,105 +1,141 @@
-import '@playwright/test';
-import { test, expect, billingTabPage, meetingsHomePage, sideNavPage, generalCreateMeetingPage, meetingSummaryPage } from '@index';
+import { 
+  Actor, test, expect, BrowseTheWeb, GoToMeetingsHomepage, GoToMyTasksPage, 
+  GoToMyTeamTasksPage, GoToAddATeamPage, GoToMyProfilePage, GoToOrgListPage,
+  Wait, GoToSprintPokerMeetingCreationPage, GoToRetroMeetingCreationPage,
+  GoToCheckInMeetingSetupPage, GoToTimelinePage, 
+  GoToUpgradeToProPage, sideQuoteBox, daysAgo, quoteBox
+} from '@index';
 
 // On Chrome
 
 test.use({ storageState: 'prodStorageState.json' });
-test.describe.parallel('Current visual snapshot matches original snapshot', () => {
+test.describe.parallel('Desktop UI Test', () => {
 
-   test('For Meetings Homepage', async ({ page }) => {
-     await page.goto('/meetings');
-     await page.waitForLoadState('networkidle');
+   test('Meetings Homepage', async ({ page }) => {
+     const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+
+     await actor.attemptsTo(GoToMeetingsHomepage.onApp());
+
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
    });
 
-   test('For My Tasks Webpage', async ({ page }) => {
-    await page.goto('/me/tasks');
-    await page.waitForLoadState('networkidle');
+   test('My Tasks Page', async ({ page }) => {
+     const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+
+     await actor.attemptsTo(GoToMyTasksPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('myTasks.png');
    });
 
-   test('For Team Tasks Webpage', async ({ page }) => {
-    const sideNav = new sideNavPage(page);
-    await page.goto('/');
-    await sideNav.teamTasksButton.click();
-    await page.waitForLoadState('networkidle');
+   test('My Team Tasks Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToMyTeamTasksPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
    });
 
-   test('For Add a Team Webpage', async ({ page }) => {
-    await page.goto('/newteam/1');
-    await page.waitForLoadState('networkidle');
+   test('Add a Team Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToAddATeamPage.onApp());
+    
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
    });
 
-   test('For User Profile Webpage', async ({ page }) => {
-    await page.goto('/me/profile');
-    await page.waitForLoadState('networkidle');
+   test('My Profile Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToMyProfilePage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
    });
 
-   test('For Organization List Webpage', async ({ page }) => {
-    await page.goto('/me/organizations');
-    await page.waitForLoadState('networkidle');
+   test('Organization List Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToOrgListPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');
    });
 
-   test('For Creating Sprint Poker Meeting Webpage', async ({ page }) => {
-    const meetings = new meetingsHomePage(page);
-    await page.goto('/meetings');
-    await meetings.addMeetingButton.click();
-    await page.waitForLoadState('networkidle');
+   test('Sprint Poker Meeting Creation Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToSprintPokerMeetingCreationPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
    });
 
-   test('For Creating Retro Meeting Webpage', async ({ page }) => {
-    const meetings = new meetingsHomePage(page);
-    const createMeeting = new generalCreateMeetingPage(page);
-    await page.goto('/meetings');
-    await meetings.addMeetingButton.click();
-    await createMeeting.goRightButton.click();
-    await page.waitForLoadState('networkidle');
+   test('Retro Meeting Creation Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToRetroMeetingCreationPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
    });
 
-   test('For Creating Check-In Meeting Webpage', async ({ page }) => {
-    const meetings = new meetingsHomePage(page);
-    const createMeeting = new generalCreateMeetingPage(page);
-    await page.goto('/meetings');
-    await meetings.addMeetingButton.click();
-    await createMeeting.goLeftButton.click();
-    await page.waitForLoadState('networkidle');
+   test('Check-In Meeting Creation Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToCheckInMeetingSetupPage.onApp());
+
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
    });
    
-   test('For Timeline Webpage', async ({ page }) => {
-    const meetingSummary = new meetingSummaryPage(page);
-    await page.goto('/me');
+   test('Timeline Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToTimelinePage.onApp());
+
+    // This covers up the Side Quote and Days Ago Statement so that it 
+    // does not fail the visual comparison test.
+    const sideQuote = await page.locator(sideQuoteBox);
+    const daysAgoStatement = await page.locator(daysAgo);
     const maskedScreenshot = await page.screenshot(
       {
-        mask: [meetingSummary.sideBoxQuote, meetingSummary.daysAgo]
+        mask: [sideQuote, daysAgoStatement]
       });
-    await page.waitForLoadState('networkidle');
+      
+    await actor.attemptsTo(Wait.forLoadState('networkidle'));
+
     expect(await maskedScreenshot).toMatchSnapshot('timeline.png');
    });
 
-   test('For Upgrade to Pro Webpage', async ({ page }) => {
-    const billingTab = new billingTabPage(page);
-    await page.waitForLoadState('networkidle');
+   test('Upgrade to Pro Page', async ({ page }) => {
+    const actor = Actor.named('Picasso')
+        .can(BrowseTheWeb.using(page));
+    
+    await actor.attemptsTo(GoToUpgradeToProPage.onApp());
+    
+    // This covers up the Quote so that it does not fail the visual comparison test.
+    const quote = await page.locator(quoteBox);
     const maskedScreenshot = await page.screenshot(
       {
-        mask: [billingTab.quoteBox]
+        mask: [quote]
       });
-    await page.waitForLoadState('networkidle');
+
+    await actor.attemptsTo(Wait.forLoadState('networkidle'));
+
     expect(await maskedScreenshot).toMatchSnapshot('upgrade.png');
    });
    
 });
 
-/* Potential TODO:
- - Sprint Poker Meeting Page
- - Retro Meeting Page
- - Check-In Meeting Page
- - Demo Page
-
- for the visual comparisons test (aka UI tests).*/
+/** Potential TODO:
+* - Sprint Poker Meeting Page
+* - Retro Meeting Page
+* - Check-In Meeting Page
+* - Demo Page
+*
+* for the visual comparisons test (aka UI tests).*/

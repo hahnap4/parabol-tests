@@ -17,4 +17,4 @@ export {
   publicTab, myOrgTab, myTeamTab, createNewTemplate, defaultTemplate, 
   cloneAndEditTemplate, useTemplateButton, editTemplateTitle, shareWithAllOfMyOrg, 
   shareWithWorld, shareWithMyTeam, deleteTemplateButton
-}
+};

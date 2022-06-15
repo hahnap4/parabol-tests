@@ -1,6 +1,6 @@
-import { Actor } from '@testla/screenplay';
 import { 
-    REQUEST_METHOD, UseAPI, Headers, Response, ResponseBodyFormat, ARequest
+    REQUEST_METHOD, UseAPI, Headers, Response, ResponseBodyFormat, 
+    ARequest, Actor
 } from '@index';
 
 /**

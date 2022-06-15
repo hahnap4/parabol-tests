@@ -1,5 +1,4 @@
-import { Action, Actor } from '@testla/screenplay';
-import { BrowseTheWeb } from '@index';
+import { Action, Actor, BrowseTheWeb } from '@index';
 
 /**
  * Action Class. Navigate to a URL using the specified url string.

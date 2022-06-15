@@ -1,13 +1,11 @@
-import { Action, Actor } from '@testla/screenplay';
-import { SelectorOptions, BrowseTheWeb } from '@index';
-import { Locator } from '@playwright/test';
+import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
 /**
- * Action Class. DragAndDrop an element specified by a selector Locator and drop it on an element specified by another
- * selector Locator.
+ * Action Class. DragAndDrop an element specified by a selector string and drop it on an element specified by another
+ * selector string.
  */
 export class DragAndDrop extends Action {
-    private constructor(private sourceSelector: Locator, private targetSelector: Locator, private options?: {
+    private constructor(private sourceSelector: string, private targetSelector: string, private options?: {
         source?: SelectorOptions;
         target?: SelectorOptions;
     }) {
@@ -28,7 +26,7 @@ export class DragAndDrop extends Action {
      * @param targetSelector the selector of the target element.
      * @param options (optional) advanced selector lookup options.
      */
-    public static execute(sourceSelector: Locator, targetSelector: Locator, options?: {
+    public static execute(sourceSelector: string, targetSelector: string, options?: {
         source?: SelectorOptions;
         target?: SelectorOptions;
     }): DragAndDrop {
