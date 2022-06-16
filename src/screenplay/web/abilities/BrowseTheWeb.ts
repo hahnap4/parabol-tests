@@ -1,10 +1,22 @@
-import { Page, Response, expect, PageScreenshotOptions } from '@playwright/test';
-import { Ability, Actor, SelectorOptions, recursiveLocatorLookup } from '@index';
+import { Page, Response } from '@playwright/test';
+import { Ability, Actor } from '@testla/screenplay';
+import { SelectorOptions, recursiveLocatorLookup } from '@index';
 
 /**
  * This class represents the actor's ability to use a Browser.
  */
 export class BrowseTheWeb extends Ability {
+
+    /**
+     * Initialize this Ability by passing an already existing Playwright Page object.
+     *
+     * @param page the Playwright Page that will be used to browse.
+     */
+     private constructor(private page: Page) {
+        super();
+        this.page = page;
+    }
+
     /**
      * Initialize this Ability by passing an already existing Playwright Page object.
      *
@@ -18,18 +30,10 @@ export class BrowseTheWeb extends Ability {
      * Use this Ability as an Actor.
      *
      * @param actor
+     * 
      */
     public static as(actor: Actor): BrowseTheWeb {
         return actor.withAbilityTo(this) as BrowseTheWeb;
-    }
-
-    /**
-     * Initialize this Ability by passing an already existing Playwright Page object.
-     *
-     * @param page the Playwright Page that will be used to browse.
-     */
-    private constructor(private page: Page) {
-        super();
     }
 
     /**
@@ -46,7 +50,7 @@ export class BrowseTheWeb extends Ability {
      *
      * @param url the url to access.
      */
-    public async goto(url: string): Promise<Response | null> {
+    public async navigate(url: string): Promise<Response | null> {
         return this.page.goto(url);
     }
 
@@ -192,5 +196,10 @@ export class BrowseTheWeb extends Ability {
         } catch (e) {
             return Promise.resolve(false);
         }
+    }
+
+    // find functionality by using playwright spicific code for our example
+    public async find(locator: string): Promise<any> {
+        return this.page.waitForSelector(locator);
     }
 }

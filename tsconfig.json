@@ -9,6 +9,7 @@
         "resolveJsonModule": true,
         "esModuleInterop":true,
         "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
         "baseUrl": ".",
         "paths": {
             "@index": [
@@ -63,7 +64,7 @@
                 "src/screenplay/api/*"
             ],
             "@tasks/*": [
-                "src/screenplay/tasks/*"
+                "src/screenplay/web/tasks/*"
             ],
             "@screenplay/*": [
                 "src/screenplay/*"

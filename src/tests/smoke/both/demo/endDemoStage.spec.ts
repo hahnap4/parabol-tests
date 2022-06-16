@@ -1,7 +1,6 @@
 import '@playwright/test';
-import { 
-    Actor, BrowseTheWeb, test, expect, EndDemoRetroMeeting 
-} from '@index';
+import { Actor, BrowseTheWeb, test, expect } from '@index';
+import { EndDemoRetroMeeting } from '@tasks/demo/endDemoRetroMeeting.task';
 
 test('Check Demo Summary after Ending Demo', async({ demoDiscussPage, page }) => {
 

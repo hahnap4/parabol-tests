@@ -1,10 +1,10 @@
 import '@playwright/test';
-import { 
-    Actor, BrowseTheWeb, test, expect, FillOutReflectionInStartColumn,
-    FillOutReflectionInStopColumn, FillOutReflectionInContinueColumn
-} from '@index';
+import { Actor, BrowseTheWeb, test, expect } from '@index';
+import { FillOutReflectionInStartColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
+import { FillOutReflectionInStopColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
+import { FillOutReflectionInContinueColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
 
-test('Type Anonymous Reflections into Boxes', async({ demoReflectPage, page }) => {
+test.skip('Type Anonymous Reflections into Boxes', async({ demoReflectPage, page }) => {
     
     const actor = Actor.named('Deemo')
         .can(BrowseTheWeb.using(page));

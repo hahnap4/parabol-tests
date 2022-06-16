@@ -1,9 +1,11 @@
 import { test as base, Page } from '@playwright/test';
-import { 
-  Actor, StartDemoReflectStage, BrowseTheWeb, StartDemoGroupCardsStage,
-  StartDemoVotingStage, StartDemoDiscussionStage, GoToUpgradeToProPage,
-  GoToUpgradeToProPageOnMobile
-} from '@index';
+import { Actor, BrowseTheWeb } from '@index';
+import { StartDemoDiscussionStage } from '@tasks/demo/fixtures/startDemoDiscussionStage.task';
+import { StartDemoReflectStage } from '@tasks/demo/fixtures/startDemoReflectStage.task';
+import { StartDemoGroupCardsStage } from '@tasks/demo/fixtures/startDemoGroupCardsStage.task';
+import { StartDemoVotingStage } from '@tasks/demo/fixtures/startDemoVotingStage.task';
+import { GoToUpgradeToProPage } from '@tasks/goToPages/desktop/goToUpgradeToProPage.task';
+import { GoToUpgradeToProPageOnMobile } from '@tasks/goToPages/mobile/goToUpgradeToProPageOnMobile.task';
 
 type MyFixtures = {
   demoReflectPage: Page;
@@ -38,7 +40,7 @@ export const test = base.extend<MyFixtures>({
     await actor.attemptsTo(StartDemoVotingStage.toApp());
   },
 
-  demoDiscussPage: async ({ page }, use) => {
+  demoDiscussPage: async ({ page }) => {
     const actor = Actor.named('Deemo')
         .can(BrowseTheWeb.using(page));
     

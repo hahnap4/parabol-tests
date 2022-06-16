@@ -1,10 +1,17 @@
 import { 
-  Actor, test, expect, BrowseTheWeb, daysAgo, quoteBox, GoToUpgradeToProPageOnMobile,
-  GoToAddATeamOnMobile, GoToCheckInSetupOnMobile, GoToMeetingsHomepageOnMobile,
-  GoToMyProfileOnMobile, GoToMyTasksOnMobile, GoToMyTeamTasksOnMobile, 
-  GoToOrgListOnMobile, GoToRetroSetupOnMobile, GoToSprintPokerSetupOnMobile,
-  GoToTimelineOnMobile
+  Actor, test, expect, BrowseTheWeb, daysAgo, quoteBox
 } from '@index';
+import { GoToMeetingsHomepageOnMobile } from '@tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
+import { GoToMyTasksOnMobile } from '@tasks/goToPages/mobile/goToMyTasksOnMobile.task';
+import { GoToMyTeamTasksOnMobile } from '@tasks/goToPages/mobile/goToMyTeamTasksOnMobile.task';
+import { GoToAddATeamOnMobile } from '@tasks/goToPages/mobile/goToAddATeamOnMobile.task';
+import { GoToMyProfileOnMobile } from '@tasks/goToPages/mobile/goToMyProfileOnMobile.task';
+import { GoToOrgListOnMobile } from '@tasks/goToPages/mobile/goToOrgListOnMobile.task';
+import { GoToSprintPokerSetupOnMobile } from '@tasks/goToPages/mobile/goToSprintPokerSetupOnMobile.task';
+import { GoToRetroSetupOnMobile } from '@tasks/goToPages/mobile/goToRetroSetupOnMobile.task';
+import { GoToCheckInSetupOnMobile } from '@tasks/goToPages/mobile/goToCheckInSetupOnMobile.task';
+import { GoToTimelineOnMobile } from '@tasks/goToPages/mobile/GoToTimelineOnMobile.task';
+import { GoToUpgradeToProPageOnMobile } from '@tasks/goToPages/mobile/GoToUpgradeToProPageOnMobile.task';
 
 // On Android
 

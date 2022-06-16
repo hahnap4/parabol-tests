@@ -1,10 +1,17 @@
 import { 
-  Actor, test, expect, BrowseTheWeb, GoToMeetingsHomepage, GoToMyTasksPage, 
-  GoToMyTeamTasksPage, GoToAddATeamPage, GoToMyProfilePage, GoToOrgListPage,
-  Wait, GoToSprintPokerMeetingCreationPage, GoToRetroMeetingCreationPage,
-  GoToCheckInMeetingSetupPage, GoToTimelinePage, 
-  GoToUpgradeToProPage, sideQuoteBox, daysAgo, quoteBox
+  Actor, test, expect, BrowseTheWeb, Wait, sideQuoteBox, daysAgo, quoteBox
 } from '@index';
+import { GoToMeetingsHomepage } from '@tasks/goToPages/desktop/goToMeetingsHomepage.task';
+import { GoToMyTasksPage } from '@tasks/goToPages/desktop/goToMyTasksPage.task';
+import { GoToMyTeamTasksPage } from '@tasks/goToPages/desktop/goToMyTeamTasksPage.task';
+import { GoToAddATeamPage } from '@tasks/goToPages/desktop/goToAddATeamPage.task';
+import { GoToMyProfilePage } from '@tasks/goToPages/desktop/goToMyProfilePage.task';
+import { GoToOrgListPage } from '@tasks/goToPages/desktop/goToOrgListPage.task';
+import { GoToSprintPokerMeetingSetupPage } from '@tasks/goToPages/desktop/goToSprintPokerMeetingSetupPage.task';
+import { GoToRetroMeetingSetupPage } from '@tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
+import { GoToCheckInMeetingSetupPage } from '@tasks/goToPages/desktop/goToCheckInMeetingSetupPage.task';
+import { GoToTimelinePage } from '@tasks/goToPages/desktop/goToTimelinePage.task';
+import { GoToUpgradeToProPage } from '@tasks/goToPages/desktop/goToUpgradeToProPage.task';
 
 // On Chrome
 
@@ -69,7 +76,7 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToSprintPokerMeetingCreationPage.onApp());
+    await actor.attemptsTo(GoToSprintPokerMeetingSetupPage.onApp());
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
    });
@@ -78,7 +85,7 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToRetroMeetingCreationPage.onApp());
+    await actor.attemptsTo(GoToRetroMeetingSetupPage.onApp());
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
    });

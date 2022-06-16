@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { SignOutOnMobile, Actor, BrowseTheWeb } from '@index'
+import { Actor, BrowseTheWeb } from '@index'
+import { SignOutOnMobile } from '@tasks/auth/signOut/mobile/signOut.task';
 
 test.use({ storageState: 'prodStorageState.json' });
 
-test('Sign Out', async({ page }) => {
+test.skip('Sign Out', async({ page }) => {
 
 const actor = Actor.named('Robert')
    .can(BrowseTheWeb.using(page));
