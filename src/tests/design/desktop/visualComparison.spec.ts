@@ -1,17 +1,18 @@
 import { 
-  Actor, test, expect, BrowseTheWeb, Wait, sideQuoteBox, daysAgo, quoteBox
+  Actor, BrowseTheWeb, Wait, sideQuoteBox, daysAgo, quoteBox
 } from '@index';
-import { GoToMeetingsHomepage } from '@tasks/goToPages/desktop/goToMeetingsHomepage.task';
-import { GoToMyTasksPage } from '@tasks/goToPages/desktop/goToMyTasksPage.task';
-import { GoToMyTeamTasksPage } from '@tasks/goToPages/desktop/goToMyTeamTasksPage.task';
-import { GoToAddATeamPage } from '@tasks/goToPages/desktop/goToAddATeamPage.task';
-import { GoToMyProfilePage } from '@tasks/goToPages/desktop/goToMyProfilePage.task';
-import { GoToOrgListPage } from '@tasks/goToPages/desktop/goToOrgListPage.task';
-import { GoToSprintPokerMeetingSetupPage } from '@tasks/goToPages/desktop/goToSprintPokerMeetingSetupPage.task';
-import { GoToRetroMeetingSetupPage } from '@tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
-import { GoToCheckInMeetingSetupPage } from '@tasks/goToPages/desktop/goToCheckInMeetingSetupPage.task';
-import { GoToTimelinePage } from '@tasks/goToPages/desktop/goToTimelinePage.task';
-import { GoToUpgradeToProPage } from '@tasks/goToPages/desktop/goToUpgradeToProPage.task';
+import { test, expect } from '@playwright/test';
+import { GoToMeetingsHomepage } from '@web/tasks/goToPages/desktop/goToMeetingsHomepage.task';
+import { GoToMyTasksPage } from '@web/tasks/goToPages/desktop/goToMyTasksPage.task';
+import { GoToMyTeamTasksPage } from '@web/tasks/goToPages/desktop/goToMyTeamTasksPage.task';
+import { GoToAddATeamPage } from '@web/tasks/goToPages/desktop/goToAddATeamPage.task';
+import { GoToMyProfilePage } from '@web/tasks/goToPages/desktop/goToMyProfilePage.task';
+import { GoToOrgListPage } from '@web/tasks/goToPages/desktop/goToOrgListPage.task';
+import { GoToSprintPokerMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToSprintPokerMeetingSetupPage.task';
+import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
+import { GoToCheckInMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToCheckInMeetingSetupPage.task';
+import { GoToTimelinePage } from '@web/tasks/goToPages/desktop/goToTimelinePage.task';
+import { GoToUpgradeToProPage } from '@web/tasks/goToPages/desktop/goToUpgradeToProPage.task';
 
 // On Chrome
 

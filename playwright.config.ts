@@ -4,7 +4,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'never' }] ], 
   retries: 3, //process.env.CI ? 3 : 0, // TODO: Remove '3, //' when test automation is ready.
-  globalSetup: require.resolve('./globalSetup'),
+  //globalSetup: require.resolve('./globalSetup'), // Uncomment if creating a new Login storageState.
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
   use: {

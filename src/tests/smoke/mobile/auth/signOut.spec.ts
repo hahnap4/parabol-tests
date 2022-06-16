@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { Actor, BrowseTheWeb } from '@index'
-import { SignOutOnMobile } from '@tasks/auth/signOut/mobile/signOut.task';
+import { SignOutOnMobile } from '@web/tasks/auth/signOut/mobile/signOut.task';
 
 test.use({ storageState: 'prodStorageState.json' });
 

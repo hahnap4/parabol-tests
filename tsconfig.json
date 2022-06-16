@@ -63,9 +63,6 @@
             "@api/*": [
                 "src/screenplay/api/*"
             ],
-            "@tasks/*": [
-                "src/screenplay/web/tasks/*"
-            ],
             "@screenplay/*": [
                 "src/screenplay/*"
             ],
