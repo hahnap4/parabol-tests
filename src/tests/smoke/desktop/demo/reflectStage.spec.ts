@@ -5,7 +5,7 @@ import { FillOutReflectionInStopColumn } from '@web/tasks/demo/reflectStage/desk
 import { FillOutReflectionInContinueColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
 import { StartDemoReflectStage } from '@web/tasks/demo/fixtures/startDemoReflectStage.task';
 
-test.skip('Type Anonymous Reflections into Boxes', async({ page }) => {
+test('Type Anonymous Reflections into Boxes', async({ page }) => {
     
     const actor = Actor.named('Deemo')
         .can(BrowseTheWeb.using(page));
