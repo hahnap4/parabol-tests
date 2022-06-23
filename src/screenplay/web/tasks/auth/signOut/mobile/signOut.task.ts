@@ -1,6 +1,7 @@
 import { 
     Actor, Task, Wait, Navigate, Click, signOutButton 
 } from '@index';
+import { LogInAsUserOne } from '../../signIn/logInAsUserOne.task';
 
 export class SignOutOnMobile extends Task {
 
@@ -8,6 +9,7 @@ export class SignOutOnMobile extends Task {
 
         return actor.attemptsTo(
             Navigate.to('/'),
+            LogInAsUserOne.inApp(),
             Click.on(signOutButton),
             Wait.forLoadState('networkidle'),
         );

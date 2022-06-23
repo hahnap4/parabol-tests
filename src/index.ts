@@ -25,7 +25,7 @@ export {
   } from '@authPage/signIn.page';
 
 export { 
-    openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
+    chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
   } from '@pages/setupMeeting/setupMeetingSettingWidget.page';
   
 export { 

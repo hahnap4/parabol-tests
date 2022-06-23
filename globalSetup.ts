@@ -13,13 +13,16 @@ async function globalSetup(config: FullConfig) {
 require('dotenv').config();
 
 const username = process.env.SECRET_EMAIL;
-const password = process.env.SECRET_PASSWORD
+const password = process.env.SECRET_PASSWORD;
+
+const base_url = process.env.BASE_URL;
+
   const AuthPage = await browser.newPage();
-  await AuthPage.goto('https://action-staging.parabol.co/'); 
+  // @ts-ignore
+  await AuthPage.goto(base_url); 
   await AuthPage.fill('input[aria-label="Email"]', username);
   await AuthPage.fill('input[aria-label="Password"]', password);
   await Promise.all([
-    AuthPage.waitForNavigation({ url: 'https://action.parabol-staging.co/meetings' }), // Make the url into a comment...
     AuthPage.locator('text=EmailPasswordSign In >> button').click()
   ]);
   

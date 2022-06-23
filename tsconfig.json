@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ESNext",
         "strict": true,
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "Node",
         "sourceMap": true,
         "outDir": "../testsOut",
