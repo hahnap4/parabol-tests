@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Wait, Navigate, Press, Click, hamburgerIconForMobile
+    Actor, Task, Wait, Navigate, Tap, removeSideNavOnMobile
 } from '@index';
 
 export class GoToAddATeamOnMobile extends Task {
@@ -8,8 +8,7 @@ export class GoToAddATeamOnMobile extends Task {
 
         return actor.attemptsTo(
             Navigate.to('/newteam/1'),
-            Click.on(hamburgerIconForMobile),
-            Press.key('Enter'),
+            Tap.on(removeSideNavOnMobile),
             Wait.forLoadState('networkidle')
         );
 }

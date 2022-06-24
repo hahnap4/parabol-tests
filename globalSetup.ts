@@ -1,6 +1,6 @@
 // Uncomment if creating a new Login storageState.
 
-/*import { FullConfig } from '@playwright/test';
+import { FullConfig } from '@playwright/test';
 import 'dotenv/config';
 
 const { chromium } = require('@playwright/test');
@@ -27,9 +27,9 @@ const base_url = process.env.BASE_URL;
   ]);
   
 // Save signed-in state to 'storageState.json'.
-await AuthPage.context().storageState({ path: 'stagingStorageState.json' })
+await AuthPage.context().storageState({ path: 'storageState.json' })
 await browser.close();
 
 }
 
-export default globalSetup; */
+export default globalSetup; 

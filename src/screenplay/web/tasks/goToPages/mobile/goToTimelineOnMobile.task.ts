@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Wait, Navigate, Click, Press, hamburgerIconForMobile, 
+    Actor, Task, Wait, Navigate, Click, Tap, removeSideNavOnMobile, 
     timelineButton
 } from '@index';
 
@@ -10,8 +10,7 @@ export class GoToTimelineOnMobile extends Task {
         return actor.attemptsTo(
             Navigate.to('/'),
             Click.on(timelineButton),
-            Click.on(hamburgerIconForMobile),
-            Press.key('Enter'),
+            Tap.on(removeSideNavOnMobile),
             Wait.forLoadState('networkidle')
         );
 }

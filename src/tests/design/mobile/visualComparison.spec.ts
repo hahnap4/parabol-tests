@@ -1,5 +1,5 @@
 import { 
-  Actor, BrowseTheWeb, daysAgo, quoteBox
+  Actor, BrowseTheWeb, daysAgo, quoteBox, Wait
 } from '@index';
 import { test, expect } from '@playwright/test';
 import { GoToMeetingsHomepageOnMobile } from '@web/tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
@@ -13,17 +13,23 @@ import { GoToRetroSetupOnMobile } from '@web/tasks/goToPages/mobile/goToRetroSet
 import { GoToCheckInSetupOnMobile } from '@web/tasks/goToPages/mobile/goToCheckInSetupOnMobile.task';
 import { GoToTimelineOnMobile } from '@web/tasks/goToPages/mobile/GoToTimelineOnMobile.task';
 import { GoToUpgradeToProPageOnMobile } from '@web/tasks/goToPages/mobile/GoToUpgradeToProPageOnMobile.task';
+import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInAsUserOne.task';
 
 // On Android
 
-test.use({ storageState: 'prodStorageState.json' });
+// test.use({ storageState: 'storageState.json' });
+// TODO: Figure out what's wrong with storageState.
 test.describe.parallel('Mobile UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
 
-     await actor.attemptsTo(GoToMeetingsHomepageOnMobile.onApp());
+     await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToMeetingsHomepageOnMobile.onApp()
+      );
 
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
    });
@@ -32,7 +38,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToMyTasksOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToMyTasksOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('myTasks.png');
    });
@@ -41,7 +51,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToMyTeamTasksOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToMyTeamTasksOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
    });
@@ -50,7 +64,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToAddATeamOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToAddATeamOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
    });
@@ -59,7 +77,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToMyProfileOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToMyProfileOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
    });
@@ -68,7 +90,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToOrgListOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToOrgListOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');
    });
@@ -77,7 +103,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToSprintPokerSetupOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToSprintPokerSetupOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
    });
@@ -86,7 +116,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToRetroSetupOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToRetroSetupOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
    });
@@ -95,7 +129,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToCheckInSetupOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToCheckInSetupOnMobile.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
    });
@@ -104,7 +142,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToTimelineOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToTimelineOnMobile.onApp()
+      );
 
     /* This covers up the Days Ago Statement so that it does not fail the 
     visual comparison test. */
@@ -121,7 +163,11 @@ test.describe.parallel('Mobile UI Test', () => {
     const actor = Actor.named('Picasso')
        .can(BrowseTheWeb.using(page));
 
-    await actor.attemptsTo(GoToUpgradeToProPageOnMobile.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      Wait.forLoadState('domcontentloaded'),
+      GoToUpgradeToProPageOnMobile.onApp()
+      );
 
     /* This covers up the Quote so that it does not fail the visual 
     comparison test. */

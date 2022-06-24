@@ -13,17 +13,21 @@ import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetr
 import { GoToCheckInMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToCheckInMeetingSetupPage.task';
 import { GoToTimelinePage } from '@web/tasks/goToPages/desktop/goToTimelinePage.task';
 import { GoToUpgradeToProPage } from '@web/tasks/goToPages/desktop/goToUpgradeToProPage.task';
+import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInAsUserOne.task';
 
 // On Chrome
-
-test.use({ storageState: 'prodStorageState.json' });
+// test.use({ storageState: 'storageState.json' });
+// TODO: Figure out what's wrong with storageState.
 test.describe.parallel('Desktop UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {
      const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
 
-     await actor.attemptsTo(GoToMeetingsHomepage.onApp());
+     await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToMeetingsHomepage.onApp()
+      );
 
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
    });
@@ -32,7 +36,10 @@ test.describe.parallel('Desktop UI Test', () => {
      const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
 
-     await actor.attemptsTo(GoToMyTasksPage.onApp());
+     await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToMyTasksPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('myTasks.png');
    });
@@ -41,7 +48,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToMyTeamTasksPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToMyTeamTasksPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
    });
@@ -50,7 +60,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToAddATeamPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToAddATeamPage.onApp()
+      );
     
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
    });
@@ -59,7 +72,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToMyProfilePage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToMyProfilePage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
    });
@@ -68,7 +84,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToOrgListPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToOrgListPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');
    });
@@ -77,7 +96,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToSprintPokerMeetingSetupPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToSprintPokerMeetingSetupPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
    });
@@ -86,7 +108,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToRetroMeetingSetupPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToRetroMeetingSetupPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
    });
@@ -95,7 +120,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToCheckInMeetingSetupPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToCheckInMeetingSetupPage.onApp()
+      );
 
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
    });
@@ -104,7 +132,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToTimelinePage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToTimelinePage.onApp()
+      );
 
     // This covers up the Side Quote and Days Ago Statement so that it 
     // does not fail the visual comparison test.
@@ -124,7 +155,10 @@ test.describe.parallel('Desktop UI Test', () => {
     const actor = Actor.named('Picasso')
         .can(BrowseTheWeb.using(page));
     
-    await actor.attemptsTo(GoToUpgradeToProPage.onApp());
+    await actor.attemptsTo(
+      LogInAsUserOne.inApp(),
+      GoToUpgradeToProPage.onApp()
+      );
     
     // This covers up the Quote so that it does not fail the visual comparison test.
     const quote = await page.locator(quoteBox);

@@ -8,7 +8,7 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'never' }] ], 
   retries: process.env.CI ? 2 : 0, 
-  //globalSetup: require.resolve('./globalSetup'), // Uncomment if creating a new Login storageState.
+  globalSetup: require.resolve('./globalSetup'), // Uncomment if creating a new Login storageState.
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
   timeout: 60000,

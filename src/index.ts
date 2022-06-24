@@ -56,7 +56,7 @@ export {
   } from '@pages/setupMeeting/sprintPokerTemplates.page';
 
 export {
-    hamburgerIcon, hamburgerIconForMobile, ParabolLogo, helpMenu, 
+    hamburgerIcon, removeSideNavOnMobile, ParabolLogo, helpMenu, 
     notificationBell, userIconButton
   } from '@general/header.page';
 
@@ -141,6 +141,7 @@ import { Press } from '@web/actions/Press';
 import { Navigate } from '@web/actions/Navigate';
 import { Type } from '@web/actions/Type';
 import { Wait } from '@web/actions/Wait';
+import { Tap } from '@web/actions/Tap';
 import { Element } from '@web/questions/Element';
 
 import { SelectorOptions, SubSelector } from '@web/types';
@@ -162,7 +163,7 @@ import {
 } from '@api/types';
 
 export {
-    Actor, Action, Task, Question, Ability, BrowseTheWeb, Check, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
+    Actor, Tap, Action, Task, Question, Ability, BrowseTheWeb, Check, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
     UseAPI, ARequest, Delete, Get, Head, Patch, Post, Put, APIResponse, Headers, RequestMethod, REQUEST_METHOD, Response, ResponseBodyFormat, 
     ResponseBodyType, SelectorOptions, recursiveLocatorLookup, SubSelector
 };

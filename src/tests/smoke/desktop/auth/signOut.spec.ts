@@ -11,7 +11,7 @@ const actor = Actor.named('Robert')
    
 await actor.attemptsTo(SignOut.ofApp());
 
-await expect(page.url()).toContain('action.parabol.co');
+await expect(page.url()).toContain('parabol.co');
 
 });
 

@@ -2,6 +2,9 @@ import { Page, Response } from '@playwright/test';
 import { Ability, Actor } from '@testla/screenplay';
 import { SelectorOptions, recursiveLocatorLookup } from '@index';
 
+const { _android: android } = require('playwright');
+const [mobile] = await android.devices();
+
 /**
  * This class represents the actor's ability to use a Browser.
  */
@@ -201,5 +204,15 @@ export class BrowseTheWeb extends Ability {
     // find functionality by using playwright spicific code for our example
     public async find(locator: string): Promise<any> {
         return this.page.waitForSelector(locator);
+    }
+
+    /**
+     * Click the element specified by the selector.
+     *
+     * @param selector the selector of the element to tap on.
+     * @param options (optional) advanced selector lookup options.
+     */
+     public async tap(selector: string, options?: SelectorOptions) {
+        return mobile.tap(selector, options);    
     }
 }

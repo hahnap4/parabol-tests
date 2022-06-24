@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Wait, Navigate, Click, hamburgerIconForMobile, Press
+    Actor, Task, Wait, Navigate, removeSideNavOnMobile, Tap
 } from '@index';
 
 export class GoToMyTasksOnMobile extends Task {
@@ -8,8 +8,7 @@ export class GoToMyTasksOnMobile extends Task {
 
         return actor.attemptsTo(
             Navigate.to('/me/tasks'),
-            Click.on(hamburgerIconForMobile),
-            Press.key('Enter'),
+            Tap.on(removeSideNavOnMobile),
             Wait.forLoadState('networkidle')
         );
 }
