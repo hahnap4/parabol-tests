@@ -2,7 +2,7 @@ import {
     Actor, Task, Navigate, Wait, Click, addMeetingButton, nextMeetingTypeButton
 } from '@index';
 
-export class GoToRetroMeetingCreationPage extends Task {
+export class GoToRetroMeetingSetupPage extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
@@ -14,8 +14,8 @@ export class GoToRetroMeetingCreationPage extends Task {
         );
 }
 
-    public static onApp(): GoToRetroMeetingCreationPage {{
-        return new GoToRetroMeetingCreationPage();
+    public static onApp(): GoToRetroMeetingSetupPage {{
+        return new GoToRetroMeetingSetupPage();
     }
 }
 }

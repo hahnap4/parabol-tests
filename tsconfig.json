@@ -2,13 +2,14 @@
     "compilerOptions": {
         "target": "ESNext",
         "strict": true,
-        "module": "commonjs",
+        "module": "esnext",
         "moduleResolution": "Node",
         "sourceMap": true,
         "outDir": "../testsOut",
         "resolveJsonModule": true,
         "esModuleInterop":true,
         "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
         "baseUrl": ".",
         "paths": {
             "@index": [
@@ -61,9 +62,6 @@
             ],
             "@api/*": [
                 "src/screenplay/api/*"
-            ],
-            "@tasks/*": [
-                "src/screenplay/tasks/*"
             ],
             "@screenplay/*": [
                 "src/screenplay/*"

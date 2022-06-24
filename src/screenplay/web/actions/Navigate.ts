@@ -4,8 +4,10 @@ import { Action, Actor, BrowseTheWeb } from '@index';
  * Action Class. Navigate to a URL using the specified url string.
  */
 export class Navigate extends Action {
+
     private constructor(private url: string) {
         super();
+        this.url = url;
     }
 
     /**
@@ -14,7 +16,7 @@ export class Navigate extends Action {
      * @param actor
      */
     public performAs(actor: Actor): Promise<any> {
-        return BrowseTheWeb.as(actor).goto(this.url);
+        return BrowseTheWeb.as(actor).navigate(this.url);
     }
 
     /**

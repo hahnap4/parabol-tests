@@ -5,25 +5,25 @@ import {
 
 require('dotenv').config();
 
-const username = process.env.SECRET_EMAIL;
-const password = process.env.SECRET_PASSWORD;
+const usernameTwo = process.env.SECRET_SECOND_EMAIL;
+const passwordTwo = process.env.SECRET_SECOND_PASSWORD;
 
-export class SignIn extends Task {
+export class LogInAsUserTwo extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
             Navigate.to('/'),
             // @ts-ignore
-            Fill.in(emailField, username),
+            Fill.in(emailField, usernameTwo),
             // @ts-ignore
-            Fill.in(passwordField, password),
+            Fill.in(passwordField, passwordTwo),
             Click.on(signInButton),
             Wait.forLoadState('networkidle'),
         );
 }
 
-    public static toApp(): SignIn {
-        return new SignIn();
+    public static inApp(): LogInAsUserTwo {
+        return new LogInAsUserTwo();
     }
 }

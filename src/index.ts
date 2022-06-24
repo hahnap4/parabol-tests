@@ -1,46 +1,3 @@
-// Tasks
-export { SignOut } from '@tasks/auth/signOut/desktop/signOut.task';
-export { SignOutOnMobile } from '@tasks/auth/signOut/mobile/signOut.task';
-export { StartDemoReflectStage } from '@tasks/demo/fixtures/startDemoReflectStage.task';
-export { StartDemoGroupCardsStage } from '@tasks/demo/fixtures/startDemoGroupCardsStage.task';
-export { StartDemoVotingStage } from '@tasks/demo/fixtures/startDemoVotingStage.task';
-export { StartDemoDiscussionStage } from '@tasks/demo/fixtures/startDemoDiscussionStage.task';
-export { GoToMeetingsHomepage } from '@tasks/goToPages/desktop/goToMeetingsHomepage.task';
-export { GoToMyTasksPage } from '@tasks/goToPages/desktop/goToMyTasksPage.task';
-export { GoToMyTeamTasksPage } from '@tasks/goToPages/desktop/goToMyTeamTasksPage.task';
-export { GoToAddATeamPage } from '@tasks/goToPages/desktop/goToAddATeamPage.task';
-export { GoToMyProfilePage } from '@tasks/goToPages/desktop/goToMyProfilePage.task';
-export { GoToOrgListPage } from '@tasks/goToPages/desktop/goToOrgListPage.task';
-export { GoToSprintPokerMeetingCreationPage } from '@tasks/goToPages/desktop/goToSprintPokerMeetingSetupPage.task';
-export { GoToRetroMeetingCreationPage } from '@tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
-export { GoToCheckInMeetingSetupPage } from '@tasks/goToPages/desktop/goToCheckInMeetingSetupPage.task';
-export { GoToTimelinePage } from '@tasks/goToPages/desktop/goToTimelinePage.task';
-export { GoToUpgradeToProPage } from '@tasks/goToPages/desktop/goToUpgradeToProPage.task'; 
-export { SignIn } from '@tasks/auth/signIn.task';
-export { GoToAddATeamOnMobile } from '@tasks/goToPages/mobile/goToAddATeamOnMobile.task';
-export { GoToCheckInSetupOnMobile } from '@tasks/goToPages/mobile/goToCheckInSetupOnMobile.task';
-export { GoToMeetingsHomepageOnMobile } from '@tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
-export { GoToMyProfileOnMobile } from '@tasks/goToPages/mobile/goToMyProfileOnMobile.task';
-export { GoToMyTasksOnMobile } from '@tasks/goToPages/mobile/goToMyTasksOnMobile.task';
-export { GoToMyTeamTasksOnMobile } from '@tasks/goToPages/mobile/goToMyTeamTasksOnMobile.task';
-export { GoToOrgListOnMobile } from '@tasks/goToPages/mobile/goToOrgListOnMobile.task';
-export { GoToRetroSetupOnMobile } from '@tasks/goToPages/mobile/goToRetroSetupOnMobile.task';
-export { GoToSprintPokerSetupOnMobile } from '@tasks/goToPages/mobile/goToSprintPokerSetupOnMobile.task';
-export { GoToTimelineOnMobile } from '@tasks/goToPages/mobile/goToTimelineOnMobile.task';
-export { GoToUpgradeToProPageOnMobile } from '@tasks/goToPages/mobile/goToUpgradeToProPageOnMobile.task';
-export { CreateAccount } from '@tasks/auth/createAccount.task';
-export { DeleteAccount } from '@tasks/auth/deleteAccount.task';
-export { EndDemoRetroMeeting } from '@tasks/demo/endDemoRetroMeeting.task';
-export { FillOutReflectionInStopColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
-export { FillOutReflectionInContinueColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
-export { FillOutReflectionInStartColumn } from '@tasks/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
-export { FillOutReflectionInStartColumnOnMobile } from '@tasks/demo/reflectStage/mobile/fillOutReflectionInStartColumnOnMobile.task';
-export { FillOutReflectionInContinueColumnOnMobile } from '@tasks/demo/reflectStage/mobile/fillOutReflectionInContinueColumnOnMobile.task';
-export { FillOutReflectionInStopColumnOnMobile } from '@tasks/demo/reflectStage/mobile/fillOutReflectionInStopColumnOnMobile.task';
-export { GoToContinueColumn } from '@tasks/demo/reflectStage/mobile/GoToContinueColumn.task';
-export { GoToStartColumn } from '@tasks/demo/reflectStage/mobile/GoToStartColumn.task';
-export { GoToStopColumn } from '@tasks/demo/reflectStage/mobile/GoToStopColumn.task';
-
 // Objects
 export { 
     teamNameField, createTeamButton 
@@ -68,7 +25,7 @@ export {
   } from '@authPage/signIn.page';
 
 export { 
-    openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
+    chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
   } from '@pages/setupMeeting/setupMeetingSettingWidget.page';
   
 export { 
@@ -159,10 +116,10 @@ export {
 
 
 // Fixtures
-export { test, expect } from '@fixtures/testSetup';
+//export { test, expect } from '@fixtures/testSetup';
 
 // Test Data
-export { reason, randomStatement} from '@data/test_data.json';
+export { reason, randomStatement } from '@data/test_data.json';
 
 
 

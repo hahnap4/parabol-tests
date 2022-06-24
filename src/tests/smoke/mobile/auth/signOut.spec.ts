@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { SignOutOnMobile, Actor, BrowseTheWeb } from '@index'
+import { Actor, BrowseTheWeb } from '@index'
+import { SignOutOnMobile } from '@web/tasks/auth/signOut/mobile/signOut.task';
 
-test.use({ storageState: 'prodStorageState.json' });
+test.use({ storageState: 'storageState.json' });
 
 test('Sign Out', async({ page }) => {
 

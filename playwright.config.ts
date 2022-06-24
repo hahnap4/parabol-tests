@@ -1,18 +1,34 @@
 import { PlaywrightTestConfig, devices } from '@playwright/test';
 
+require('dotenv').config();
+
+const base_url = process.env.BASE_URL;
+
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'never' }] ], 
-  retries: 3, //process.env.CI ? 3 : 0, // TODO: Remove '3, //' when test automation is ready.
-  globalSetup: require.resolve('./globalSetup'),
+  retries: process.env.CI ? 2 : 0, 
+  //globalSetup: require.resolve('./globalSetup'), // Uncomment if creating a new Login storageState.
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
+  timeout: 60000,
+  expect: {
+    timeout: 10000,
+  },
   use: {
+    actionTimeout: 12000,
+    navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: true, 
-    baseURL: 'https://action-staging.parabol.co/', //https://action-staging.parabol.co/
+    // @ts-ignore
+    baseURL: base_url,
+    launchOptions: {
+      // force-enable GPU hardware acceleration (even in headless mode)
+      // "--use-gl=desktop" OR "--use-gl=egl"
+      args: ["--use-gl=desktop"]
+    }
   }, 
   projects: [
     {
