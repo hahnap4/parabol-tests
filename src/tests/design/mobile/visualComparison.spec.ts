@@ -2,7 +2,7 @@ import {
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
   teamFilter, agendaButton, createTeamButton, deleteAccountButton,
   addNewOrganization, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
-
+  timelineMessageBox, 
 } from '@index';
 import { test, expect } from '@playwright/test';
 import { GoToMeetingsHomepageOnMobile } from '@web/tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
@@ -158,7 +158,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToTimelineOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(timelineMessageBox)
       );
 
     /* This covers up the Days Ago Statement so that it does not fail the 

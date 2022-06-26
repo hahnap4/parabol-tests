@@ -35,7 +35,7 @@ export {
 export { 
     learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
     backPageButton, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
-    
+
   } from '@pages/setupMeeting/generalSetupMeeting.page';
 
 export {
@@ -106,7 +106,7 @@ export {
   } from '@teamTasksDashboard/teamTasksHeader.page';
 
 export {
-    sideQuoteBox, daysAgo
+    sideQuoteBox, daysAgo, timelineMessageBox
   } from '@timeline/meetingSummary.page';
 
 export {
