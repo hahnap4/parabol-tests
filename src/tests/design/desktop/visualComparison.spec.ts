@@ -19,7 +19,7 @@ import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInA
 
 //TODO: For both desktop and mobile, add the if statement for login.
 // If storageState doesn't work, then use the LogInAsUserOne task. 
-//TODO: For desktop, update the images.
+//TODO: For desktop, update the images and follow mobile ui test structure.
 
 //test.use({ storageState: 'storageState.json' });
 test.describe.parallel('Desktop UI Test', () => {
