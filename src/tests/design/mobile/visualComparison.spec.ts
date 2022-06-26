@@ -1,7 +1,7 @@
 import { 
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
-  teamFilter, agendaButton, 
-
+  teamFilter, agendaButton, createTeamButton, deleteAccountButton,
+  addNewOrganization, 
 } from '@index';
 import { test, expect } from '@playwright/test';
 import { GoToMeetingsHomepageOnMobile } from '@web/tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
@@ -73,7 +73,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToAddATeamOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(createTeamButton)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
@@ -87,7 +87,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMyProfileOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(deleteAccountButton)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
@@ -101,7 +101,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToOrgListOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(addNewOrganization)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');

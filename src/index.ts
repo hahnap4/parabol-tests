@@ -97,7 +97,7 @@ export {
   } from '@meetingsHomepage/meetingsHome.page';
 
 export {
-    upgradeToProButtonOnOrgList
+    upgradeToProButtonOnOrgList, addNewOrganization, 
   } from '@orgList/orgList.page';  
 
 export {
