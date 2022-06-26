@@ -22,9 +22,7 @@ const base_url = process.env.BASE_URL;
   await AuthPage.goto(base_url); 
   await AuthPage.fill('input[aria-label="Email"]', username);
   await AuthPage.fill('input[aria-label="Password"]', password);
-  await Promise.all([
-    AuthPage.locator('text=EmailPasswordSign In >> button').click()
-  ]);
+  await AuthPage.locator('text=EmailPasswordSign In >> button').click();
   
 // Save signed-in state to 'storageState.json'.
 await AuthPage.context().storageState({ path: 'storageState.json' })

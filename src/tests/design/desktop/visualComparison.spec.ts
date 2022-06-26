@@ -16,8 +16,7 @@ import { GoToUpgradeToProPage } from '@web/tasks/goToPages/desktop/goToUpgradeTo
 import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInAsUserOne.task';
 
 // On Chrome
-// test.use({ storageState: 'storageState.json' });
-// TODO: Figure out what's wrong with storageState.
+
 test.describe.parallel('Desktop UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {

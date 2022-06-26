@@ -1,14 +1,14 @@
 import { 
-     Actor, Task, Wait, Navigate, Tap, removeSideNavOnMobile, 
- } from '@index';
+    Actor, Task, Wait, Click, Press, removeSideNavOnMobile, 
+    meetingsButton 
+} from '@index';
  
  export class GoToMeetingsHomepageOnMobile extends Task {
  
      public async performAs(actor:Actor): Promise<any> {
  
          return actor.attemptsTo(
-             Navigate.to('/meetings'),
-             Tap.on(removeSideNavOnMobile),
+             Click.on(meetingsButton),
              Wait.forLoadState('networkidle')
          );
  }

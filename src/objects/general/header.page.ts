@@ -1,7 +1,7 @@
 // Selectors for the header
 
 const hamburgerIcon = 'button[aria-label="Toggle dashboard menu"]';
-const removeSideNavOnMobile = '.css-r7qq99'; //'button:has-text("menu")';
+const removeSideNavOnMobile = '.css-r7qq99 >> nth=0'; //'button:has-text("menu")';
 
 const ParabolLogo = 'button >> .css-1tiimx7';
 const helpMenu = 'button[aria-label="Help menu"]';

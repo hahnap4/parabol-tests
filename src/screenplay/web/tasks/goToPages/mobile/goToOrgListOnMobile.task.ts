@@ -7,7 +7,6 @@ export class GoToOrgListOnMobile extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/'),
             Click.on(upgradeToProButtonForMobile),
             Wait.forLoadState('networkidle')
         );

@@ -1,4 +1,8 @@
 // Objects
+export {
+  teamFilter,
+} from '@myTasks/myTasksHeader.page';
+
 export { 
     teamNameField, createTeamButton 
   } from '@addATeam/createTeam.page';
@@ -62,7 +66,7 @@ export {
 
 export {
     upgradeToProButtonForMobile, meetingsButton, timelineButton, myTasksButton,
-    myTeamTasksButton, addATeamButton
+    myTeamTasksButton, addATeamButton, profilePictureForMobile
   } from '@general/sideNav.page';
 
 export {
@@ -88,7 +92,8 @@ export {
 
 export {
     addMeetingButton, addMeetingButtonForMobile, activeMeetingBox, 
-    tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton
+    tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton,
+    retrospectiveDemoCard
   } from '@meetingsHomepage/meetingsHome.page';
 
 export {
@@ -141,7 +146,6 @@ import { Press } from '@web/actions/Press';
 import { Navigate } from '@web/actions/Navigate';
 import { Type } from '@web/actions/Type';
 import { Wait } from '@web/actions/Wait';
-import { Tap } from '@web/actions/Tap';
 import { Element } from '@web/questions/Element';
 
 import { SelectorOptions, SubSelector } from '@web/types';
@@ -163,7 +167,7 @@ import {
 } from '@api/types';
 
 export {
-    Actor, Tap, Action, Task, Question, Ability, BrowseTheWeb, Check, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
+    Actor, Action, Task, Question, Ability, BrowseTheWeb, Check, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
     UseAPI, ARequest, Delete, Get, Head, Patch, Post, Put, APIResponse, Headers, RequestMethod, REQUEST_METHOD, Response, ResponseBodyFormat, 
     ResponseBodyType, SelectorOptions, recursiveLocatorLookup, SubSelector
 };

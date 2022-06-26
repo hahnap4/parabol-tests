@@ -20,7 +20,7 @@ const config: PlaywrightTestConfig = {
     navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'on',
     headless: true, 
     // @ts-ignore
     baseURL: base_url,

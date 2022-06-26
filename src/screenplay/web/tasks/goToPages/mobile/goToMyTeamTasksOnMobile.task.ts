@@ -7,7 +7,6 @@ export class GoToMyTeamTasksOnMobile extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/'),
             Click.on(myTeamTasksButton),
             Wait.forLoadState('networkidle')
         );

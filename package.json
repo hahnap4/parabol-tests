@@ -1,7 +1,8 @@
 {
     "scripts": {
         "pretest": "tsc --incremental -p tests/tsconfig.json",
-        "test": "playwright test -c tests-out"
+        "test": "playwright test -c tests-out",
+        "type": "module"
     },
     "dependencies": {
         "@testla/screenplay": "^0.2.0",

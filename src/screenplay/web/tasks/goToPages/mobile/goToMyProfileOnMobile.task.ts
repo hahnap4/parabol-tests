@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Wait, Navigate, removeSideNavOnMobile, Tap
+    Actor, Task, Wait, Navigate, Click, profilePictureForMobile
 } from '@index';
 
 export class GoToMyProfileOnMobile extends Task {
@@ -7,8 +7,7 @@ export class GoToMyProfileOnMobile extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/me/profile'),
-            Tap.on(removeSideNavOnMobile),
+            Click.on(profilePictureForMobile),
             Wait.forLoadState('networkidle')
         );
 }

@@ -3,30 +3,20 @@
     {
       "sameSite": "Strict",
       "name": "_dd_s",
-      "value": "rum=1&id=c86568ba-4e9a-4c46-bef9-d6d783de7328&created=1656039690807&expire=1656040590807",
+      "value": "rum=1&id=3d598fd0-d852-42a3-b1a6-b72abd3ba9c7&created=1656049336841&expire=1656050236841",
       "domain": "action-staging.parabol.co",
       "path": "/",
-      "expires": 1656040590,
+      "expires": 1656050236,
       "httpOnly": false,
       "secure": false
     },
     {
       "sameSite": "Lax",
       "name": "_gcl_au",
-      "value": "1.1.1489756739.1656039692",
+      "value": "1.1.1726396031.1656049337",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1663815691,
-      "httpOnly": false,
-      "secure": false
-    },
-    {
-      "sameSite": "Lax",
-      "name": "ajs_anonymous_id",
-      "value": "%22a733e1ce-7c07-4cfc-b81d-874c7f307a49%22",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1687575691,
+      "expires": 1663825337,
       "httpOnly": false,
       "secure": false
     }
@@ -45,7 +35,7 @@
         },
         {
           "name": "ajs_anonymous_id",
-          "value": "\"a733e1ce-7c07-4cfc-b81d-874c7f307a49\""
+          "value": "\"380fb889-114c-46c0-bc2b-918f75536c15\""
         },
         {
           "name": "debug",
