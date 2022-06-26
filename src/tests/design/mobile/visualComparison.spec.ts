@@ -1,6 +1,6 @@
 import { 
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
-  teamFilter, 
+  teamFilter, agendaButton, 
 
 } from '@index';
 import { test, expect } from '@playwright/test';
@@ -59,7 +59,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMyTeamTasksOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(agendaButton)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');

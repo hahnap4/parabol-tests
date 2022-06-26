@@ -101,7 +101,7 @@ export {
   } from '@orgList/orgList.page';  
 
 export {
-    archivedTasksButton
+    archivedTasksButton, agendaButton
   } from '@teamTasksDashboard/teamTasksHeader.page';
 
 export {
