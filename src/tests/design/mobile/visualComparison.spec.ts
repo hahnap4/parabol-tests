@@ -2,7 +2,7 @@ import {
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
   teamFilter, agendaButton, createTeamButton, deleteAccountButton,
   addNewOrganization, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
-  timelineMessageBox, 
+  timelineMessageBox, upgradeNowButton
 } from '@index';
 import { test, expect } from '@playwright/test';
 import { GoToMeetingsHomepageOnMobile } from '@web/tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
@@ -180,7 +180,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToUpgradeToProPageOnMobile.onApp(),
-      Wait.forSelector(notificationBell)
+      Wait.forSelector(upgradeNowButton)
       );
 
     /* This covers up the Quote so that it does not fail the visual 
