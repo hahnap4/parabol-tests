@@ -3,6 +3,8 @@
 const sideQuoteBox = '.css-122zgjr';
 const daysAgo = '.css-12n9j71';
 
+const timelineMessageBox= '.css-6cphjh';
+
 export {
-  sideQuoteBox, daysAgo
+  sideQuoteBox, daysAgo, timelineMessageBox
 };

@@ -1,7 +1,8 @@
 import { 
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
   teamFilter, agendaButton, createTeamButton, deleteAccountButton,
-  addNewOrganization, 
+  addNewOrganization, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
+
 } from '@index';
 import { test, expect } from '@playwright/test';
 import { GoToMeetingsHomepageOnMobile } from '@web/tasks/goToPages/mobile/goToMeetingsHomepageOnMobile.task';
@@ -115,7 +116,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToSprintPokerSetupOnMobile.onApp(),
-      Wait.forSelector(startMeetingButton)
+      Wait.forSelector(howToRunSprintPoker)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
@@ -129,7 +130,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToRetroSetupOnMobile.onApp(),
-      Wait.forSelector(startMeetingButton)
+      Wait.forSelector(howToRunRetroMeeting)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
@@ -143,7 +144,7 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToCheckInSetupOnMobile.onApp(),
-      Wait.forSelector(startMeetingButton)
+      Wait.forSelector(howToRunCheckInMeeting)
       );
 
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');

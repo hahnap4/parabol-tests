@@ -34,7 +34,8 @@ export {
   
 export { 
     learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
-    backPageButton 
+    backPageButton, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
+    
   } from '@pages/setupMeeting/generalSetupMeeting.page';
 
 export {

@@ -1,5 +1,7 @@
 // Selectors for the Templates Popup page for the Sprint Poker Meeting Type
 
+const howToRunSprintPoker = '.css-ojlpz5';
+
 const addAnotherDimension = 'text=Add another dimension';
 const editDimensionTitle = '.css-1vby7lt >> nth=0';
 const removeFirstDimension = '.css-49avaq >> nth=0';
@@ -18,6 +20,7 @@ const deleteNewScale = '.css-1tcaq0x >> nth=6';
 export {
   addAnotherDimension, editDimensionTitle, removeFirstDimension, openScaleList, 
   cloneDefaultScale, tshirtSizesChoice, prioritiesChoice, fibonacciChoice, 
-  fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale
+  fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale,
+  howToRunSprintPoker
 };
 
