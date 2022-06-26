@@ -204,15 +204,4 @@ export class BrowseTheWeb extends Ability {
         return this.page.waitForSelector(locator);
     }
    
-        
-    /**
-     * Click the element specified by the selector.
-     *
-     * @param selector the selector of the element to tap on.
-     * @param options (optional) advanced selector lookup options.
-     */
-     public async tap(selector: object, options?: SelectorOptions) {
-        const [mobile] = await _android.devices();
-        return mobile.tap(selector, options);  
-    }
 }

@@ -17,6 +17,11 @@ import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInA
 
 // On Chrome
 
+//TODO: For both desktop and mobile, add the if statement for login.
+// If storageState doesn't work, then use the LogInAsUserOne task. 
+//TODO: For desktop, update the images.
+
+//test.use({ storageState: 'storageState.json' });
 test.describe.parallel('Desktop UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {
@@ -25,7 +30,9 @@ test.describe.parallel('Desktop UI Test', () => {
 
      await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToMeetingsHomepage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToMeetingsHomepage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
@@ -37,7 +44,9 @@ test.describe.parallel('Desktop UI Test', () => {
 
      await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToMyTasksPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToMyTasksPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('myTasks.png');
@@ -49,7 +58,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToMyTeamTasksPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToMyTeamTasksPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
@@ -61,7 +72,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToAddATeamPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToAddATeamPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
     
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
@@ -73,7 +86,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToMyProfilePage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToMyProfilePage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
@@ -85,7 +100,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToOrgListPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToOrgListPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');
@@ -97,7 +114,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToSprintPokerMeetingSetupPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToSprintPokerMeetingSetupPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
@@ -109,7 +128,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToRetroMeetingSetupPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToRetroMeetingSetupPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
@@ -121,7 +142,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToCheckInMeetingSetupPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToCheckInMeetingSetupPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
@@ -133,7 +156,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToTimelinePage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToTimelinePage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
 
     // This covers up the Side Quote and Days Ago Statement so that it 
@@ -156,7 +181,9 @@ test.describe.parallel('Desktop UI Test', () => {
     
     await actor.attemptsTo(
       LogInAsUserOne.inApp(),
-      GoToUpgradeToProPage.onApp()
+      Wait.forLoadState('networkidle'),
+      GoToUpgradeToProPage.onApp(),
+      Wait.forLoadState('domcontentloaded')
       );
     
     // This covers up the Quote so that it does not fail the visual comparison test.

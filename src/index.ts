@@ -4,7 +4,7 @@ export {
 } from '@myTasks/myTasksHeader.page';
 
 export { 
-    teamNameField, createTeamButton 
+    teamNameField, createTeamButton, createTeamAndOrgButton
   } from '@addATeam/createTeam.page';
 
 export { 
@@ -34,7 +34,7 @@ export {
   
 export { 
     learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
-    backPageButton, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
+    backPageButton
 
   } from '@pages/setupMeeting/generalSetupMeeting.page';
 

@@ -1,7 +1,7 @@
 import { 
   Actor, BrowseTheWeb, daysAgo, quoteBox, Wait, retrospectiveDemoCard,
   teamFilter, agendaButton, createTeamButton, deleteAccountButton,
-  addNewOrganization, howToRunSprintPoker, howToRunRetroMeeting, howToRunCheckInMeeting,
+  addNewOrganization, startMeetingButton,
   timelineMessageBox, upgradeNowButton
 } from '@index';
 import { test, expect } from '@playwright/test';
@@ -20,8 +20,7 @@ import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInA
 
 // On Android
 
-//TODO: Wait.forSelector('Choose one that is specific to these pages.');
-
+test.use({ storageState: 'storageState.json' });
 test.describe.parallel('Mobile UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {
@@ -32,7 +31,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMeetingsHomepageOnMobile.onApp(),
-      Wait.forSelector(retrospectiveDemoCard)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(retrospectiveDemoCard),
+      Wait.forLoadState('networkidle')
       );
 
      expect(await page.screenshot()).toMatchSnapshot('meetingsHome.png');
@@ -46,7 +47,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMyTasksOnMobile.onApp(),
-      Wait.forSelector(teamFilter)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(teamFilter),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('myTasks.png');
@@ -60,7 +63,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMyTeamTasksOnMobile.onApp(),
-      Wait.forSelector(agendaButton)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(agendaButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('teamTasks.png');
@@ -74,7 +79,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToAddATeamOnMobile.onApp(),
-      Wait.forSelector(createTeamButton)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(createTeamButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('addTeam.png');
@@ -88,7 +95,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToMyProfileOnMobile.onApp(),
-      Wait.forSelector(deleteAccountButton)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(deleteAccountButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('userProfile.png');
@@ -102,7 +111,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToOrgListOnMobile.onApp(),
-      Wait.forSelector(addNewOrganization)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(addNewOrganization),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('orgList.png');
@@ -116,7 +127,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToSprintPokerSetupOnMobile.onApp(),
-      Wait.forSelector(howToRunSprintPoker)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(startMeetingButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('sprintPoker.png');
@@ -130,7 +143,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToRetroSetupOnMobile.onApp(),
-      Wait.forSelector(howToRunRetroMeeting)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(startMeetingButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('retro.png');
@@ -144,7 +159,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToCheckInSetupOnMobile.onApp(),
-      Wait.forSelector(howToRunCheckInMeeting)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(startMeetingButton),
+      Wait.forLoadState('networkidle')
       );
 
     expect(await page.screenshot()).toMatchSnapshot('checkin.png');
@@ -158,7 +175,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToTimelineOnMobile.onApp(),
-      Wait.forSelector(timelineMessageBox)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(timelineMessageBox),
+      Wait.forLoadState('networkidle')
       );
 
     /* This covers up the Days Ago Statement so that it does not fail the 
@@ -180,7 +199,9 @@ test.describe.parallel('Mobile UI Test', () => {
       LogInAsUserOne.inApp(),
       Wait.forLoadState('networkidle'),
       GoToUpgradeToProPageOnMobile.onApp(),
-      Wait.forSelector(upgradeNowButton)
+      Wait.forLoadState('domcontentloaded'),
+      Wait.forSelector(upgradeNowButton),
+      Wait.forLoadState('networkidle')
       );
 
     /* This covers up the Quote so that it does not fail the visual 
