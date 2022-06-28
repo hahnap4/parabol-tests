@@ -18,6 +18,7 @@ const deleteNewScale = '.css-1tcaq0x >> nth=6';
 export {
   addAnotherDimension, editDimensionTitle, removeFirstDimension, openScaleList, 
   cloneDefaultScale, tshirtSizesChoice, prioritiesChoice, fibonacciChoice, 
-  fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale
+  fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale,
+  
 };
 

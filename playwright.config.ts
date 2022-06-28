@@ -8,7 +8,6 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'never' }] ], 
   retries: process.env.CI ? 2 : 0, 
-  //globalSetup: require.resolve('./globalSetup'), // Uncomment if creating a new Login storageState.
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
   timeout: 60000,
@@ -16,11 +15,11 @@ const config: PlaywrightTestConfig = {
     timeout: 10000,
   },
   use: {
-    actionTimeout: 12000,
+    actionTimeout: 20000,
     navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
+    video: 'on',
     headless: true, 
     // @ts-ignore
     baseURL: base_url,

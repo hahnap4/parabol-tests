@@ -1,15 +1,14 @@
 import { 
-     Actor, Task, Wait, Navigate, Click, hamburgerIconForMobile, Press
- } from '@index';
+    Actor, Task, Wait, Click, Press, removeSideNavOnMobile, 
+    meetingsButton 
+} from '@index';
  
  export class GoToMeetingsHomepageOnMobile extends Task {
  
      public async performAs(actor:Actor): Promise<any> {
  
          return actor.attemptsTo(
-             Navigate.to('/meetings'),
-             Click.on(hamburgerIconForMobile),
-             Press.key('Enter'),
+             Click.on(meetingsButton),
              Wait.forLoadState('networkidle')
          );
  }

@@ -7,7 +7,6 @@ export class GoToSprintPokerSetupOnMobile extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/'),
             Click.on(meetingsButton),
             Click.on(addMeetingButton),
             Wait.forLoadState('networkidle')

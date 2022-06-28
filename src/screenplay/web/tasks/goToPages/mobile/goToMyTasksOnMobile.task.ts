@@ -1,16 +1,12 @@
-import { 
-    Actor, Task, Wait, Navigate, Click, hamburgerIconForMobile, Press
-} from '@index';
+import { Actor, Task, Wait, Navigate, Click, Press, removeSideNavOnMobile, myTasksButton } from '@index';
 
 export class GoToMyTasksOnMobile extends Task {
 
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/me/tasks'),
-            Click.on(hamburgerIconForMobile),
-            Press.key('Enter'),
-            Wait.forLoadState('networkidle')
+           Click.on(myTasksButton),
+           Wait.forLoadState('networkidle')
         );
 }
 

@@ -1,6 +1,10 @@
 // Objects
+export {
+  teamFilter,
+} from '@myTasks/myTasksHeader.page';
+
 export { 
-    teamNameField, createTeamButton 
+    teamNameField, createTeamButton, createTeamAndOrgButton
   } from '@addATeam/createTeam.page';
 
 export { 
@@ -30,7 +34,8 @@ export {
   
 export { 
     learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
-    backPageButton 
+    backPageButton
+
   } from '@pages/setupMeeting/generalSetupMeeting.page';
 
 export {
@@ -56,13 +61,13 @@ export {
   } from '@pages/setupMeeting/sprintPokerTemplates.page';
 
 export {
-    hamburgerIcon, hamburgerIconForMobile, ParabolLogo, helpMenu, 
+    hamburgerIcon, removeSideNavOnMobile, ParabolLogo, helpMenu, 
     notificationBell, userIconButton
   } from '@general/header.page';
 
 export {
     upgradeToProButtonForMobile, meetingsButton, timelineButton, myTasksButton,
-    myTeamTasksButton, addATeamButton
+    myTeamTasksButton, addATeamButton, profilePictureForMobile
   } from '@general/sideNav.page';
 
 export {
@@ -88,19 +93,20 @@ export {
 
 export {
     addMeetingButton, addMeetingButtonForMobile, activeMeetingBox, 
-    tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton
+    tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton,
+    retrospectiveDemoCard
   } from '@meetingsHomepage/meetingsHome.page';
 
 export {
-    upgradeToProButtonOnOrgList
+    upgradeToProButtonOnOrgList, addNewOrganization, 
   } from '@orgList/orgList.page';  
 
 export {
-    archivedTasksButton
+    archivedTasksButton, agendaButton
   } from '@teamTasksDashboard/teamTasksHeader.page';
 
 export {
-    sideQuoteBox, daysAgo
+    sideQuoteBox, daysAgo, timelineMessageBox
   } from '@timeline/meetingSummary.page';
 
 export {

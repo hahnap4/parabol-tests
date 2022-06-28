@@ -1,5 +1,6 @@
 import { 
-    Actor, Task, Wait, Navigate, Press, Click, hamburgerIconForMobile
+    Actor, Task, Wait, Navigate, removeSideNavOnMobile, Click, Press, 
+    addATeamButton
 } from '@index';
 
 export class GoToAddATeamOnMobile extends Task {
@@ -7,9 +8,7 @@ export class GoToAddATeamOnMobile extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/newteam/1'),
-            Click.on(hamburgerIconForMobile),
-            Press.key('Enter'),
+            Click.on(addATeamButton),
             Wait.forLoadState('networkidle')
         );
 }

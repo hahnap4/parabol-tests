@@ -8,5 +8,6 @@ const backPageButton = '.css-eq76j1 >> nth=0';
 
 export { 
   learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
-  backPageButton 
+  backPageButton
+
 };

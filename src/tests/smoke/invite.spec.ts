@@ -10,6 +10,7 @@ Requires:
  - authPage objects
  - teamDashboard objects
  - myTasks objects
- - use storageState to immediately log in at the start of a test run
+ - use LogInAsUserOne to immediately log in at the start of a test run
+ so that we can use this for CI/CD pipeline
  - use Faker for fake email addresses
 */
