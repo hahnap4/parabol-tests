@@ -26,8 +26,8 @@ As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integrat
 1. Go into the directory where you keep your repos.
 2. In your terminal, run: `git clone git@github.com:hahnap4/parabol-tests.git`
 3. Then run: `cd parabol-tests`
-4. Install Playwright: `npm i -D @playwright/test` and `npx playwright install`
-5. Once you have that installed, you can run the tests.
+4. Install dependencies: `npm ci`
+5. Once you have everything installed, you can run the tests.
 
 **How to run the tests?**
 
