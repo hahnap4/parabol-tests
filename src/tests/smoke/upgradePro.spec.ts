@@ -7,6 +7,7 @@ TODO: Upgrade to Pro
 Requires: 
  - orgList objects
  - upgradeOrgPlan objects
- - use storageState to immediately log in at the start of a test run
+ - use LogInAsUserOne to immediately log in at the start of a test run
+ so that we can use this for CI/CD pipeline
  - teardown fixture to downgrade plan to free and sign out
 */

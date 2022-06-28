@@ -12,7 +12,8 @@ Requires:
  - teamDashboard objects
  - myTasks objects
  - timeline objects
- - create globalsetup for second player login for another storageState
+ - use LogInAsUserTwo for the second player
+ so that we can use this for CI/CD pipeline
  - Add second player to the same team as the main first player
  - fixture for setting up check-in meeting, signing in as both players, creating new tasks, creating agenda items, and joining the meeting 
  - teardown fixture for ending meeting, cleaning up timeline webpage, unarchiving tasks, remove certain tasks, removing agenda items, and signing out

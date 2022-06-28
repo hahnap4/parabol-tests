@@ -20,7 +20,6 @@ import { LogInAsUserOne } from '../../../screenplay/web/tasks/auth/signIn/logInA
 
 // On Android
 
-test.use({ storageState: 'storageState.json' });
 test.describe.parallel('Mobile UI Test', () => {
 
    test('Meetings Homepage', async ({ page }) => {

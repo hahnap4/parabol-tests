@@ -8,8 +8,6 @@ export class SignOut extends Task {
     public async performAs(actor:Actor): Promise<any> {
 
         return actor.attemptsTo(
-            Navigate.to('/'),
-            LogInAsUserOne.inApp(),
             Click.on(userIconButton),
             Click.on(signOutButton),
             Wait.forLoadState('networkidle'),

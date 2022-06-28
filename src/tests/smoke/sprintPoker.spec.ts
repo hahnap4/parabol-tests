@@ -12,7 +12,7 @@ Requires:
  - teamDashboard objects
  - myTasks objects
  - timeline objects
- - create globalsetup for second player login for another storageState
+  - use LogInAsUserTwo for the second player login
  - Add second player to the same team as the main first player
  - fixture for setting up sprint poker meeting, signing in as both players, creating random tasks with faker, and joining the meeting 
  - teardown fixture for ending meeting, cleaning up timeline webpage, deleting all newly made tasks, and signing out
