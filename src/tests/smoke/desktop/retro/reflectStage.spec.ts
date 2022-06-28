@@ -1,4 +1,3 @@
-/*
 import { test, expect } from '@playwright/test';
 import { Actor, BrowseTheWeb } from '@index';
 import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
@@ -45,15 +44,6 @@ test('2 Users Add Reflections', async({ page }) => {
 
 
 /*
-Robert:
-1. Click Create Meeting Button
-2. Go to Retro Section
-3. Click on Template Options
-4. Click on Start, Stop, Continue Template
-5. Use that Template
-6. Exclude Icebreaker
-7. Click on Start Meeting Button
-
 Lisa:
 1. Go to https://action-staging.parabol.co/meetings
 2. Click on first meeting box to enter meeting
