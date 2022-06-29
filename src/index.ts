@@ -79,7 +79,7 @@ export {
   } from '@inMeeting/demo/demoSpecific.page';
 
 export {
-    tipsPopupBox, closeTipsButton, nextTopicButton
+    tipsPopupBox, closeTipsButton, nextTopicButton, meetingName
   } from '@inMeeting/general/generalInMeeting.page';
 
 export {

@@ -1,9 +1,10 @@
 import { test, expect } from '@playwright/test';
-import { Actor, BrowseTheWeb } from '@index';
+import { Actor, BrowseTheWeb, meetingName } from '@index';
 import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
 import { LogInAsUserTwo } from '@web/tasks/auth/signIn/logInAsUserTwo.task';
 import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
 import { MakeRetroMeeting } from '@web/tasks/retro/desktop/makeRetroMeeting.task';
+import { EnterRetroMeeting } from '../../../../screenplay/web/tasks/retro/desktop/enterRetroMeeting.task';
 
 const { devices } = require('playwright');
 
@@ -21,34 +22,29 @@ const lisaPage = await lisaContext.newPage();
 // Interact with contexts independently
 test('2 Users Add Reflections', async({ page }) => {
     
-    const actorOne = Actor.named('Robert')
+    const Robert = Actor.named('Robert')
         .can(BrowseTheWeb.using(robertPage));
 
-    await actorOne.attemptsTo(
+    await Robert.attemptsTo(
         LogInAsUserOne.inApp(),
         GoToRetroMeetingSetupPage.onApp(),
         MakeRetroMeeting.inApp()
         );
 
-    const actorTwo = Actor.named('Lisa')
+    const Lisa = Actor.named('Lisa')
         .can(BrowseTheWeb.using(lisaPage));
 
-    await actorTwo.attemptsTo(
+    await Lisa.attemptsTo(
         LogInAsUserTwo.inApp(),
-    
+        EnterRetroMeeting.inApp()
         );
 
-    await expect(page.locator('[aria-label="Edit this reflection"]')).toHaveCount(12);
+    await expect.soft(lisaPage.meetingName).toContainText('Retro');
     
 });
 
 
 /*
-Lisa:
-1. Go to https://action-staging.parabol.co/meetings
-2. Click on first meeting box to enter meeting
-3. Expect to see "Retro" text in page (soft check)
-
 Robert and Lisa:
 1. Fill out the reflections in the Start, Stop, and Continue Columns.
 2. Expect to count 12 of the selectors. (hard check)

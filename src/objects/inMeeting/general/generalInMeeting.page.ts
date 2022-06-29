@@ -2,6 +2,7 @@
 
 const tipsPopupBox = '.css-1svc0d4';
 const closeTipsButton = 'text=close';
+const meetingName = '.css-fohp80';
 
 const nextTopicButton = '.css-1ogh8i5 >> text=Next';
 
