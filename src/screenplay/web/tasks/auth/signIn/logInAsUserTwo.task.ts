@@ -14,8 +14,10 @@ export class LogInAsUserTwo extends Task {
 
         return actor.attemptsTo(
             Navigate.to('/'),
+            Click.on(emailField),
             // @ts-ignore
             Fill.in(emailField, usernameTwo),
+            Click.on(passwordField),
             // @ts-ignore
             Fill.in(passwordField, passwordTwo),
             Click.on(signInButton),

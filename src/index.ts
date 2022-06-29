@@ -29,7 +29,8 @@ export {
   } from '@authPage/signIn.page';
 
 export { 
-    chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, includeIcebreakerCheckbox
+    chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, 
+    includeIcebreakerCheckbox, excludeIcebreakerCheckbox
   } from '@pages/setupMeeting/setupMeetingSettingWidget.page';
   
 export { 
@@ -39,14 +40,14 @@ export {
   } from '@pages/setupMeeting/generalSetupMeeting.page';
 
 export {
-    publicTab, myOrgTab, myTeamTab, createNewTemplate, defaultTemplate, 
+    publicTab, myOrgTab, myTeamTab, createNewTemplate, 
     cloneAndEditTemplate, useTemplateButton, editTemplateTitle, shareWithAllOfMyOrg, 
     shareWithWorld, shareWithMyTeam, deleteTemplateButton
   } from '@pages/setupMeeting/generalTemplatesPopup.page';
 
 export{
     addAnotherPromptButton, editPromptTitle, removePrompt, changePromptColor, 
-    editPromptDescription
+    editPromptDescription, defaultTemplate, startStopContinueTemplate
   } from '@pages/setupMeeting/retroTemplates.page';
 
 export {
@@ -79,11 +80,12 @@ export {
   } from '@inMeeting/demo/demoSpecific.page';
 
 export {
-    tipsPopupBox, closeTipsButton, nextTopicButton, meetingName
+    tipsPopupBox, closeTipsButton, nextTopicButton, meetingName, endMeetingButton
   } from '@inMeeting/general/generalInMeeting.page';
 
 export {
-    startField, stopField, continueField
+    startField, stopField, continueField, firstReflectionBox, secondReflectionBox,
+    thirdReflectionBox
   } from '@inMeeting/retro/desktopSpecificReflectStage.page';
 
 export {
@@ -106,7 +108,7 @@ export {
   } from '@teamTasksDashboard/teamTasksHeader.page';
 
 export {
-    sideQuoteBox, daysAgo, timelineMessageBox
+    sideQuoteBox, daysAgo, timelineMessageBox, tripleDotForMessage, archiveMeeting
   } from '@timeline/meetingSummary.page';
 
 export {

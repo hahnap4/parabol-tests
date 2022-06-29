@@ -7,6 +7,8 @@ const meetingName = '.css-fohp80';
 
 const nextTopicButton = '.css-1ogh8i5 >> text=Next';
 
+const endMeetingButton = 'button:has-text("flagEnd Meeting")';
+
 export {
-  tipsPopupBox, closeTipsButton, nextTopicButton, meetingName
+  tipsPopupBox, closeTipsButton, nextTopicButton, meetingName, endMeetingButton
 };

@@ -1,5 +1,6 @@
 import { 
-    Actor, Task, Fill, Click, continueField, Press, randomStatement
+    Actor, Task, Fill, Click, continueField, Press, randomStatement,
+    Wait, thirdReflectionBox
 } from '@index';
 
 export class FillOutReflectionInContinueColumn extends Task {
@@ -10,8 +11,10 @@ export class FillOutReflectionInContinueColumn extends Task {
             
             Click.on(continueField),
             Fill.in(continueField, randomStatement),
+            Wait.forLoadState('networkidle'),
             Press.key('Enter'),
-            Press.key('Enter')
+            Press.key('Enter'),
+            Wait.forSelector(thirdReflectionBox)
         );
 }
 

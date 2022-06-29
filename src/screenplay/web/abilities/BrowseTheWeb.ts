@@ -265,4 +265,26 @@ export class BrowseTheWeb extends Ability {
             return Promise.resolve(true);
         }
     }
+
+    /**
+     * Validate the locator is checkmarked.
+     * 
+     * @param selector
+     * The locator
+     * 
+     * @param options (optional)
+     * Advanced selector lookup options
+     * 
+     * 
+     * @returns
+     * True if the locator is checkmarked, false otherwise
+     */
+     public async isCheckmarked(selector: string, options?: SelectorOptions): Promise<boolean> {
+        try {
+            return (await recursiveLocatorLookup({ page: this.page, selector, options }))
+                .isChecked();
+        } catch (e) {
+            return Promise.resolve(false);
+        }
+    }
 }

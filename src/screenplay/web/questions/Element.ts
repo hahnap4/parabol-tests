@@ -4,9 +4,9 @@ import { Actor, Question, SelectorOptions, BrowseTheWeb } from '@index';
  * Question Class. Get a specified state for a selector like visible or enabled.
  */
 export class Element extends Question<boolean> {
-    private mode: 'visible' | 'enabled' | 'hidden';
+    private mode: 'visible' | 'enabled' | 'hidden' | 'checked';
 
-    private constructor(mode: 'visible' | 'enabled' | 'hidden', private selector: string, private options?: SelectorOptions & { wait?: boolean }) {
+    private constructor(mode: 'visible' | 'enabled' | 'hidden' | 'checked', private selector: string, private options?: SelectorOptions & { wait?: boolean }) {
         super();
         this.mode = mode;
     }
@@ -18,6 +18,8 @@ export class Element extends Question<boolean> {
             return BrowseTheWeb.as(actor).isEnabled(this.selector, this.options);
         } if (this.mode === 'hidden') {
             return BrowseTheWeb.as(actor).isHidden(this.selector, this.options);
+        } if (this.mode === 'checked') {
+            return BrowseTheWeb.as(actor).isCheckmarked(this.selector, this.options);
         }
         throw new Error('Unknown mode');
     }
@@ -70,5 +72,15 @@ export class Element extends Question<boolean> {
         if (options?.wait === false) { newOptions.timeout = 1; }
 
         return new Element('hidden', selector, newOptions);
+    }
+
+    /**
+     * Verifies if an element is checkmarked.
+     *
+     * @param selector the selector
+     * @param options (optional) advanced selector lookup options.
+     */
+     static isCheckmarked(selector: string, options?: SelectorOptions): Element {
+        return new Element('checked', selector, options);
     }
 }
