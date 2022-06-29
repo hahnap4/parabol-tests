@@ -23,7 +23,7 @@ test.only('2 Users Add Reflections', async({ page }) => {
 try {
 
 // Create a browser instance 
-const browser = await chromium.launch({ headless: false });
+const browser = await chromium.launch({ headless: true });
 
 // Create two isolated browser contexts
 const robertContext = await browser.newContext();
