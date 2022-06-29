@@ -203,5 +203,66 @@ export class BrowseTheWeb extends Ability {
     public async find(locator: string): Promise<any> {
         return this.page.waitForSelector(locator);
     }
-   
+
+    /**
+     * Wait for page to navigate to the given URL
+     * 
+     * @param url
+     */
+    public async waitForURL(url: string): Promise<void> {
+        return this.page.waitForURL(url);
+    }
+
+    /**
+     * Wait for event to fire.
+     * 
+     * @param event
+     */
+    public async waitForEvent(event:"close", optionsOrPredicate?: {
+        predicate?: ((page: Page) => boolean | Promise<boolean>) | undefined;
+        timeout?: number | undefined; } | undefined): Promise<any> {
+            try {
+                return await this.page.waitForEvent(event);
+            } catch (e) {
+                return Promise.resolve(false);
+            }
+    }
+
+    /**
+     * Specify which choice should be chosen
+     * 
+     * @param selector
+     * The string representing the list of options
+     * 
+     * @param targetSelector 
+     * The string you want to select from the list of options
+     * 
+     * @param options (optional)
+     * Advanced selector lookup options
+     */
+    public async selectOption(selector: string, targetSelector: string, options?: SelectorOptions) {
+        return (await recursiveLocatorLookup({ page: this.page, selector, options }))
+            .selectOption(targetSelector);
+    }
+
+    /**
+     * Validate the locator on the page is hidden.
+     * 
+     * @param selector 
+     * The locator to search for
+     * 
+     * @param options (optional)
+     * Advanced selector lookup options.
+     * 
+     * @returns
+     * True if the locator is visible, false otherwise
+     */
+    public async isHidden(selector: string, options?: SelectorOptions): Promise<boolean> {
+        try {
+            await recursiveLocatorLookup({ page: this.page, selector, options });
+            return Promise.resolve(false);
+        } catch (e) {
+            return Promise.resolve(true);
+        }
+    }
 }

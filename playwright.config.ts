@@ -1,4 +1,5 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import type { PlaywrightTestConfig } from "@playwright/test";
+import { devices } from '@playwright/test';
 
 require('dotenv').config();
 
@@ -12,10 +13,10 @@ const config: PlaywrightTestConfig = {
   fullyParallel: true,
   timeout: 60000,
   expect: {
-    timeout: 10000,
+    timeout: 15000,
   },
   use: {
-    actionTimeout: 20000,
+    actionTimeout: 15000,
     navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',

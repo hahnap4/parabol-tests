@@ -6,21 +6,21 @@ import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetr
 import { MakeRetroMeeting } from '@web/tasks/retro/desktop/makeRetroMeeting.task';
 import { EnterRetroMeeting } from '../../../../screenplay/web/tasks/retro/desktop/enterRetroMeeting.task';
 
-const { devices } = require('playwright');
-
-// Create a browser instance 
-const browser = await devices.launch();
-
-// Create two isolated browser contexts
-const robertContext = await browser.newContext();
-const lisaContext = await browser.newContext();
-
-// Create two pages
-const robertPage = await robertContext.newPage();
-const lisaPage = await lisaContext.newPage();
+const { devices } = require('@playwright/test');
 
 // Interact with contexts independently
 test('2 Users Add Reflections', async({ page }) => {
+
+// Create a browser instance 
+const browser = devices.launch();
+
+// Create two isolated browser contexts
+const robertContext = browser.newContext();
+const lisaContext = browser.newContext();
+
+// Create two pages
+const robertPage = robertContext.newPage();
+const lisaPage = lisaContext.newPage();
     
     const Robert = Actor.named('Robert')
         .can(BrowseTheWeb.using(robertPage));
