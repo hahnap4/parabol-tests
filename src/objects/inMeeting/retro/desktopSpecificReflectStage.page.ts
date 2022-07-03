@@ -2,7 +2,7 @@
 
 const startField = '[aria-label="Edit this reflection"] >> nth=0'; 
 const stopField = '[aria-label="Edit this reflection"] >> nth=1'; 
-const continueField = '[aria-label="Edit this reflection"] >> nth=3'; 
+const continueField = '[aria-label="Edit this reflection"] >> nth=2'; 
 
 const firstReflectionBox = '.DraftEditor-editorContainer >> nth=1';
 const secondReflectionBox = '.DraftEditor-editorContainer >> nth=3';

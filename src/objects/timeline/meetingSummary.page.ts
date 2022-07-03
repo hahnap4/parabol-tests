@@ -5,8 +5,8 @@ const daysAgo = '.css-12n9j71';
 
 const timelineMessageBox= '.css-6cphjh >> nth=0';
 
-const tripleDotForMessage = '.css-1ph8luj';
-const archiveMeeting = 'text=Archive meeting';
+const tripleDotForMessage = '.css-1ph8luj >> nth=0';
+const archiveMeeting = 'text=Archive meeting >> nth=0';
 
 export {
   sideQuoteBox, daysAgo, timelineMessageBox, tripleDotForMessage, archiveMeeting

@@ -23,7 +23,7 @@ test.only('2 Users Add Reflections', async({ page }) => {
 try {
 
 // Create a browser instance 
-const browser = await chromium.launch({ headless: true });
+const browser = await chromium.launch();
 
 // Create two isolated browser contexts
 const robertContext = await browser.newContext();
@@ -87,7 +87,7 @@ const lisaPage = await lisaContext.newPage();
 
 } finally {
 
-    const browser = await chromium.launch({ headless: true });
+    const browser = await chromium.launch();
     const robertContext = await browser.newContext();
     const robertPage = await robertContext.newPage();
 
@@ -102,11 +102,16 @@ const lisaPage = await lisaContext.newPage();
         Navigate.to('/me')
     );
 
-    // TODO: Fix the loop to work. The test above works though.
-    while (await Robert.asks(Element.isVisible(tripleDotForMessage))) {
+   let existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
+    while (existingSelector === true) {
         await Robert.attemptsTo(
             RemoveMeetingSummaryMessage.inApp()
         );
-    }
+        existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
+        if (existingSelector === false) {
+            break;
+        }
+        }
+
 }
 });
