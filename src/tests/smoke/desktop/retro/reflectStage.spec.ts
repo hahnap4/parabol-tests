@@ -1,14 +1,29 @@
-import { test, expect } from '@playwright/test';
-import { Actor, BrowseTheWeb } from '@index';
+//
+import { test, expect, chromium } from '@playwright/test';
+import {
+    Actor, BrowseTheWeb, Click, includeIcebreakerCheckbox,
+    Element, Wait, startStopContinueTemplate, startMeetingButton, 
+    Navigate, tripleDotForMessage, firstReflectionBox, secondReflectionBox,
+    thirdReflectionBox
+ } from '@index';
 import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
 import { LogInAsUserTwo } from '@web/tasks/auth/signIn/logInAsUserTwo.task';
 import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
-import { MakeRetroMeeting } from '@web/tasks/retro/desktop/makeRetroMeeting.task';
+import { EnterRetroMeeting } from '@web/tasks/retro/desktop/enterRetroMeeting.task';
+import { ChangeTemplate } from '@web/tasks/retro/desktop/changeTemplate.task';
+import { FillOutReflectionInStartColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
+import { FillOutReflectionInStopColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
+import { FillOutReflectionInContinueColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
+import { EndMeeting } from '@web/tasks/endMeeting.task';
+import { RemoveMeetingSummaryMessage } from '@web/tasks/removeMeetingSummaryMessage.task';
 
-const { devices } = require('playwright');
+// Interact with contexts independently
+test.only('2 Users Add Reflections', async({ page }) => {
+
+try {
 
 // Create a browser instance 
-const browser = await devices.launch();
+const browser = await chromium.launch();
 
 // Create two isolated browser contexts
 const robertContext = await browser.newContext();
@@ -18,66 +33,85 @@ const lisaContext = await browser.newContext();
 const robertPage = await robertContext.newPage();
 const lisaPage = await lisaContext.newPage();
 
-// Interact with contexts independently
-test('2 Users Add Reflections', async({ page }) => {
-    
-    const actorOne = Actor.named('Robert')
+    const Robert = Actor.named('Robert')
         .can(BrowseTheWeb.using(robertPage));
 
-    await actorOne.attemptsTo(
+    await Robert.attemptsTo(
         LogInAsUserOne.inApp(),
-        GoToRetroMeetingSetupPage.onApp(),
-        MakeRetroMeeting.inApp()
-        );
+        GoToRetroMeetingSetupPage.onApp()
+    );
 
-    const actorTwo = Actor.named('Lisa')
+    if ( await Robert.asks(Element.isVisible(includeIcebreakerCheckbox))) {
+        await Robert.attemptsTo(
+            Click.on(includeIcebreakerCheckbox),
+            Wait.forLoadState('networkidle')
+        );     
+    }
+
+    if ( await Robert.asks(Element.isHidden(startStopContinueTemplate))) {
+        await Robert.attemptsTo(
+            ChangeTemplate.inApp()
+        );
+    }
+
+    await Robert.attemptsTo(
+        Click.on(startMeetingButton),
+        Wait.forLoadState('networkidle')
+    );
+        
+    const Lisa = Actor.named('Lisa')
         .can(BrowseTheWeb.using(lisaPage));
-
-    await actorTwo.attemptsTo(
+    
+    await Lisa.attemptsTo(
         LogInAsUserTwo.inApp(),
-    
+        EnterRetroMeeting.inApp(),
+        FillOutReflectionInStartColumn.inApp(),
+        Wait.forSelector(firstReflectionBox),
+        FillOutReflectionInStopColumn.inApp(),
+        Wait.forSelector(secondReflectionBox),
+        FillOutReflectionInContinueColumn.inApp(),
+        Wait.forSelector(thirdReflectionBox)
+    );
+
+    await Robert.attemptsTo(
+        FillOutReflectionInStartColumn.inApp(),
+        Wait.forSelector(firstReflectionBox),
+        FillOutReflectionInStopColumn.inApp(),
+        Wait.forSelector(secondReflectionBox),
+        FillOutReflectionInContinueColumn.inApp(),
+        Wait.forSelector(thirdReflectionBox)
+    );
+
+    await expect(robertPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+    await expect(lisaPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+
+} finally {
+
+    const browser = await chromium.launch();
+    const robertContext = await browser.newContext();
+    const robertPage = await robertContext.newPage();
+
+    const Robert = Actor.named('Robert')
+        .can(BrowseTheWeb.using(robertPage));
+
+    await Robert.attemptsTo(
+        LogInAsUserOne.inApp(),
+        Navigate.to('/'),
+        EnterRetroMeeting.inApp(),
+        EndMeeting.inApp(),
+        Navigate.to('/me')
+    );
+
+   let existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
+    while (existingSelector === true) {
+        await Robert.attemptsTo(
+            RemoveMeetingSummaryMessage.inApp()
         );
+        existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
+        if (existingSelector === false) {
+            break;
+        }
+        }
 
-    await expect(page.locator('[aria-label="Edit this reflection"]')).toHaveCount(12);
-    
+}
 });
-
-
-/*
-Lisa:
-1. Go to https://action-staging.parabol.co/meetings
-2. Click on first meeting box to enter meeting
-3. Expect to see "Retro" text in page (soft check)
-
-Robert and Lisa:
-1. Fill out the reflections in the Start, Stop, and Continue Columns.
-2. Expect to count 12 of the selectors. (hard check)
-
-Robert:
-1. Click on End Meeting button twice.
-2. Create a loop: Go to Timeline Page. Click on Triple Dot. Click on "Archive Meeting" until you cannot find any triple dots.
-3. Teardown complete.
-
-*/
-
-
-
-/* 
-TODO: Test the Retro meeting with 2 players.
- - Create 2 isolated browser contexts.
- - Create pages and interact with the contexts independently.
-
-Requires: 
- - inMeeting objects
- - authPage objects
- - addTeam objects
- - createMeeting objects
- - meetingsHome objects
- - teamDashboard objects
- - myTasks objects
- - timeline objects
- - create globalsetup for second player login for another storageState
- - Add second player to the same team as the main first player
- - fixture for setting up retro meeting, signing in as both players, and joining the meeting 
- - teardown fixture for ending meeting, cleaning up timeline webpage, and signing out
-*/

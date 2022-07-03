@@ -1,5 +1,5 @@
 import { 
-    Actor, Task, Wait, Navigate, Click, meetingsButton, 
+    Actor, Task, Wait, Click, meetingsButton, 
     addMeetingButtonForMobile, previousMeetingTypeButton
 } from '@index';
 

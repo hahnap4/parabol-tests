@@ -1,4 +1,5 @@
-import { PlaywrightTestConfig, devices } from '@playwright/test';
+import type { PlaywrightTestConfig } from "@playwright/test";
+import { devices } from '@playwright/test';
 
 require('dotenv').config();
 
@@ -10,12 +11,12 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0, 
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
-  timeout: 60000,
+  timeout: 60000, 
   expect: {
-    timeout: 10000,
+    timeout: 15000,
   },
   use: {
-    actionTimeout: 20000,
+    actionTimeout: 15000,
     navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
@@ -42,7 +43,7 @@ const config: PlaywrightTestConfig = {
       use: {
           ...devices['Desktop Edge']
       },
-      testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/mobile/**'],
+      testIgnore: ['**/design/desktop/**', '**/design/mobile/**', '**/smoke/mobile/**', '**/smoke/desktop/retro/**'],
     },
     {
         name: 'Android v8.0.0',
