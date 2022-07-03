@@ -2,7 +2,7 @@
 
 Based on the following: https://github.com/ParabolInc/parabol/issues/6466 and https://github.com/ParabolInc/parabol/blob/master/docs/manualTestingGuide.md
 
-This test automation will cover most of the checklist items for Release and UI tests. 
+This test automation will cover most of the checklist items for the Release tests. 
 
 In other words, it will be focused on covering the smoke tests. If time permits, we may create test automation for partial regression.
 
@@ -19,7 +19,7 @@ Read more about that here: https://playwright.dev/docs/emulation
 
 We are using Playwright for our test automation: https://playwright.dev/docs/intro
 
-As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integration-tests/README.md: We will create test automation that utilizes the Screenplay patter, instead of POM (Page Object Model) design, to test real-time behavior of users.
+As stated in https://github.com/ParabolInc/parabol/blob/master/packages/integration-tests/README.md: We will create test automation that utilizes the Screenplay pattern, instead of POM (Page Object Model) design, to test real-time behavior of users.
 
 ## How to get the tests to work...
 
@@ -63,7 +63,3 @@ Please be sure to clear out the files in the following folders after running the
 This way, it will keep the repo clean locally for yourself. 
 
 We already have a .gitignore file set up so that the files in those three folders will not be added to the repo commit.
-
-**How to update original snapshots for visual comparison tests**
-
-Use `npx playwright test desktop/visualComparison --update-snapshots` or `npx playwright test mobile/visualComparison --update-snapshots` to update the original snapshot. And then you can run the tests as usual.
