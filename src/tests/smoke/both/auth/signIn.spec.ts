@@ -1,6 +1,6 @@
 import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
 import { test, expect } from '@playwright/test';
-import { Actor, BrowseTheWeb, Navigate } from '@index';
+import { Actor, BrowseTheWeb } from '@index';
 
 test('Sign In', async({ page }) => {
 

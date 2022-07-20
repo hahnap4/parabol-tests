@@ -139,7 +139,7 @@ import {
 } from '@testla/screenplay';
 
 import { BrowseTheWeb } from '@web/abilities/BrowseTheWeb';
-import { Check } from '@web/actions/Check';
+import { Checkmark } from '@web/actions/Checkmark';
 import { Click } from '@web/actions/Click';
 import { DoubleClick } from '@web/actions/DoubleClick';
 import { DragAndDrop } from '@web/actions/DragAndDrop';
@@ -170,7 +170,7 @@ import {
 } from '@api/types';
 
 export {
-    Actor, Action, Task, Question, Ability, BrowseTheWeb, Check, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
+    Actor, Action, Task, Question, Ability, BrowseTheWeb, Checkmark, Wait, Hover, Navigate, Fill, Press, DragAndDrop, Click, DoubleClick, Type, Element,
     UseAPI, ARequest, Delete, Get, Head, Patch, Post, Put, APIResponse, Headers, RequestMethod, REQUEST_METHOD, Response, ResponseBodyFormat, 
     ResponseBodyType, SelectorOptions, recursiveLocatorLookup, SubSelector
 };

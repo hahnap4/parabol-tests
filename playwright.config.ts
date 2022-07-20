@@ -7,7 +7,7 @@ const base_url = process.env.BASE_URL;
 
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
-  reporter: [ ['html', { open: 'never' }] ], 
+  reporter: [ ['html', { open: 'on-failure' }] ], 
   retries: process.env.CI ? 2 : 0, 
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
@@ -16,11 +16,9 @@ const config: PlaywrightTestConfig = {
     timeout: 15000,
   },
   use: {
-    actionTimeout: 15000,
-    navigationTimeout: 15000,
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
-    video: 'on',
+    video: 'retain-on-failure',
     headless: true, 
     // @ts-ignore
     baseURL: base_url,

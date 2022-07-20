@@ -1,8 +1,7 @@
 import { Action, Actor, BrowseTheWeb } from '@index';
 
-/**
- * Action Class. Press the specified key on the keyboard.
- */
+// Press the specified key on the keyboard.
+
 export class Press extends Action {
     private constructor(private input: string) {
         super();
@@ -18,9 +17,10 @@ export class Press extends Action {
     }
 
     /**
-     * Press a key on the keyboard. (or multiple keys with +, e.g. Shift+A)
+     * Press a key (or multiple keys with `+`) on the keyboard. (e.g. Shift+A)
      *
-     * @param keys the key(s) to press.
+     * @param keys 
+     * The key(s) to press.
      */
     public static key(keys: string): Press {
         return new Press(keys);
