@@ -1,4 +1,4 @@
-name: "Run Tests"
+name: main
 
 on:
   push:
@@ -8,23 +8,21 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-    name: Run Test Automation
+  build-and-test:
     runs-on: ubuntu-latest
+    name: Build and test
 
-   steps:
-   - name: Setup Node.js environment
-     uses: actions/setup-node@v3.4.1
+    steps:
+      - uses: actions/setup-node@v3.4.1
+
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+      - run: npm t
+
+      - run: npx playwright install-deps
    
-   - uses: actions/checkout@v2
-   - uses: bahmutov/npm-install@v1
-   - run: npm t
+      - name: Create .env file
+        run:  echo "${{ secrets.ENV_FILE }}" > .env
    
-   - name: Install Playwright System Dependencies
-     run: npx playwright install-deps
-   
-   - name: Create .env file
-     run:  echo "${{ secrets.ENV_FILE }}" > .env
-   
-   - name: Run tests
-     run: npx playwright test
+      - name: Run tests
+        run: npx playwright test
