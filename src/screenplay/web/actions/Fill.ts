@@ -1,15 +1,14 @@
 import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
-/**
- * Action Class. Fill an element specified by a selector string with the specified input.
- */
+// Fill an element specified by a selector string with the specified input.
+
 export class Fill extends Action {
     private constructor(private locator: string, private input: string, private options?: SelectorOptions) {
         super();
     }
 
     /**
-     * find the specified selector and fill it.
+     * Find the specified selector and fill it.
      *
      * @param actor
      */
@@ -18,13 +17,19 @@ export class Fill extends Action {
     }
 
     /**
-     * Finds the specified selector and will it with the specified input string.
+     * Finds the specified selector and fill it with the specified input string.
      *
-     * @param selector the selector.
-     * @param input the input.
-     * @param options (optional) advanced selector lookup options.
+     * @param selector 
+     * The selector.
+     * 
+     * @param input 
+     * The input.
+     * 
+     * @param options (optional) 
+     * Advanced selector lookup options.
      */
     public static in(selector: string, input: string, options?: SelectorOptions): Fill {
         return new Fill(selector, input, options);
     }
+
 }

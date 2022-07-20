@@ -1,8 +1,8 @@
 import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
 
-// Click on an element specified by a selector string.
+// Check a checkbox specified by a selector string.
 
- export class DoubleClick extends Action {
+export class Checkmark extends Action {
     private constructor(private selector: string, private options?: SelectorOptions) {
         super();
     }
@@ -13,7 +13,7 @@ import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
      * @param actor
      */
     public async performAs(actor: Actor): Promise<void> {
-        await BrowseTheWeb.as(actor).dblclick(this.selector, this.options);
+        await BrowseTheWeb.as(actor).checkBox(this.selector, this.options);
     }
 
     /**
@@ -25,7 +25,7 @@ import { Action, Actor, SelectorOptions, BrowseTheWeb } from '@index';
      * @param options (optional)
      * Advanced selector lookup options.
      */
-    public static on(selector: string, options?: SelectorOptions): DoubleClick {
-        return new DoubleClick(selector, options);
+    public static element(selector: string, options?: SelectorOptions): Checkmark {
+        return new Checkmark(selector, options);
     }
 }
