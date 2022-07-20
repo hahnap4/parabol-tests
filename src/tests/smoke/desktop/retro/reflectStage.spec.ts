@@ -18,7 +18,7 @@ import { EndMeeting } from '@web/tasks/endMeeting.task';
 import { RemoveMeetingSummaryMessage } from '@web/tasks/removeMeetingSummaryMessage.task';
 
 // Interact with contexts independently
-test.only('2 Users Add Reflections', async({ page }) => {
+test('2 Users Add Reflections', async({ page }) => {
 
 try {
 
