@@ -6,8 +6,10 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
+  schedule:
+   - cron: '0 5 1-31 * *'
 
-jobs:
+jobs:`  
   build-and-test:
     runs-on: ubuntu-latest
     name: Build and test
@@ -39,7 +41,6 @@ jobs:
         with:
           name: test-failures
           path: |
-            failedReports/
             playwright-report/
             test-results/
           retention-days: 30

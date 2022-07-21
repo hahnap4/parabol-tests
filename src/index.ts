@@ -30,7 +30,7 @@ export {
 
 export { 
     chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, 
-    includeIcebreakerCheckbox, excludeIcebreakerCheckbox
+    includeIcebreakerCheckbox, blankIcebreakerCheckbox
   } from '@pages/setupMeeting/setupMeetingSettingWidget.page';
   
 export { 
