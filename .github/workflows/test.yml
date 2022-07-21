@@ -23,6 +23,23 @@ jobs:
    
       - name: Create .env file
         run:  echo "${{ secrets.ENV_FILE }}" > .env
+
+      - name: Cache
+        uses: actions/cache@v3.0.5
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
    
       - name: Run tests
         run: npx playwright test
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            failedReports/
+            playwright-report/
+            test-results/
+          retention-days: 30
