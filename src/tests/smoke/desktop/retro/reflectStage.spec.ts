@@ -4,7 +4,7 @@ import {
     Actor, BrowseTheWeb, Click, includeIcebreakerCheckbox,
     Element, Wait, startStopContinueTemplate, startMeetingButton, 
     Navigate, tripleDotForMessage, firstReflectionBox, secondReflectionBox,
-    thirdReflectionBox
+    thirdReflectionBox, blankIcebreakerCheckbox
  } from '@index';
 import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
 import { LogInAsUserTwo } from '@web/tasks/auth/signIn/logInAsUserTwo.task';
@@ -41,14 +41,16 @@ const lisaPage = await lisaContext.newPage();
         GoToRetroMeetingSetupPage.onApp()
     );
 
-    if ( (await Robert.asks(Element.isVisible(includeIcebreakerCheckbox))) === true ) {
+    let hiddenBlankCheckbox = await Robert.asks(Element.isHidden(blankIcebreakerCheckbox));
+    if ( hiddenBlankCheckbox === true ) {
         await Robert.attemptsTo(
             Click.on(includeIcebreakerCheckbox),
             Wait.forLoadState('networkidle')
         );     
     }
 
-    if ( (await Robert.asks(Element.isHidden(startStopContinueTemplate))) === true ) {
+    let hiddenTemplate = await Robert.asks(Element.isHidden(startStopContinueTemplate));
+    if ( hiddenTemplate === true ) {
         await Robert.attemptsTo(
             ChangeTemplate.inApp()
         );
@@ -107,11 +109,10 @@ const lisaPage = await lisaContext.newPage();
         await Robert.attemptsTo(
             RemoveMeetingSummaryMessage.inApp()
         );
-        existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
-        if (existingSelector === false) {
+        let hiddenSelector = await Robert.asks(Element.isHidden(tripleDotForMessage));
+        if (hiddenSelector === true) {
             break;
         }
         }
-
 }
 });
