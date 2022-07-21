@@ -1,4 +1,4 @@
-name: "Run Tests"
+name: main
 
 on:
   push:
@@ -6,23 +6,41 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
+  schedule:
+   - cron: '0 5 1-31 * *'
 
-jobs:
+jobs: 
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: Build and test
 
-runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3.4.1
 
-steps:
-- name: Setup Node.js environment
-  uses: actions/setup-node@v3.4.1
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+      - run: npm ci
+      - run: npx playwright install
+      - run: npx playwright install-deps
+   
+      - name: Create .env file
+        run:  echo "${{ secrets.ENV_FILE }}" > .env
 
-- name: Install dependencies
-  run: npm ci
+      - name: Cache
+        uses: actions/cache@v3.0.5
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+   
+      - name: Run tests
+        run: npx playwright test
 
-- name: Install Playwright System Dependencies
-  run: npx playwright install-deps
-
-- name: Create .env file
-  run:  echo "${{ secrets.ENV_FILE }}" > .env
-
-- name: Run tests
-  run: npx playwright test
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
