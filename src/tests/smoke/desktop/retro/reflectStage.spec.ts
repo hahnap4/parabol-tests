@@ -41,14 +41,14 @@ const lisaPage = await lisaContext.newPage();
         GoToRetroMeetingSetupPage.onApp()
     );
 
-    if ( await Robert.asks(Element.isVisible(includeIcebreakerCheckbox))) {
+    if ( (await Robert.asks(Element.isVisible(includeIcebreakerCheckbox))) === true ) {
         await Robert.attemptsTo(
             Click.on(includeIcebreakerCheckbox),
             Wait.forLoadState('networkidle')
         );     
     }
 
-    if ( await Robert.asks(Element.isHidden(startStopContinueTemplate))) {
+    if ( (await Robert.asks(Element.isHidden(startStopContinueTemplate))) === true ) {
         await Robert.attemptsTo(
             ChangeTemplate.inApp()
         );

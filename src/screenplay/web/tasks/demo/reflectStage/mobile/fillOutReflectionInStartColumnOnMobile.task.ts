@@ -1,5 +1,6 @@
 import { 
-    Actor, Task, Fill, Click, startFieldForMobile, Press, randomStatement
+    Actor, Task, Fill, Click, startFieldForMobile, Press, randomStatement,
+    Wait
 } from '@index';
 
 export class FillOutReflectionInStartColumnOnMobile extends Task {
@@ -11,7 +12,8 @@ export class FillOutReflectionInStartColumnOnMobile extends Task {
             Click.on(startFieldForMobile),
             Fill.in(startFieldForMobile, randomStatement),
             Press.key('Enter'),
-            Press.key('Enter')
+            Press.key('Enter'),
+            Wait.forLoadState('load')
         );
 }
 
