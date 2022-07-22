@@ -7,3 +7,5 @@ test-results/**
 .env
 
 node_modules
+
+/playwright/.cache/
