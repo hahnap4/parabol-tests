@@ -47,10 +47,6 @@ jobs:
       - name: Install Playwright with dependencies
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
    
       - name: Create .env file
         run:  echo "${{ secrets.ENV_FILE }}" > .env
