@@ -15,9 +15,17 @@ jobs:
     name: Build and test
 
     steps:
-      - uses: actions/setup-node@v3.4.1
-
       - uses: actions/checkout@v2
+      
+      - name: Cache
+        uses: actions/cache@v3.0.5
+        with:
+          path: |
+            node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          
+      - uses: actions/setup-node@v3.4.1
+          
       - uses: bahmutov/npm-install@v1
       - run: npm ci
       - run: npx playwright install
@@ -25,13 +33,6 @@ jobs:
    
       - name: Create .env file
         run:  echo "${{ secrets.ENV_FILE }}" > .env
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
    
       - name: Run tests
         run: npx playwright test --config=playwright.config.ts
