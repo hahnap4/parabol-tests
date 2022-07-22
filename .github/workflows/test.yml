@@ -30,6 +30,10 @@ jobs:
           node-version: '14.x'
 
       - uses: bahmutov/npm-install@v1
+
+      - name: Create .env file
+        run:  echo "${{ secrets.ENV_FILE }}" > .env
+
       - run: npm ci
 
       - name: Get installed Playwright version
@@ -47,9 +51,6 @@ jobs:
       - name: Install Playwright with dependencies
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
-   
-      - name: Create .env file
-        run:  echo "${{ secrets.ENV_FILE }}" > .env
    
       - name: Run tests
         run: npx playwright test
