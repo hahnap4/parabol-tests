@@ -11,7 +11,7 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0, 
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
-  workers: 2,
+  workers: 5,
   timeout: 60000, 
   expect: {
     timeout: 15000,
