@@ -25,17 +25,18 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           
       - uses: actions/setup-node@v3.4.1
+        with:
+          node-version: '14.x'
           
       - uses: bahmutov/npm-install@v1
       - run: npm ci
-      - run: npx playwright install
-      - run: npx playwright install-deps
+      - run: npx playwright install --with-deps
    
       - name: Create .env file
         run:  echo "${{ secrets.ENV_FILE }}" > .env
    
       - name: Run tests
-        run: npx playwright test --config=playwright.config.ts
+        run: npx playwright test
 
       - uses: actions/upload-artifact@v3.1.0
         if: failure()
