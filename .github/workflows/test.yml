@@ -34,7 +34,7 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
    
       - name: Run tests
-        run: npx playwright test --config=path/tp/playwright.config.js
+        run: npx playwright test --config=path/tp/playwright.config.ts
 
       - uses: actions/upload-artifact@v3.1.0
         if: failure()
