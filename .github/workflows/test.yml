@@ -34,7 +34,7 @@ jobs:
 
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(npm explain --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
       - uses: actions/cache@v3
         id: playwright-cache
@@ -43,10 +43,6 @@ jobs:
           key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
           restore-keys: |
             ${{ runner.os }}-playwright-
-
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
       - name: Install Playwright with dependencies
         if: steps.playwright-cache.outputs.cache-hit != 'true'
