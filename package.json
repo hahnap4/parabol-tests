@@ -1,15 +1,15 @@
 {
    "scripts": {
-        "pretest": "tsc --incremental -p tests/tsconfig.json",
-        "test": "playwright test -c tests-out"  
-    },
-    "dependencies": {
-        "@testla/screenplay": "^0.2.0",
-        "adm-zip": "^0.5.9",
-        "dotenv": "^16.0.1"
-    },
-    "devDependencies": {
-        "@faker-js/faker": "^6.3.1",
-        "@playwright/test": "^1.23.0"
-    }
+      "pretest": "tsc --incremental -p tests/tsconfig.json",
+      "test": "playwright test -c tests-out"
+   },
+   "dependencies": {
+      "@testla/screenplay": "^0.2.0",
+      "adm-zip": "^0.5.9",
+      "dotenv": "^16.0.1"
+   },
+   "devDependencies": {
+      "@faker-js/faker": "^6.3.1",
+      "@playwright/test": "^1.23.0"
+   }
 }
