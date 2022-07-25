@@ -23,7 +23,6 @@ jobs:
           path: |
             node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          
 
       - uses: actions/setup-node@v3.4.1
         with:
@@ -51,6 +50,10 @@ jobs:
       - name: Install Playwright with dependencies
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
+
+      - name: Install Playwright's dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps
    
       - name: Run tests
         run: npx playwright test
