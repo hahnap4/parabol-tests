@@ -55,15 +55,15 @@ jobs:
 
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/both/auth
@@ -122,15 +122,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/both/demo
@@ -189,15 +189,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/desktop/auth
@@ -256,15 +256,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/desktop/demo
@@ -323,15 +323,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/desktop/retro
@@ -390,15 +390,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/mobile/auth
@@ -457,15 +457,15 @@ jobs:
    
       - name: Create .env file
         run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          touch .env
+          echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
+          echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
+          echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
+          echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
+          echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
+          echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
+          echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
+          cat .env
 
       - name: Run tests
         run: npx playwright test smoke/mobile/demo
