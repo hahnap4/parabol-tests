@@ -12,6 +12,7 @@ on:
 jobs: 
   smoke-both-auth:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Auth Tests - Desktop and Mobile
 
     steps:
@@ -79,6 +80,7 @@ jobs:
 
   smoke-both-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Desktop and Mobile
 
     steps:
@@ -146,6 +148,7 @@ jobs:
 
   smoke-desktop-auth:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Auth Tests - Desktop
 
     steps:
@@ -213,6 +216,7 @@ jobs:
 
   smoke-desktop-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Desktop
 
     steps:
@@ -280,6 +284,7 @@ jobs:
 
   smoke-desktop-retro:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Retro Tests - Desktop
 
     steps:
@@ -347,6 +352,7 @@ jobs:
 
   smoke-mobile-auth:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Auth Tests - Mobile
 
     steps:
@@ -414,6 +420,7 @@ jobs:
 
   smoke-mobile-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Mobile
 
     steps:
