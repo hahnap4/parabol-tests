@@ -11,10 +11,12 @@ const config: PlaywrightTestConfig = {
   retries: process.env.CI ? 2 : 0, 
   globalTeardown: './globalTeardown.ts',
   fullyParallel: true,
+  /* // Uncomment if running tests locally:
   timeout: 60000, 
   expect: {
     timeout: 15000,
   },
+  */
   use: {
     trace: 'retain-on-failure', 
     screenshot: 'only-on-failure',
@@ -22,11 +24,13 @@ const config: PlaywrightTestConfig = {
     headless: true, 
     // @ts-ignore
     baseURL: base_url,
+    /* // Uncomment if running tests locally:
     launchOptions: {
       // force-enable GPU hardware acceleration (even in headless mode)
       // "--use-gl=desktop" OR "--use-gl=egl"
       args: ["--use-gl=desktop"]
     }
+    */
   }, 
   projects: [
     {

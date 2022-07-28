@@ -32,13 +32,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -100,13 +99,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -168,13 +166,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -236,13 +233,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -304,13 +300,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -372,13 +367,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
@@ -440,13 +434,12 @@ jobs:
 
       - if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
-          
+
       - name: Get installed Playwright version
         id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
+        run: echo "::set-output name=version::$(cat package-lock.json | grep "^\"@playwright\/test" --after-context 1 | tail -n 1 | sed 's/\s*version "\([0-9.]\+\)"/\1/')"
 
-      - name: Cache
-        uses: actions/cache@v3.0.5          
+      - uses: actions/cache@v3
         id: playwright-cache
         with:
           path: '~/.cache/ms-playwright'
