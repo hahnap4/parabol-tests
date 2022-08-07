@@ -16,6 +16,9 @@ zip.addLocalFolder(reportPath, "./test-results");
 zip.writeZip("./failedReports/report.zip");
 
 }
+else {
+    close();
+}
 }
 
 export default globalTeardown;
