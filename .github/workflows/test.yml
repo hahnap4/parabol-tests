@@ -6,64 +6,28 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ main ]
-  schedule:
-   - cron: '0 5 1-31 * *'
+  #schedule:
+  # - cron: '0 5 1-31 * *'
 
 jobs: 
   smoke-both-auth:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Auth Tests - Desktop and Mobile
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/both/auth
@@ -79,125 +43,22 @@ jobs:
 
   smoke-both-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Desktop and Mobile
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
-
-      - name: Run tests
-        run: npx playwright test smoke/both/demo
-
-      - uses: actions/upload-artifact@v3.1.0
-        if: failure()
-        with:
-          name: test-failures
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 30
-
-  smoke-desktop-auth:
-    runs-on: ubuntu-latest
-    name: Smoke Auth Tests - Desktop
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v3.4.1
-        with:
-          node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/desktop/auth
@@ -213,58 +74,22 @@ jobs:
 
   smoke-desktop-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Desktop
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/desktop/demo
@@ -280,58 +105,22 @@ jobs:
 
   smoke-desktop-retro:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Retro Tests - Desktop
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/desktop/retro
@@ -347,58 +136,22 @@ jobs:
 
   smoke-mobile-auth:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Auth Tests - Mobile
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/mobile/auth
@@ -414,58 +167,22 @@ jobs:
 
   smoke-mobile-demo:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     name: Smoke Demo Tests - Mobile
 
     steps:
       - uses: actions/checkout@v2
 
-      - uses: actions/setup-node@v3.4.1
+      - uses: ./.github/actions/packages/build
         with:
           node-version: '14.x'
-
-      - name: Cache
-        uses: actions/cache@v3.0.5
-        id: npm-cache
-        with:
-          path: |
-            node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm ci
-          
-      - name: Get installed Playwright version
-        id: playwright-version
-        run: echo "::set-output name=version::$(cat npm why --json @playwright/test | grep -h 'workspace:.' | jq --raw-output '.children[].locator' | sed -e 's/@playwright\/test@.*://')"
-
-      - name: Cache
-        uses: actions/cache@v3.0.5          
-        id: playwright-cache
-        with:
-          path: '~/.cache/ms-playwright'
-          key: '${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}'
-          restore-keys: |
-            ${{ runner.os }}-playwright-
-
-      - name: Install Playwright with dependencies
-        if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: npx playwright install --with-deps
-
-      - name: Install Playwright's dependencies
-        if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: npx playwright install-deps
-   
-      - name: Create .env file
-        run:  |
-        touch .env
-        echo SECRET_EMAIL="${{ secrets.SECRET_EMAIL }}" >> .env
-        echo SECRET_PASSWORD="${{ secrets.SECRET_PASSWORD }}" >> .env
-        echo SECRET_SECOND_EMAIL="${{ secrets.SECRET_SECOND_EMAIL }}" >> .env
-        echo SECRET_SECOND_PASSWORD="${{ secrets.SECRET_SECOND_PASSWORD }}" >> .env
-        echo CREATE_EMAIL="${{ secrets.CREATE_EMAIL }}" >> .env
-        echo CREATE_PASSWORD="${{ secrets.CREATE_PASSWORD }}" >> .env
-        echo BASE_URL="${{ secrets.BASE_URL }}" >> .env
-        cat .env
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
 
       - name: Run tests
         run: npx playwright test smoke/mobile/demo

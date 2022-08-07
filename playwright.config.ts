@@ -9,11 +9,11 @@ const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   reporter: [ ['html', { open: 'on-failure' }] ], 
   retries: process.env.CI ? 2 : 0, 
-  globalTeardown: './globalTeardown.ts',
+  globalTeardown: process.env.CI ? undefined : './globalTeardown.ts',
   fullyParallel: true,
-  timeout: 60000, 
+  timeout: process.env.CI ? 30000 : 60000, 
   expect: {
-    timeout: 15000,
+    timeout: process.env.CI ? 5000 : 15000,
   },
   use: {
     trace: 'retain-on-failure', 
@@ -22,7 +22,7 @@ const config: PlaywrightTestConfig = {
     headless: true, 
     // @ts-ignore
     baseURL: base_url,
-    launchOptions: {
+    launchOptions: process.env.CI ? undefined : {
       // force-enable GPU hardware acceleration (even in headless mode)
       // "--use-gl=desktop" OR "--use-gl=egl"
       args: ["--use-gl=desktop"]
