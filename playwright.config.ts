@@ -19,8 +19,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: true, 
-    // @ts-ignore
-    baseURL: base_url,
+    baseURL: `${base_url}`,
     launchOptions: process.env.CI ? undefined : {
       // force-enable GPU hardware acceleration (even in headless mode)
       // "--use-gl=desktop" OR "--use-gl=egl"
