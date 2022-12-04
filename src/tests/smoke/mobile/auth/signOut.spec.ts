@@ -1,9 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { Actor, BrowseTheWeb } from '@index'
-import { SignOutOnMobile } from '@web/tasks/auth/signOut/mobile/signOut.task';
-import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
-
-require('dotenv').config();
+import { SignOutOnMobile } from 'src/common-events/auth/signOut/mobile/signOut.task';
+import { LogInAsUserOne } from 'src/common-events/auth/signIn/logInAsUserOne';
+import 'dotenv/config';
 
 const base_url = process.env.BASE_URL;
 

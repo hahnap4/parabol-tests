@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ESNext",
         "strict": true,
-        "module": "esnext",
+        "module": "CommonJS",
         "moduleResolution": "Node",
         "sourceMap": true,
         "outDir": "../testsOut",
@@ -10,6 +10,13 @@
         "esModuleInterop":true,
         "allowSyntheticDefaultImports": true,
         "strictNullChecks": true,
+        "noImplicitAny": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "allowJs": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "forceConsistentCasingInFileNames": true,
         "baseUrl": ".",
         "paths": {
             "@index": [
@@ -56,15 +63,6 @@
             ],
             "@userProfile/*": [
                 "src/objects/userProfile/*"
-            ], 
-            "@web/*": [
-                "src/screenplay/web/*"
-            ],
-            "@api/*": [
-                "src/screenplay/api/*"
-            ],
-            "@screenplay/*": [
-                "src/screenplay/*"
             ],
             "@general/*": [
                 "src/objects/general/*"

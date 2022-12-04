@@ -1,48 +1,39 @@
 //
-import { test, expect, chromium } from '@playwright/test';
+import { test, expect, browser } from '@playwright/test';
 import {
-    Actor, BrowseTheWeb, Click, includeIcebreakerCheckbox,
-    Element, Wait, startStopContinueTemplate, startMeetingButton, 
-    Navigate, tripleDotForMessage, firstReflectionBox, secondReflectionBox,
+    includeIcebreakerCheckbox,
+    startStopContinueTemplate, startMeetingButton, 
+    tripleDotForMessage, firstReflectionBox, secondReflectionBox,
     thirdReflectionBox, blankIcebreakerCheckbox
  } from '@index';
-import { LogInAsUserOne } from '@web/tasks/auth/signIn/logInAsUserOne.task';
-import { LogInAsUserTwo } from '@web/tasks/auth/signIn/logInAsUserTwo.task';
-import { GoToRetroMeetingSetupPage } from '@web/tasks/goToPages/desktop/goToRetroMeetingSetupPage.task';
-import { EnterRetroMeeting } from '@web/tasks/retro/desktop/enterRetroMeeting.task';
-import { ChangeTemplate } from '@web/tasks/retro/desktop/changeTemplate.task';
-import { FillOutReflectionInStartColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
-import { FillOutReflectionInStopColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
-import { FillOutReflectionInContinueColumn } from '@web/tasks/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
-import { EndMeeting } from '@web/tasks/endMeeting.task';
-import { RemoveMeetingSummaryMessage } from '@web/tasks/removeMeetingSummaryMessage.task';
+import { LogInAsUserOne } from 'src/common-events/auth/signIn/logInAsUserOne';
+import { LogInAsUserTwo } from 'src/common-events/auth/signIn/logInAsUserTwo.task';
+import { GoToRetroMeetingSetupPage } from 'src/common-events/goToPages/desktop/goToRetroMeetingSetupPage.task';
+import { EnterRetroMeeting } from 'src/common-events/retro/desktop/enterRetroMeeting.task';
+import { ChangeTemplate } from 'src/common-events/retro/desktop/changeTemplate.task';
+import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
+import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
+import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
+import { EndMeeting } from 'src/common-events/endMeeting.task';
+import { RemoveMeetingSummaryMessage } from 'src/common-events/removeMeetingSummaryMessage.task';
 
 // FIXME: The setupMeeting page is no longer a separate page. It's a popup instead.
 // Check if the locator values need to be changed.
 
 // Interact with contexts independently
-test('2 Users Add Reflections', async({ page }) => {
+test('2 Users Add Reflections', async({ browser }) => {
 
 try {
 
-// Create a browser instance 
-const browser = await chromium.launch();
-
 // Create two isolated browser contexts
-const robertContext = await browser.newContext();
-const lisaContext = await browser.newContext();
+const robertContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
+const lisaContext = await browser.newContext({ storageState: './src/fixtures/storageState/secondUser.json'});
 
 // Create two pages
 const robertPage = await robertContext.newPage();
 const lisaPage = await lisaContext.newPage();
 
-    const Robert = Actor.named('Robert')
-        .can(BrowseTheWeb.using(robertPage));
-
-    await Robert.attemptsTo(
-        LogInAsUserOne.inApp(),
-        GoToRetroMeetingSetupPage.onApp()
-    );
+    await robertPage.GoToRetroMeetingSetupPage();
 
     let hiddenBlankCheckbox = await Robert.asks(Element.isHidden(blankIcebreakerCheckbox));
     if ( hiddenBlankCheckbox === true ) {

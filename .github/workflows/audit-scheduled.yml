@@ -1,0 +1,28 @@
+name: Accessibility & Performance Audit (Scheduled)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ main ]
+  #schedule:
+  # - cron: '0 6 1-31 * *'
+
+jobs: 
+
+  Lighthouse-Report-Scheduled:
+    runs-on: ubuntu-latest
+    name: Accessibility and Performance Audit (Scheduled)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.1.0
+
+      - name: Audit Step
+        id: LHCIAction
+        uses: treosh/lighthouse-ci-action@v9
+        with:
+          urls: |
+            "${{ secrets.BASE_URL }}"
+          uploadArtifacts: true

@@ -1,5 +1,5 @@
-name: "Build test env"
-description: "Build test environment to run tests"
+name: "Build"
+description: "Set up to run tests"
 
 inputs:
   node-version:

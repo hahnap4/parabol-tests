@@ -1,18 +1,13 @@
 import { test, expect } from '@playwright/test';
-import { Actor, BrowseTheWeb } from '@index';
-import { EndDemoRetroMeeting } from '@web/tasks/demo/endDemoRetroMeeting.task';
-import { StartDemoDiscussionStage } from '@web/tasks/demo/fixtures/startDemoDiscussionStage.task';
+import { EndDemoRetroMeeting } from 'src/common-events/demo/endDemoRetroMeeting.task';
+import { StartDemoDiscussionStage } from 'src/common-events/demo/fixtures/startDemoDiscussionStage.task';
 
 test('Check Demo Summary after Ending Demo', async({ page }) => {
 
-    const actor = Actor.named('Deemo')
-        .can(BrowseTheWeb.using(page));
+    await StartDemoDiscussionStage.toApp();
+    
+    EndDemoRetroMeeting.inApp();
 
-    await actor.attemptsTo(
-        StartDemoDiscussionStage.toApp(),
-        EndDemoRetroMeeting.inApp()
-        );
-
-    await expect(page.url()).toContain('/retrospective-demo-summary');
+    expect(page.url()).toContain('/retrospective-demo-summary');
     
 });
