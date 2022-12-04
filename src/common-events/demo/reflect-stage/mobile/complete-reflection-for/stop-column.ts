@@ -15,4 +15,10 @@ export class CompleteReflectionForStopColumnOnMobileBy {
         this.page.fill(stopFieldForMobile, randomStatement);
         this.page.waitForLoadState('networkidle');
     }
+
+    async SubmittingReflection() {
+        this.page.keyboard.press('Enter');
+        this.page.keyboard.press('Enter');
+        this.page.waitForLoadState('load');
+    }
 }

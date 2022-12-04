@@ -1,20 +1,15 @@
 import { test, expect } from '@playwright/test';
-import { SignOutOnMobileBy } from '../../../../common-events/auth/logout-for/mobile';
-import { LogInAsUserOneBy } from '../../../../common-events/auth/login-as/user-one';
+import { LogoutOnMobileBy } from '../../../../common-events/auth/logout-for/mobile';
 import 'dotenv/config';
 
 const base_url = process.env.BASE_URL;
 
+test.use({ storageState: './src/fixtures/storage-state/first-user.json'});
+
 test('Sign Out', async({ page }) => {
+   const logoutOnMobileBy = new LogoutOnMobileBy(page);
+   await page.goto(`${base_url}/meetings`)
+   await logoutOnMobileBy.ClickingOnSignOutButton();
 
-const actor = Actor.named('Robert')
-   .can(BrowseTheWeb.using(page));
-   
-await actor.attemptsTo(
-   LogInAsUserOne.inApp(),
-   SignOutOnMobile.inApp()
-   );
-
-await expect(page.url()).toContain(base_url);
-    
+   await expect(page.url()).toContain(base_url);
 });

@@ -1,123 +1,123 @@
 // Objects
 export {
   teamFilter,
-} from '@pages/my-tasks/myTasksHeader.page';
+} from '@pages/my-tasks/my-tasks-header';
 
 export { 
     teamNameField, createTeamButton, createTeamAndOrgButton
-  } from '@pages/add-a-team/createTeam.page';
+  } from '@pages/add-a-team/create-team';
 
 export { 
     existingOrgRadioButton, openExistingOrgsList, myOrgChoice 
-  } from '@pages/add-a-team/existingOrg.page';
+  } from '@pages/add-a-team/existing-org';
   
 export { 
     newOrgRadioButton, newOrgNameField 
-  } from '@pages/add-a-team/newOrg.page';
+  } from '@pages/add-a-team/new-org';
 
 export { 
     createAccountButton, signUpWithGoogle, signUpWithSSO, privacyPolicy, 
     signInInstead 
-  } from '@pages/auth/createAccount.page';
+  } from '@pages/auth/create-account';
 
 export { 
     logoIcon, emailField, passwordField 
-  } from '@pages/auth/generalAuth.page';
+  } from '@pages/auth/general-auth';
 
 export { 
     signInButton, signInWithGoogle, signInWithSSO, forgotPassword, createAccountInstead 
-  } from '@pages/auth/signIn.page';
+  } from '@pages/auth/sign-in';
 
 export { 
     chosenTemplate, openTeamsList, selectAnotherTemplate, myTeamChoice, 
     includeIcebreakerCheckbox, blankIcebreakerCheckbox
-  } from '@pages/setup-meeting/setupMeetingSettingWidget.page';
+  } from '@pages/setup-meeting/setup-meeting-setting-widget';
   
 export { 
     learnMore, startMeetingButton, nextMeetingTypeButton, previousMeetingTypeButton, 
     backPageButton
 
-  } from '@pages/setup-meeting/generalSetupMeeting.page';
+  } from '@pages/setup-meeting/general-setup-meeting';
 
 export {
     publicTab, myOrgTab, myTeamTab, createNewTemplate, 
     cloneAndEditTemplate, useTemplateButton, editTemplateTitle, shareWithAllOfMyOrg, 
     shareWithWorld, shareWithMyTeam, deleteTemplateButton
-  } from '@pages/setup-meeting/generalTemplatesPopup.page';
+  } from '@pages/setup-meeting/general-templates-popup';
 
 export{
     addAnotherPromptButton, editPromptTitle, removePrompt, changePromptColor, 
     editPromptDescription, defaultTemplate, startStopContinueTemplate
-  } from '@pages/setup-meeting/retroTemplates.page';
+  } from '@pages/setup-meeting/retro-templates';
 
 export {
     editScaleName, addValueButton, editNewScaleValue, removeNewScaleValueButton, 
     changeScaleValueColor, backToNewTemplate
-  } from '@pages/setup-meeting/scaleCreationSprintPokerTemplate.page';
+  } from '@pages/setup-meeting/scale-creation-sprint-poker-template';
 
 export {
     addAnotherDimension, editDimensionTitle, removeFirstDimension, openScaleList, 
     cloneDefaultScale, tshirtSizesChoice, prioritiesChoice, fibonacciChoice, 
     fiveFingersChoice, createAScaleButton, editNewScale, deleteNewScale
-  } from '@pages/setup-meeting/sprintPokerTemplates.page';
+  } from '@pages/setup-meeting/sprint-poker-templates';
 
 export {
     hamburgerIcon, removeSideNavOnMobile, ParabolLogo, helpMenu, 
     notificationBell, userIconButton
-  } from '@general/header.page';
+  } from '@pages/general/header';
 
 export {
     upgradeToProButtonForMobile, meetingsButton, timelineButton, myTasksButton,
     myTeamTasksButton, addATeamButton, profilePictureForMobile
-  } from '@general/sideNav.page';
+  } from '@pages/general/side-nav';
 
 export {
     signOutButton, goToMyProfileButton, goToOrgListButton, upgradeToProButton
-  } from '@general/userMenuDropdown.page';
+  } from '@pages/general/user-menu-dropdown';
 
 export {
     startDemoButton, endDemoButton
-  } from '@pages/in-meeting/demo/demoSpecific.page';
+  } from '@pages/in-meeting/demo/demo-specific';
 
 export {
     tipsPopupBox, closeTipsButton, nextTopicButton, meetingName, endMeetingButton
-  } from '@pages/in-meeting/general/generalInMeeting.page';
+  } from '@pages/in-meeting/general/general-in-meeting';
 
 export {
     startField, stopField, continueField, firstReflectionBox, secondReflectionBox,
     thirdReflectionBox
-  } from '@pages/in-meeting/retro/desktopSpecificReflectStage.page';
+  } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
 
 export {
     startFieldForMobile, stopFieldForMobile, continueFieldForMobile, goToFirstReflection, 
     goToSecondReflection, goToThirdReflection
-  } from '@pages/in-meeting/retro/mobileSpecificReflectStage.page';
+  } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
 
 export {
     addMeetingButton, addMeetingButtonForMobile, activeMeetingBox, 
     tripleDotButtonOnActiveMeetingBox, copyActiveMeetingInviteLinkButton,
     retrospectiveDemoCard
-  } from '@pages/meetings-homepage/meetingsHome.page';
+  } from '@pages/meetings-homepage/meetings-homepage';
 
 export {
     upgradeToProButtonOnOrgList, addNewOrganization, 
-  } from '@pages/org-list/orgList.page';  
+  } from '@pages/org-list/org-list';  
 
 export {
     archivedTasksButton, agendaButton
-  } from '@pages/team-tasks-dashboard/teamTasksHeader.page';
+  } from '@pages/team-tasks-dashboard/team-tasks-header';
 
 export {
     sideQuoteBox, daysAgo, timelineMessageBox, tripleDotForMessage, archiveMeeting
-  } from '@timeline/meetingSummary.page';
+  } from '@pages/timeline/meeting-summary';
 
 export {
     upgradeNowButton, quoteBox
-  } from '@pages/upgrade-org-plan/billingTab.page';
+  } from '@pages/upgrade-org-plan/billing-tab';
 
 export {
     deleteAccountButton, reasonForDeletionField, goodbyeForeverButton
-  } from '@pages/user-profile/dangerZone.page';
+  } from '@pages/user-profile/danger-zone';
 
 
 

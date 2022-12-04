@@ -1,0 +1,85 @@
+{
+  "cookies": [
+    {
+      "name": "_dd_s",
+      "value": "rum=1&id=98a77ad5-4945-4de0-9d5b-6eb5acb0f187&created=1670191299577&expire=1670192199577",
+      "domain": "action-staging.parabol.co",
+      "path": "/",
+      "expires": 1670192199,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.1335414751.1670191300",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1677967299,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_session_id",
+      "value": "7f5a04b30ae870f82e221ac65ac7331f",
+      "domain": "tracking.g2crowd.com",
+      "path": "/",
+      "expires": 1671400899.906355,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "635cS1grevDEJWrlHCkEkp2uFTQvj1n240NVxaDNwNY-1670191299-0-AVl4d7dBKDEznq4njDBul77AgSzbRKhbBDP9MvXBpGZhT57SD6e7mmmYAmFg8R0uSYW4LRSaEgl62hqUbhlqXh0=",
+      "domain": ".g2crowd.com",
+      "path": "/",
+      "expires": 1670193099.906401,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__hstc",
+      "value": "168470334.c60ec219619a7d5c4668c275addbd0ab.1670191300051.1670191300051.1670191300051.1",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1685743300,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "hubspotutk",
+      "value": "c60ec219619a7d5c4668c275addbd0ab",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1685743300,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssrc",
+      "value": "1",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "__hssc",
+      "value": "168470334.1.1670191300051",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1670193100,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}

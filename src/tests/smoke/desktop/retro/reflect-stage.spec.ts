@@ -1,112 +1,126 @@
 //
-import { test, expect, browser } from '@playwright/test';
+import { test, expect, chromium } from '@playwright/test';
 import {
     includeIcebreakerCheckbox,
     startStopContinueTemplate, startMeetingButton, 
     tripleDotForMessage, firstReflectionBox, secondReflectionBox,
-    thirdReflectionBox, blankIcebreakerCheckbox
+    thirdReflectionBox, blankIcebreakerCheckbox, addMeetingButton, nextMeetingTypeButton, selectAnotherTemplate, useTemplateButton, activeMeetingBox, startField, randomStatement, stopField, continueField, endMeetingButton, archiveMeeting
  } from '@index';
-import { LoginAsUserOneBy } from '../../../../common-events/auth/login-as/user-one';
-import { LoginAsUserTwoBy } from '../../../../common-events/auth/login-as/user-two';
-import { GoToRetroMeetingSetupPageBy } from '../../../../common-events/go-to-pages/desktop/retro-meeting-setup';
-import { EnterRetroMeetingBy } from '../../../../common-events/retro/desktop/enter-retro-meeting';
-import { ChangeTemplateBy } from '../../../../common-events/retro/desktop/change-template';
-import { CompleteReflectionForStartColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
-import { CompleteReflectionForStopColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
-import { CompleteReflectionForContinueColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
-import { EndMeetingBy } from '../../../../common-events/end-meeting';
-import { RemoveMeetingSummaryMessageBy } from '../../../../common-events/remove-meeting-summary-message';
+import 'dotenv/config';
 
-// FIXME: The setupMeeting page is no longer a separate page. It's a popup instead.
-// Check if the locator values need to be changed.
+const baseURL = process.env.BASE_URL;
 
-// Interact with contexts independently
-test('2 Users Add Reflections', async({ browser }) => {
+test('2 Users Add Reflections', async() => {
 
 try {
+    
+    const browser = await chromium.launch();
 
-// Create two isolated browser contexts
-const robertContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
-const lisaContext = await browser.newContext({ storageState: './src/fixtures/storageState/secondUser.json'});
+    const userOneContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
+    const userTwoContext = await browser.newContext({ storageState: './src/fixtures/storageState/secondUser.json'});
 
-// Create two pages
-const robertPage = await robertContext.newPage();
-const lisaPage = await lisaContext.newPage();
+    const userOnePage = await userOneContext.newPage();
+    const userTwoPage = await userTwoContext.newPage();
 
-    await robertPage.GoToRetroMeetingSetupPage();
+    // User One Scenario
+    await userOnePage.goto(`${baseURL}/meetings`);
+    userOnePage.click(addMeetingButton);
+    userOnePage.click(nextMeetingTypeButton);
+    userOnePage.waitForLoadState('networkidle');
 
-    let hiddenBlankCheckbox = await Robert.asks(Element.isHidden(blankIcebreakerCheckbox));
+    let hiddenBlankCheckbox = await userOnePage.isHidden(blankIcebreakerCheckbox);
     if ( hiddenBlankCheckbox === true ) {
-        await Robert.attemptsTo(
-            Click.on(includeIcebreakerCheckbox),
-            Wait.forLoadState('networkidle')
-        );     
+        await userOnePage.click(includeIcebreakerCheckbox);
+        userOnePage.waitForLoadState('networkidle');
     }
 
-    let hiddenTemplate = await Robert.asks(Element.isHidden(startStopContinueTemplate));
+    let hiddenTemplate = await userOnePage.isHidden(startStopContinueTemplate);
     if ( hiddenTemplate === true ) {
-        await Robert.attemptsTo(
-            ChangeTemplate.inApp()
-        );
+        await userOnePage.click(selectAnotherTemplate);
+        userOnePage.click(startStopContinueTemplate);
+        userOnePage.click(useTemplateButton);
     }
 
-    await Robert.attemptsTo(
-        Click.on(startMeetingButton),
-        Wait.forLoadState('networkidle')
-    );
+    await userOnePage.click(startMeetingButton);
+    userOnePage.waitForLoadState('networkidle');
         
-    const Lisa = Actor.named('Lisa')
-        .can(BrowseTheWeb.using(lisaPage));
-    
-    await Lisa.attemptsTo(
-        LogInAsUserTwo.inApp(),
-        EnterRetroMeeting.inApp(),
-        FillOutReflectionInStartColumn.inApp(),
-        Wait.forSelector(firstReflectionBox),
-        FillOutReflectionInStopColumn.inApp(),
-        Wait.forSelector(secondReflectionBox),
-        FillOutReflectionInContinueColumn.inApp(),
-        Wait.forSelector(thirdReflectionBox)
-    );
+    // User Two Scenario
+    await userTwoPage.goto(`${baseURL}/meetings`);
+    userTwoPage.click(activeMeetingBox);
 
-    await Robert.attemptsTo(
-        FillOutReflectionInStartColumn.inApp(),
-        Wait.forSelector(firstReflectionBox),
-        FillOutReflectionInStopColumn.inApp(),
-        Wait.forSelector(secondReflectionBox),
-        FillOutReflectionInContinueColumn.inApp(),
-        Wait.forSelector(thirdReflectionBox)
-    );
+    await userTwoPage.click(startField);
+    userTwoPage.fill(startField, randomStatement);
+    userTwoPage.waitForLoadState('networkidle');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.waitForSelector(firstReflectionBox);
 
-    await expect(robertPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
-    await expect(lisaPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
-    
+    await userTwoPage.click(stopField);
+    userTwoPage.fill(stopField, randomStatement);
+    userTwoPage.waitForLoadState('networkidle');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.waitForSelector(secondReflectionBox);
+
+    await userTwoPage.click(continueField);
+    userTwoPage.fill(continueField, randomStatement);
+    userTwoPage.waitForLoadState('networkidle');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.keyboard.press('Enter');
+    userTwoPage.waitForSelector(thirdReflectionBox);
+
+    // User One Scenario, Cont'd
+    await userOnePage.click(startField);
+    userOnePage.fill(startField, randomStatement);
+    userOnePage.waitForLoadState('networkidle');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.waitForSelector(firstReflectionBox);
+
+    await userOnePage.click(stopField);
+    userOnePage.fill(stopField, randomStatement);
+    userOnePage.waitForLoadState('networkidle');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.waitForSelector(secondReflectionBox);
+
+    await userOnePage.click(continueField);
+    userOnePage.fill(continueField, randomStatement);
+    userOnePage.waitForLoadState('networkidle');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.keyboard.press('Enter');
+    userOnePage.waitForSelector(thirdReflectionBox);
+
+    // Assertions for Both Users
+    expect(userOnePage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+    expect(userTwoPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+
+    await browser.close();
+
 } finally {
 
     const browser = await chromium.launch();
-    const robertContext = await browser.newContext();
-    const robertPage = await robertContext.newPage();
+    const userOneContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
+    const userOnePage = await userOneContext.newPage();
 
-    const Robert = Actor.named('Robert')
-        .can(BrowseTheWeb.using(robertPage));
+    //Robert
+    await userOnePage.goto(`${baseURL}/meetings`);
+    userOnePage.click(activeMeetingBox);
+    userOnePage.dblclick(endMeetingButton);
 
-    await Robert.attemptsTo(
-        LogInAsUserOne.inApp(),
-        Navigate.to('/'),
-        EnterRetroMeeting.inApp(),
-        EndMeeting.inApp(),
-        Navigate.to('/me')
-    );
+    await userOnePage.goto(`${baseURL}/me`)
 
-   let existingSelector = await Robert.asks(Element.isVisible(tripleDotForMessage));
+   let existingSelector = await userOnePage.isVisible(tripleDotForMessage);
     while (existingSelector === true) {
-        await Robert.attemptsTo(
-            RemoveMeetingSummaryMessage.inApp()
-        );
-        let hiddenSelector = await Robert.asks(Element.isHidden(tripleDotForMessage));
+        await userOnePage.click(tripleDotForMessage);
+        userOnePage.click(archiveMeeting);
+
+        let hiddenSelector = await userOnePage.isHidden(tripleDotForMessage);
         if (hiddenSelector === true) {
             break;
         }
         }
+
+    await browser.close();
 }
 });
