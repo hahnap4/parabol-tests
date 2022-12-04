@@ -6,16 +6,16 @@ import {
     tripleDotForMessage, firstReflectionBox, secondReflectionBox,
     thirdReflectionBox, blankIcebreakerCheckbox
  } from '@index';
-import { LogInAsUserOne } from 'src/common-events/auth/login-as/user-one';
-import { LogInAsUserTwo } from 'src/common-events/auth/login-as/user-two';
-import { GoToRetroMeetingSetupPage } from 'src/common-events/goToPages/desktop/goToRetroMeetingSetupPage.task';
-import { EnterRetroMeeting } from 'src/common-events/retro/desktop/enterRetroMeeting.task';
-import { ChangeTemplate } from 'src/common-events/retro/desktop/changeTemplate.task';
-import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
-import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
-import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
-import { EndMeeting } from 'src/common-events/endMeeting.task';
-import { RemoveMeetingSummaryMessage } from 'src/common-events/removeMeetingSummaryMessage.task';
+import { LogInAsUserOne } from '../../../../common-events/auth/login-as/user-one';
+import { LogInAsUserTwo } from '../../../../common-events/auth/login-as/user-two';
+import { GoToRetroMeetingSetupPage } from '../../../../common-events/go-to-pages/desktop/retro-meeting-setup';
+import { EnterRetroMeeting } from '../../../../common-events/retro/desktop/enter-retro-meeting';
+import { ChangeTemplate } from '../../../../common-events/retro/desktop/change-template';
+import { FillOutReflectionInStartColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
+import { FillOutReflectionInStopColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
+import { FillOutReflectionInContinueColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
+import { EndMeeting } from '../../../../common-events/end-meeting';
+import { RemoveMeetingSummaryMessage } from '../../../../common-events/remove-meeting-summary-message';
 
 // FIXME: The setupMeeting page is no longer a separate page. It's a popup instead.
 // Check if the locator values need to be changed.

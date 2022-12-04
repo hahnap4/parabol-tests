@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { SignOut } from 'src/common-events/auth/logout-for/desktop/desktop';
-import { LogInAsUserOne } from 'src/common-events/auth/login-as/user-one';
+import { SignOutBy } from '../../../../common-events/auth/logout-for/desktop';
+import { LogInAsUserOneBy } from '../../../../common-events/auth/login-as/user-one';
 import 'dotenv/config';
 
 const base_url = process.env.BASE_URL;

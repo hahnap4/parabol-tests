@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { CreateAccount } from 'src/common-events/auth/createAccount.task';
-import { DeleteAccount } from 'src/common-events/auth/deleteAccount.task';
+import { CreateAccountBy } from '../../../../common-events/auth/create-account';
+import { DeleteAccounBy } from '../../../../common-events/auth/delete-account';
 
     // TODO: Create a mobile version of this test.
 
