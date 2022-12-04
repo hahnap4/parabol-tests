@@ -1,6 +1,6 @@
 # Cross-Browser Test Automation for Parabol
 
-This test automation will cover most of the checklist items for the Release tests. 
+This test automation will cover some or most of the checklist items for the Release tests. 
 
 In other words, it will be focused on covering the smoke tests. If the situation arises, we may create test automation for partial regression.
 

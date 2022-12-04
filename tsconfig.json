@@ -29,40 +29,40 @@
                 "src/fixtures/*"
             ],
             "@addATeam/*": [
-                "src/objects/addATeam/*"
+                "src/objects/add-a-team/*"
             ],
             "@authPage/*": [
-                "src/objects/authPage/*"
+                "src/objects/auth/*"
             ],
             "@createMeeting/*": [
-                "src/objects/setupMeeting/*"
+                "src/objects/setup-meeting/*"
             ],
             "@inMeeting/*": [
-                "src/objects/inMeeting/*"
+                "src/objects/in-meeting/*"
             ],
             "@meetingsHomepage/*": [
-                "src/objects/meetingsHomepage/*"
+                "src/objects/meetings-homepage/*"
             ],
             "@myTasks/*": [
-                "src/objects/myTasks/*"
+                "src/objects/my-tasks/*"
             ],
             "@orgList/*": [
-                "src/objects/orgList/*"
+                "src/objects/org-list/*"
             ],
             "@settingsAndIntegrations/*": [
                 "src/objects/settingsAndIntegrations/*"
             ],
             "@teamTasksDashboard/*": [
-                "src/objects/teamTasksDashboard/*"
+                "src/objects/team-tasks-dashboard/*"
             ],
             "@timeline/*": [
                 "src/objects/timeline/*"
             ],
             "@upgradeOrgPlan/*": [
-                "src/objects/upgradeOrgPlan/*"
+                "src/objects/upgrade-org-plan/*"
             ],
             "@userProfile/*": [
-                "src/objects/userProfile/*"
+                "src/objects/user-profile/*"
             ],
             "@general/*": [
                 "src/objects/general/*"

@@ -6,16 +6,16 @@ import {
     tripleDotForMessage, firstReflectionBox, secondReflectionBox,
     thirdReflectionBox, blankIcebreakerCheckbox
  } from '@index';
-import { LogInAsUserOne } from '../../../../common-events/auth/login-as/user-one';
-import { LogInAsUserTwo } from '../../../../common-events/auth/login-as/user-two';
-import { GoToRetroMeetingSetupPage } from '../../../../common-events/go-to-pages/desktop/retro-meeting-setup';
-import { EnterRetroMeeting } from '../../../../common-events/retro/desktop/enter-retro-meeting';
-import { ChangeTemplate } from '../../../../common-events/retro/desktop/change-template';
-import { FillOutReflectionInStartColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
-import { FillOutReflectionInStopColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
-import { FillOutReflectionInContinueColumn } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
-import { EndMeeting } from '../../../../common-events/end-meeting';
-import { RemoveMeetingSummaryMessage } from '../../../../common-events/remove-meeting-summary-message';
+import { LoginAsUserOneBy } from '../../../../common-events/auth/login-as/user-one';
+import { LoginAsUserTwoBy } from '../../../../common-events/auth/login-as/user-two';
+import { GoToRetroMeetingSetupPageBy } from '../../../../common-events/go-to-pages/desktop/retro-meeting-setup';
+import { EnterRetroMeetingBy } from '../../../../common-events/retro/desktop/enter-retro-meeting';
+import { ChangeTemplateBy } from '../../../../common-events/retro/desktop/change-template';
+import { CompleteReflectionForStartColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
+import { CompleteReflectionForStopColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
+import { CompleteReflectionForContinueColumnBy } from '../../../../common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
+import { EndMeetingBy } from '../../../../common-events/end-meeting';
+import { RemoveMeetingSummaryMessageBy } from '../../../../common-events/remove-meeting-summary-message';
 
 // FIXME: The setupMeeting page is no longer a separate page. It's a popup instead.
 // Check if the locator values need to be changed.
@@ -54,7 +54,7 @@ const lisaPage = await lisaContext.newPage();
         Click.on(startMeetingButton),
         Wait.forLoadState('networkidle')
     );
-/*        
+        
     const Lisa = Actor.named('Lisa')
         .can(BrowseTheWeb.using(lisaPage));
     
@@ -80,7 +80,7 @@ const lisaPage = await lisaContext.newPage();
 
     await expect(robertPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
     await expect(lisaPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
-*/
+    
 } finally {
 
     const browser = await chromium.launch();
