@@ -29,7 +29,7 @@ async function bothUsersSignIn(config: FullConfig) {
   });
   }
 
-  await firstRequestContext.storageState({ path: './src/fixtures/storageState/firstUser.json'});
+  await firstRequestContext.storageState({ path: './src/fixtures/storage-state/first-user.json'});
 
   await firstRequestContext.dispose();
 
@@ -49,23 +49,23 @@ async function bothUsersSignIn(config: FullConfig) {
   });
   }
 
-  await secondRequestContext.storageState({ path: './src/fixtures/storageState/secondUser.json'});
+  await secondRequestContext.storageState({ path: './src/fixtures/storage-state/second-user.json'});
 
   await secondRequestContext.dispose();
 
-  // Auth Log In
-  //const AuthPage = await browser.newPage();
-  //await AuthPage.goto(`${BaseURL}`);
-  //await AuthPage.fill(emailField, 'email@test.com');
-  //await AuthPage.fill(passwordField, 'password');
-  //await Promise.all([
-  //  AuthPage.waitForNavigation({ url: `${BaseURL}/meetings` }),
-  //  AuthPage.click(signInButton)
-  //]);
-  // Save signed-in state to 'storageState.json'.
-  //await AuthPage.context().storageState({ path: 'savedAuthSession.json' });
-  //
-  //await browser.close();
+  /* Auth Log In
+  const AuthPage = await browser.newPage();
+  await AuthPage.goto(`${BaseURL}`);
+  await AuthPage.fill(emailField, 'email@test.com');
+  await AuthPage.fill(passwordField, 'password');
+  await Promise.all([
+    AuthPage.waitForNavigation({ url: `${BaseURL}/meetings` }),
+    AuthPage.click(signInButton)
+  ]);
+   Save signed-in state to 'storageState.json'.
+  await AuthPage.context().storageState({ path: 'savedAuthSession.json' });
+  
+  await browser.close(); */
 }
 
 export default bothUsersSignIn;

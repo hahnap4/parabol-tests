@@ -6,14 +6,14 @@ import {
     tripleDotForMessage, firstReflectionBox, secondReflectionBox,
     thirdReflectionBox, blankIcebreakerCheckbox
  } from '@index';
-import { LogInAsUserOne } from 'src/common-events/auth/signIn/logInAsUserOne';
-import { LogInAsUserTwo } from 'src/common-events/auth/signIn/logInAsUserTwo.task';
+import { LogInAsUserOne } from 'src/common-events/auth/login-as/user-one';
+import { LogInAsUserTwo } from 'src/common-events/auth/login-as/user-two';
 import { GoToRetroMeetingSetupPage } from 'src/common-events/goToPages/desktop/goToRetroMeetingSetupPage.task';
 import { EnterRetroMeeting } from 'src/common-events/retro/desktop/enterRetroMeeting.task';
 import { ChangeTemplate } from 'src/common-events/retro/desktop/changeTemplate.task';
-import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
-import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
-import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
+import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
+import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
+import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
 import { EndMeeting } from 'src/common-events/endMeeting.task';
 import { RemoveMeetingSummaryMessage } from 'src/common-events/removeMeetingSummaryMessage.task';
 

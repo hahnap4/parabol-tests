@@ -1,9 +1,11 @@
-import { LogInAsUserOne } from 'src/common-events/auth/signIn/logInAsUserOne';
 import { test, expect } from '@playwright/test';
+import { LoginAsUserOneBy } from '../../../../common-events/auth/login-as/user-one';
 
-test('Sign In', async({ page }) => {
+test('Sign In', async ({ page }) => {
+    const loginAsUserOneBy = new LoginAsUserOneBy(page);
 
-    await LogInAsUserOne.inApp();
+    await loginAsUserOneBy.FillingOutFields();
+    loginAsUserOneBy.ClickingSignInButton();
 
     expect(page.url()).toContain('/meetings');
 

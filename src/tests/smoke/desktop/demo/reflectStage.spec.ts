@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStartColumn.task';
-import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInStopColumn.task';
-import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflectStage/desktop/fillOutReflectionInContinueColumn.task';
-import { StartDemoReflectStage } from 'src/common-events/demo/fixtures/startDemoReflectStage.task';
+import { FillOutReflectionInStartColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/start-column';
+import { FillOutReflectionInStopColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/stop-column';
+import { FillOutReflectionInContinueColumn } from 'src/common-events/demo/reflect-stage/desktop/complete-reflection-for/continue-column';
+import { StartDemoReflectStage } from 'src/common-events/demo/fixtures/start-demo-stage/reflect';
 
 test('Type Anonymous Reflections into Boxes', async({ page }) => {
     
