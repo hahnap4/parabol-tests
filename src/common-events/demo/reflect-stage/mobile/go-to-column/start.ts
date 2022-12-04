@@ -1,6 +1,4 @@
-import { 
-    goToFirstReflection
-} from '@index';
+import { goToFirstReflection } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
 import { Page } from '@playwright/test';
 
 export class GoToStartColumnBy {

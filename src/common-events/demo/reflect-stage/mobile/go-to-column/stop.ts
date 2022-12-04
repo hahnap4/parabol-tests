@@ -1,6 +1,4 @@
-import { 
-    goToSecondReflection
-} from '@index';
+import { goToSecondReflection } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
 import { Page } from '@playwright/test';
 
 export class GoToStopColumnBy {

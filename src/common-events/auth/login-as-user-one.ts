@@ -1,6 +1,5 @@
-import { 
-    emailField, passwordField, signInButton
-} from '@index';
+import { emailField, passwordField } from '@pages/auth/general-auth';
+import { signInButton } from '@pages/auth/sign-in';
 import { Page } from '@playwright/test';
 import 'dotenv/config';
 
@@ -18,10 +17,8 @@ export class LoginAsUserOneBy {
 
     async FillingOutFields() {
         await this.page.goto(`${baseURL}`);
-        // @ts-ignore
-        this.page.fill(emailField, username);
-        // @ts-ignore
-        this.page.fill(passwordField, password);
+        this.page.fill(emailField, `${username}`);
+        this.page.fill(passwordField, `${password}`);
     }
 
     async ClickingSignInButton() {

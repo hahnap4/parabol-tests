@@ -1,6 +1,4 @@
-import { 
-    goToThirdReflection
-} from '@index';
+import { goToThirdReflection } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
 import { Page } from '@playwright/test';
 
 export class GoToContinueColumnBy {

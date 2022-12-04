@@ -3,10 +3,8 @@
 const signOutButton = 'text=exit_to_appSign Out';
 
 const goToMyProfileButton = 'text=account_boxProfile';
-const goToOrgListButton = '.css-1gdkvb >> text=Organizations';
-const upgradeToProButton = '.css-1gdkvb >> text=Upgrade to Pro';
 
 export {
-  signOutButton, goToMyProfileButton, goToOrgListButton, upgradeToProButton
+  signOutButton, goToMyProfileButton
 };
 

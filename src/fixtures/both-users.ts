@@ -1,5 +1,6 @@
+import { emailField, passwordField } from '@pages/auth/general-auth';
+import { signInButton } from '@pages/auth/sign-in';
 import { FullConfig, chromium } from '@playwright/test';
-import { emailField, passwordField, signInButton } from '@index';
 import 'dotenv/config';
 
 const BaseURL = process.env.BASE_URL;

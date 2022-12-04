@@ -1,6 +1,5 @@
-import { 
-    stopFieldForMobile, randomStatement
-} from '@index';
+import { stopFieldForMobile } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
+import { randomStatement } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForStopColumnOnMobileBy {

@@ -1,7 +1,6 @@
-import { 
-    closeTipsButton, startDemoButton, 
-    tipsPopupBox
-} from '@index';
+
+import { startDemoButton } from '@pages/in-meeting/demo/demo-specific';
+import { tipsPopupBox, closeTipsButton } from '@pages/in-meeting/general/general-in-meeting';
 import { Page } from '@playwright/test';
 import 'dotenv/config';
 

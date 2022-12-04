@@ -1,6 +1,5 @@
-import { 
-    createAccountButton
-} from '@index';
+import { createAccountButton } from '@pages/auth/create-account';
+import { emailField, passwordField } from '@pages/auth/general-auth';
 import { Page } from '@playwright/test';
 import 'dotenv/config';
 
@@ -17,10 +16,8 @@ export class CreateAccountBy {
 
     async FillingOutFields() {
         await this.page.goto(`${baseURL}/create-account`);
-        // @ts-ignore
-        this.page.fill(emailField, tempUsername);
-        // @ts-ignore
-        this.page.fill(passwordField, tempPassword);
+        this.page.fill(emailField, `${tempUsername}`);
+        this.page.fill(passwordField, `${tempPassword}`);
     }
 
     async ClickingOnCreateAccountButton() {

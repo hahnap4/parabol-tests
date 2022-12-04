@@ -1,6 +1,5 @@
-import { 
-    signOutButton 
-} from '@index';
+
+import { signOutButton } from '@pages/general/user-menu-dropdown';
 import { Page } from '@playwright/test';
 
 export class LogoutOnMobileBy {

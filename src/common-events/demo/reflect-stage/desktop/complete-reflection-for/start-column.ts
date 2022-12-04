@@ -1,7 +1,5 @@
-import { 
-    startField, randomStatement,
-    firstReflectionBox
-} from '@index';
+import { startField, firstReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
+import { randomStatement } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForStartColumnBy {

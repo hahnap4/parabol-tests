@@ -1,8 +1,7 @@
-import { 
-    userIconButton, 
-    goToMyProfileButton, deleteAccountButton, reasonForDeletionField, 
-    goodbyeForeverButton, reason
-} from '@index';
+import { userIconButton } from '@pages/general/header';
+import { goToMyProfileButton } from '@pages/general/user-menu-dropdown';
+import { deleteAccountButton, goodbyeForeverButton, reasonForDeletionField } from '@pages/user-profile/danger-zone';
+import { reason } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
 export class DeleteAccountBy {

@@ -1,6 +1,5 @@
-import { 
-    continueFieldForMobile, randomStatement
-} from '@index';
+import { continueFieldForMobile } from '@pages/in-meeting/retro/mobile-specific-reflect-stage';
+import { randomStatement } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForContinueColumnOnMobileBy {

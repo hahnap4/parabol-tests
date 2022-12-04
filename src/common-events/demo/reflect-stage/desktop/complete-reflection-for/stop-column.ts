@@ -1,7 +1,5 @@
-import { 
-    stopField, randomStatement,
-    secondReflectionBox
-} from '@index';
+import { randomStatement } from '@data/test_data.json';
+import { stopField, secondReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForStopColumnBy {

@@ -1,6 +1,4 @@
-import { 
-    endDemoButton
-} from '@index';
+import { endDemoButton } from '@pages/in-meeting/demo/demo-specific';
 import { Page } from '@playwright/test';
 
 export class EndDemoRetroMeetingBy {

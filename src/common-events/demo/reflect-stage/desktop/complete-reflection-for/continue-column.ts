@@ -1,7 +1,5 @@
-import { 
-    continueField, randomStatement,
-    thirdReflectionBox
-} from '@index';
+import { continueField, thirdReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
+import { randomStatement } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForContinueColumnBy {

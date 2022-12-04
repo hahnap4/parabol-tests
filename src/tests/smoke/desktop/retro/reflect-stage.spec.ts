@@ -1,12 +1,15 @@
 //
 import { test, expect, chromium } from '@playwright/test';
-import {
-    includeIcebreakerCheckbox,
-    startStopContinueTemplate, startMeetingButton, 
-    tripleDotForMessage, firstReflectionBox, secondReflectionBox,
-    thirdReflectionBox, blankIcebreakerCheckbox, addMeetingButton, nextMeetingTypeButton, selectAnotherTemplate, useTemplateButton, activeMeetingBox, startField, randomStatement, stopField, continueField, endMeetingButton, archiveMeeting
- } from '@index';
 import 'dotenv/config';
+import { randomStatement } from '@data/test_data.json';
+import { blankIcebreakerCheckbox, includeIcebreakerCheckbox, selectAnotherTemplate } from '@pages/setup-meeting/setup-meeting-setting-widget';
+import { endMeetingButton } from '@pages/in-meeting/general/general-in-meeting';
+import { startField, firstReflectionBox, stopField, secondReflectionBox, continueField, thirdReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
+import { activeMeetingBox, addMeetingButton } from '@pages/meetings-homepage/meetings-homepage';
+import { nextMeetingTypeButton, startMeetingButton } from '@pages/setup-meeting/general-setup-meeting';
+import { useTemplateButton } from '@pages/setup-meeting/general-templates-popup';
+import { startStopContinueTemplate } from '@pages/setup-meeting/retro-templates';
+import { tripleDotForMessage, archiveMeeting } from '@pages/timeline/meeting-summary';
 
 const baseURL = process.env.BASE_URL;
 
@@ -103,7 +106,7 @@ try {
     const userOneContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
     const userOnePage = await userOneContext.newPage();
 
-    //Robert
+    // User One Cleanup
     await userOnePage.goto(`${baseURL}/meetings`);
     userOnePage.click(activeMeetingBox);
     userOnePage.dblclick(endMeetingButton);

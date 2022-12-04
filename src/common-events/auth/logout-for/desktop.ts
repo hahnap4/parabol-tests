@@ -1,6 +1,6 @@
-import { 
-    userIconButton, signOutButton 
-} from '@index';
+
+import { userIconButton } from '@pages/general/header';
+import { signOutButton } from '@pages/general/user-menu-dropdown';
 import { Page } from '@playwright/test';
 
 export class LogoutBy {

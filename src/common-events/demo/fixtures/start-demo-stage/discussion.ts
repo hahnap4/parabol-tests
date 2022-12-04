@@ -1,6 +1,5 @@
-import { 
-    nextTopicButton
-} from '@index';
+
+import { nextTopicButton } from '@pages/in-meeting/general/general-in-meeting';
 import { Page } from '@playwright/test';
 
 export class GoToDemoDiscussionStageBy {
