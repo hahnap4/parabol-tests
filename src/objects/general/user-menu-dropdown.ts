@@ -1,10 +1,10 @@
 // Selectors for the dropdown menu that appears when you click on the user icon
 
-const signOutButton = 'text=exit_to_appSign Out';
+const signOutButton = 'role=link[name="Sign Out"]';
 
-const goToMyProfileButton = 'text=account_boxProfile';
+const goToMySettingsButton = 'role=link[name="My Settings"]';
 
 export {
-  signOutButton, goToMyProfileButton
+  signOutButton, goToMySettingsButton
 };
 

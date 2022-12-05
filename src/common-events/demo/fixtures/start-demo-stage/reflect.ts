@@ -1,6 +1,5 @@
 
 import { startDemoButton } from '@pages/in-meeting/demo/demo-specific';
-import { tipsPopupBox, closeTipsButton } from '@pages/in-meeting/general/general-in-meeting';
 import { Page } from '@playwright/test';
 import 'dotenv/config';
 
@@ -17,7 +16,5 @@ export class GoToDemoReflectStageBy {
         await this.page.goto(`${baseURL}/retrospective-demo/reflect`);
         this.page.click(startDemoButton);
         this.page.waitForLoadState('networkidle');
-        this.page.waitForSelector(tipsPopupBox);
-        this.page.click(closeTipsButton);
     }
 }

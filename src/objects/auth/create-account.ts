@@ -1,6 +1,6 @@
 // Selectors on the Create Account Page
 
-const createAccountButton = 'button:has-text("Create Free Account")';
+const createAccountButton = 'role=button[name="Create Free Account"]';
 
 export { 
   createAccountButton 

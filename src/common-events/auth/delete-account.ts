@@ -1,5 +1,5 @@
 import { userIconButton } from '@pages/general/header';
-import { goToMyProfileButton } from '@pages/general/user-menu-dropdown';
+import { goToMySettingsButton } from '@pages/general/user-menu-dropdown';
 import { deleteAccountButton, goodbyeForeverButton, reasonForDeletionField } from '@pages/user-profile/danger-zone';
 import { reason } from '@data/test_data.json';
 import { Page } from '@playwright/test';
@@ -13,7 +13,7 @@ export class DeleteAccountBy {
 
     async GoingToMyProfilePage() {
         await this.page.click(userIconButton);
-        this.page.click(goToMyProfileButton);
+        this.page.click(goToMySettingsButton);
     }
 
     async FillingOutFields() {

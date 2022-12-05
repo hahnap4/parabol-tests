@@ -1,64 +1,14 @@
 {
   "cookies": [
     {
-      "name": "_gcl_au",
-      "value": "1.1.393398771.1670192525",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1677968524,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "_session_id",
-      "value": "043df4181f9d6cc6bcc31a0909c6b4f9",
-      "domain": "tracking.g2crowd.com",
-      "path": "/",
-      "expires": 1671402125.008453,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
-      "name": "__cf_bm",
-      "value": "uX2.svxcgCnKKi3fhQrZjEY7KfFlKfXzRje7ryITiP0-1670192524-0-AUDrKuKSq2v40+fpR779tNqevTtSKvNvI+QqgEb+r7TlKSPZyn0xeheTpi7eonARQ83KeaTH6TlD9F+G5goKp+E=",
-      "domain": ".g2crowd.com",
-      "path": "/",
-      "expires": 1670194325.008498,
-      "httpOnly": true,
-      "secure": true,
-      "sameSite": "None"
-    },
-    {
       "name": "_dd_s",
-      "value": "rum=1&id=65d55079-e2e3-4125-aba3-b059bdb11c74&created=1670192524129&expire=1670193425133",
+      "value": "rum=1&id=6b7d6380-77b7-4491-b0d1-79ce4596bbfe&created=1670197833167&expire=1670198734170",
       "domain": "action-staging.parabol.co",
       "path": "/",
-      "expires": 1670193425,
+      "expires": 1670198734,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Strict"
-    },
-    {
-      "name": "ajs_user_id",
-      "value": "local|ddVv15EwX6",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1701728525,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
-    },
-    {
-      "name": "ajs_anonymous_id",
-      "value": "fe11299c-3aff-4401-b659-e930d3d8944a",
-      "domain": ".parabol.co",
-      "path": "/",
-      "expires": 1701728525,
-      "httpOnly": false,
-      "secure": false,
-      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -67,23 +17,11 @@
       "localStorage": [
         {
           "name": "Action:token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMTkyNTI1LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyNzg0NTI1LCJyb2wiOm51bGx9.1RwCz9SAuaU0EXAAECycAQmfLX9-JALj5r2ApABjy-o"
-        },
-        {
-          "name": "ajs_user_id",
-          "value": "\"local|ddVv15EwX6\""
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMTk3ODM0LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyNzg5ODM0LCJyb2wiOm51bGx9.55DUhdtyk7cICC7W-fRveBe2gsbY-gGOvVtoGaIiX7c"
         },
         {
           "name": "email",
           "value": "test@automate.com"
-        },
-        {
-          "name": "ajs_anonymous_id",
-          "value": "\"fe11299c-3aff-4401-b659-e930d3d8944a\""
-        },
-        {
-          "name": "ajs_user_traits",
-          "value": "{\"email\":\"test@automate.com\"}"
         }
       ]
     }

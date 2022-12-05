@@ -1,6 +1,6 @@
 // Selectors for the header
 
-const userIconButton = 'text=Add Meetinghelp_outlinenotifications >> button >> nth=3';
+const userIconButton = 'role=banner >> role=button >> nth=4';
     
 export {
   userIconButton
