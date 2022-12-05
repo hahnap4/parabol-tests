@@ -1,10 +1,11 @@
  // Common Selectors for the settings widget when you're creating any type of meeting
 
-const selectAnotherTemplate = '.css-1hqp667';
-const includeIcebreakerCheckbox = 'text=check_boxInclude Icebreaker';
-const blankIcebreakerCheckbox = 'text=check_box_outline_blankInclude Icebreaker';
+const selectAnotherTemplate = '.css-1wom7xj >> text=Template';
+const settingsForRetro = '#newMeetingRoot >> text=Settings';
+const includeIcebreakerCheckbox = 'data-test-id=CheckBoxIcon';
+const blankIcebreakerCheckbox = 'data-test-id=CheckBoxOutlineBlankIcon';
 
 export { 
-  selectAnotherTemplate,
+  selectAnotherTemplate, settingsForRetro,
   includeIcebreakerCheckbox, blankIcebreakerCheckbox
 };

@@ -1,7 +1,7 @@
 // Selectors for the Meetings homepage
 
-const addMeetingButton = 'button:has-text("Add Meeting")';
-const activeMeetingBox = '.css-17crg8a >> nth=0';
+const addMeetingButton = 'role=button[name="Add Meeting"]';
+const activeMeetingBox = 'role=link >> nth=1';
 
 export {
   addMeetingButton, activeMeetingBox

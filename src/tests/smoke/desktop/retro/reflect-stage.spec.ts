@@ -2,11 +2,11 @@
 import { test, expect, chromium } from '@playwright/test';
 import 'dotenv/config';
 import { randomStatement } from '@data/test_data.json';
-import { blankIcebreakerCheckbox, includeIcebreakerCheckbox, selectAnotherTemplate } from '@pages/setup-meeting/setup-meeting-setting-widget';
+import { blankIcebreakerCheckbox, settingsForRetro, includeIcebreakerCheckbox, selectAnotherTemplate } from '@pages/setup-meeting/setup-meeting-setting-widget';
 import { endMeetingButton } from '@pages/in-meeting/general/general-in-meeting';
 import { startField, firstReflectionBox, stopField, secondReflectionBox, continueField, thirdReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
 import { activeMeetingBox, addMeetingButton } from '@pages/meetings-homepage/meetings-homepage';
-import { nextMeetingTypeButton, startMeetingButton } from '@pages/setup-meeting/general-setup-meeting';
+import { retrospectiveOption, startMeetingButton } from '@pages/setup-meeting/general-setup-meeting';
 import { useTemplateButton } from '@pages/setup-meeting/general-templates-popup';
 import { startStopContinueTemplate } from '@pages/setup-meeting/retro-templates';
 import { tripleDotForMessage, archiveMeeting } from '@pages/timeline/meeting-summary';
@@ -28,13 +28,13 @@ try {
     // User One Scenario
     await userOnePage.goto(`${baseURL}/meetings`);
     userOnePage.click(addMeetingButton);
-    userOnePage.click(nextMeetingTypeButton);
-    userOnePage.waitForLoadState('networkidle');
+    userOnePage.click(retrospectiveOption);
+    userOnePage.click(settingsForRetro);
 
     let hiddenBlankCheckbox = await userOnePage.isHidden(blankIcebreakerCheckbox);
     if ( hiddenBlankCheckbox === true ) {
         await userOnePage.click(includeIcebreakerCheckbox);
-        userOnePage.waitForLoadState('networkidle');
+        userOnePage.click(settingsForRetro);
     }
 
     let hiddenTemplate = await userOnePage.isHidden(startStopContinueTemplate);
@@ -45,7 +45,6 @@ try {
     }
 
     await userOnePage.click(startMeetingButton);
-    userOnePage.waitForLoadState('networkidle');
         
     // User Two Scenario
     await userTwoPage.goto(`${baseURL}/meetings`);
