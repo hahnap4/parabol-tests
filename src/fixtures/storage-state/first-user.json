@@ -2,13 +2,43 @@
   "cookies": [
     {
       "name": "_dd_s",
-      "value": "rum=1&id=6b7d6380-77b7-4491-b0d1-79ce4596bbfe&created=1670197833167&expire=1670198734170",
+      "value": "rum=1&id=94c3ab2c-3801-4144-8ccc-539daec4c557&created=1670277980901&expire=1670278884003",
       "domain": "action-staging.parabol.co",
       "path": "/",
-      "expires": 1670198734,
+      "expires": 1670278884,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Strict"
+    },
+    {
+      "name": "_gcl_au",
+      "value": "1.1.132534510.1670277984",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1678053984,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_user_id",
+      "value": "local|ddVv15EwX6",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1701813984,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "f2145151-ba60-4c83-9725-64e215e6458d",
+      "domain": ".parabol.co",
+      "path": "/",
+      "expires": 1701813984,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
     }
   ],
   "origins": [
@@ -17,11 +47,23 @@
       "localStorage": [
         {
           "name": "Action:token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMTk3ODM0LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyNzg5ODM0LCJyb2wiOm51bGx9.55DUhdtyk7cICC7W-fRveBe2gsbY-gGOvVtoGaIiX7c"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMjc3OTg0LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyODY5OTg0LCJyb2wiOm51bGx9.UtcmlsydZT10JCyx91g0cOIk1gPpPTXUJx-_mXEXZD0"
+        },
+        {
+          "name": "ajs_user_id",
+          "value": "\"local|ddVv15EwX6\""
         },
         {
           "name": "email",
           "value": "test@automate.com"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"f2145151-ba60-4c83-9725-64e215e6458d\""
+        },
+        {
+          "name": "ajs_user_traits",
+          "value": "{\"email\":\"test@automate.com\"}"
         }
       ]
     }

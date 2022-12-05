@@ -19,103 +19,97 @@ try {
     
     const browser = await chromium.launch();
 
-    const userOneContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
-    const userTwoContext = await browser.newContext({ storageState: './src/fixtures/storageState/secondUser.json'});
+    const userOneContext = await browser.newContext({ storageState: 'src/fixtures/storageState/firstUser.json'});
+    const userTwoContext = await browser.newContext({ storageState: 'src/fixtures/storageState/secondUser.json'});
 
     const userOnePage = await userOneContext.newPage();
     const userTwoPage = await userTwoContext.newPage();
 
     // User One Scenario
     await userOnePage.goto(`${baseURL}/meetings`);
-    userOnePage.click(addMeetingButton);
-    userOnePage.click(retrospectiveOption);
-    userOnePage.click(settingsForRetro);
+    await userOnePage.click(addMeetingButton);
+    await userOnePage.click(retrospectiveOption);
+    await userOnePage.click(settingsForRetro);
 
     let hiddenBlankCheckbox = await userOnePage.isHidden(blankIcebreakerCheckbox);
     if ( hiddenBlankCheckbox === true ) {
         await userOnePage.click(includeIcebreakerCheckbox);
-        userOnePage.click(settingsForRetro);
+        await userOnePage.click(settingsForRetro);
     }
 
     let hiddenTemplate = await userOnePage.isHidden(startStopContinueTemplate);
     if ( hiddenTemplate === true ) {
         await userOnePage.click(selectAnotherTemplate);
-        userOnePage.click(startStopContinueTemplate);
-        userOnePage.click(useTemplateButton);
+        await userOnePage.click(startStopContinueTemplate);
+        await userOnePage.click(useTemplateButton);
     }
 
     await userOnePage.click(startMeetingButton);
         
     // User Two Scenario
     await userTwoPage.goto(`${baseURL}/meetings`);
-    userTwoPage.click(activeMeetingBox);
+    await userTwoPage.click(activeMeetingBox);
 
     await userTwoPage.click(startField);
-    userTwoPage.fill(startField, randomStatement);
-    userTwoPage.waitForLoadState('networkidle');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.waitForSelector(firstReflectionBox);
+    await userTwoPage.fill(startField, randomStatement);
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.waitForSelector(firstReflectionBox);
 
     await userTwoPage.click(stopField);
-    userTwoPage.fill(stopField, randomStatement);
-    userTwoPage.waitForLoadState('networkidle');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.waitForSelector(secondReflectionBox);
+    await userTwoPage.fill(stopField, randomStatement);
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.waitForSelector(secondReflectionBox);
 
     await userTwoPage.click(continueField);
-    userTwoPage.fill(continueField, randomStatement);
-    userTwoPage.waitForLoadState('networkidle');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.keyboard.press('Enter');
-    userTwoPage.waitForSelector(thirdReflectionBox);
+    await userTwoPage.fill(continueField, randomStatement);
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.keyboard.press('Enter');
+    await userTwoPage.waitForSelector(thirdReflectionBox);
 
     // User One Scenario, Cont'd
     await userOnePage.click(startField);
-    userOnePage.fill(startField, randomStatement);
-    userOnePage.waitForLoadState('networkidle');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.waitForSelector(firstReflectionBox);
+    await userOnePage.fill(startField, randomStatement);
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.waitForSelector(firstReflectionBox);
 
     await userOnePage.click(stopField);
-    userOnePage.fill(stopField, randomStatement);
-    userOnePage.waitForLoadState('networkidle');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.waitForSelector(secondReflectionBox);
+    await userOnePage.fill(stopField, randomStatement);
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.waitForSelector(secondReflectionBox);
 
     await userOnePage.click(continueField);
-    userOnePage.fill(continueField, randomStatement);
-    userOnePage.waitForLoadState('networkidle');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.keyboard.press('Enter');
-    userOnePage.waitForSelector(thirdReflectionBox);
+    await userOnePage.fill(continueField, randomStatement);
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.keyboard.press('Enter');
+    await userOnePage.waitForSelector(thirdReflectionBox);
 
     // Assertions for Both Users
-    expect(userOnePage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
-    expect(userTwoPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+    await expect(userOnePage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+    await expect(userTwoPage.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
 
     await browser.close();
 
 } finally {
 
     const browser = await chromium.launch();
-    const userOneContext = await browser.newContext({ storageState: './src/fixtures/storageState/firstUser.json'});
+    const userOneContext = await browser.newContext({ storageState: 'src/fixtures/storageState/firstUser.json'});
     const userOnePage = await userOneContext.newPage();
 
     // User One Cleanup
     await userOnePage.goto(`${baseURL}/meetings`);
-    userOnePage.click(activeMeetingBox);
-    userOnePage.dblclick(endMeetingButton);
+    await userOnePage.click(activeMeetingBox);
+    await userOnePage.dblclick(endMeetingButton);
 
     await userOnePage.goto(`${baseURL}/me`)
 
    let existingSelector = await userOnePage.isVisible(tripleDotForMessage);
     while (existingSelector === true) {
         await userOnePage.click(tripleDotForMessage);
-        userOnePage.click(archiveMeeting);
+        await userOnePage.click(archiveMeeting);
 
         let hiddenSelector = await userOnePage.isHidden(tripleDotForMessage);
         if (hiddenSelector === true) {

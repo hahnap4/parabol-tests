@@ -10,15 +10,15 @@ test('Type Anonymous Reflections into Boxes', async({ page }) => {
 
     const completeReflectionForStartColumnBy = new CompleteReflectionForStartColumnBy(page);
     await completeReflectionForStartColumnBy.FillingInStartField();
-    completeReflectionForStartColumnBy.SubmittingReflection();
+    await completeReflectionForStartColumnBy.SubmittingReflection();
 
     const completeReflectionForStopColumnBy = new CompleteReflectionForStopColumnBy(page);
     await completeReflectionForStopColumnBy.FillingInStopField();
-    completeReflectionForStopColumnBy.SubmittingReflection();
+    await completeReflectionForStopColumnBy.SubmittingReflection();
 
     const completeReflectionForContinueColumnBy = new CompleteReflectionForContinueColumnBy(page);
     await completeReflectionForContinueColumnBy.FillingInContinueField();
-    completeReflectionForContinueColumnBy.SubmittingReflection();
+    await completeReflectionForContinueColumnBy.SubmittingReflection();
 
-    expect(page.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
+    await expect(page.locator('[aria-label="Edit this reflection"]')).toHaveCount(6);
 });
