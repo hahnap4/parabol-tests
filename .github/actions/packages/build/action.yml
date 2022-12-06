@@ -63,15 +63,19 @@ runs:
         restore-keys: |
           ${{ runner.os }}-playwright-
 
-    - name: Install Playwright with dependencies
-      if: steps.playwright-cache.outputs.cache-hit != 'true'
-      run: npx playwright install --with-deps
+    - name: Download New Browsers
+      run: npx playwright install
       shell: bash
 
-    - name: Install Playwright's dependencies
-      if: steps.playwright-cache.outputs.cache-hit == 'true'
-      run: npx playwright install-deps
-      shell: bash
+    #- name: Install Playwright with dependencies
+    #  if: steps.playwright-cache.outputs.cache-hit != 'true'
+    #  run: npx playwright install --with-deps
+    #  shell: bash
+#
+    #- name: Install Playwright's dependencies
+    #  if: steps.playwright-cache.outputs.cache-hit == 'true'
+    #  run: npx playwright install-deps
+    #  shell: bash
 
     - name: Create .env file
       run: |
