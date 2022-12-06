@@ -6,7 +6,7 @@ const base_url = process.env.BASE_URL;
 
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
-  globalSetup: require.resolve('./src/fixtures/both-users.ts'),
+  globalSetup: process.env.CI ? undefined : require.resolve('./src/fixtures/both-users.ts'),
   reporter: [ ['html', { open: 'on-failure' }] ], 
   retries: process.env.CI ? 2 : 0, 
   fullyParallel: true,
