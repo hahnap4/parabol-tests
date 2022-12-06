@@ -159,33 +159,3 @@ jobs:
             playwright-report/
             test-results/
           retention-days: 30
-
-  smoke-mobile-demo:
-    runs-on: ubuntu-latest
-    name: Smoke Demo Tests - Mobile
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - uses: ./.github/actions/packages/build
-        with:
-          node-version: '14.x'
-          secret_email: "${{ secrets.SECRET_EMAIL }}"
-          secret_password: "${{ secrets.SECRET_PASSWORD }}"
-          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
-          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
-          create_email: "${{ secrets.CREATE_EMAIL }}"
-          create_password: "${{ secrets.CREATE_PASSWORD }}"
-          base_url: "${{ secrets.BASE_URL }}"
-
-      - name: Run tests
-        run: npx playwright test smoke/mobile/demo
-
-      - uses: actions/upload-artifact@v3.1.0
-        if: failure()
-        with:
-          name: test-failures
-          path: |
-            playwright-report/
-            test-results/
-          retention-days: 30
