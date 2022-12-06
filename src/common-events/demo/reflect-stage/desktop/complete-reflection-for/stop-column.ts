@@ -1,5 +1,5 @@
 import { randomStatement } from '@data/test_data.json';
-import { stopField, secondReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
+import { stopField } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
 import { Page } from '@playwright/test';
 
 export class CompleteReflectionForStopColumnBy {
@@ -10,14 +10,12 @@ export class CompleteReflectionForStopColumnBy {
     }
 
     async FillingInStopField() {
-        this.page.click(stopField);
-        this.page.fill(stopField, randomStatement);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(stopField);
+        await this.page.fill(stopField, randomStatement);
     }
 
     async SubmittingReflection() {
-        this.page.keyboard.press('Enter');
-        this.page.keyboard.press('Enter');
-        this.page.waitForSelector(secondReflectionBox);
+        await this.page.keyboard.press('Enter');
+        await this.page.keyboard.press('Enter');
     }
 }

@@ -16,12 +16,12 @@ export class CreateAccountBy {
 
     async FillingOutFields() {
         await this.page.goto(`${baseURL}/create-account`);
-        this.page.fill(emailField, `${tempUsername}`);
-        this.page.fill(passwordField, `${tempPassword}`);
+        await this.page.fill(emailField, `${tempUsername}`);
+        await this.page.fill(passwordField, `${tempPassword}`);
     }
 
     async ClickingOnCreateAccountButton() {
         await this.page.dblclick(createAccountButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle');
     }
 }

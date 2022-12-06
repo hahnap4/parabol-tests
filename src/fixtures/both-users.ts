@@ -10,6 +10,7 @@ const secondUserEmail = process.env.SECRET_SECOND_EMAIL;
 const secondUserPassword = process.env.SECRET_SECOND_PASSWORD;
 
 async function bothUsersSignIn(_config: FullConfig) {
+
   const browser = await chromium.launch();
 
   const userOnePage = await browser.newPage();
@@ -29,7 +30,10 @@ async function bothUsersSignIn(_config: FullConfig) {
   await userTwoPage.goto(`${BaseURL}`);
   await userTwoPage.fill(emailField, `${secondUserEmail}`);
   await userTwoPage.fill(passwordField, `${secondUserPassword}`);
-  await userTwoPage.click(signInButton);
+  await Promise.all([
+    userTwoPage.waitForNavigation({ url: `${BaseURL}/meetings` }),
+    userTwoPage.click(signInButton)
+  ]);
   
   await userTwoPage.context().storageState({ path: './src/fixtures/storage-state/second-user.json' });
       

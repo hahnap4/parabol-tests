@@ -1,5 +1,5 @@
 
-import { signOutButton } from '@pages/general/user-menu-dropdown';
+import { signOutForMobileButton } from '@pages/general/user-menu-dropdown';
 import { Page } from '@playwright/test';
 
 export class LogoutOnMobileBy {
@@ -10,7 +10,7 @@ export class LogoutOnMobileBy {
     }
 
     async ClickingOnSignOutButton() {
-        await this.page.click(signOutButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(signOutForMobileButton);
+        await this.page.waitForLoadState('networkidle');
     }
 }

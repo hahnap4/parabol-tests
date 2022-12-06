@@ -10,6 +10,6 @@ test('Sign In', async ({ page }) => {
     await loginAsUserOneBy.FillingOutFields();
     await loginAsUserOneBy.ClickingSignInButton();
 
-    expect(page.url()).toContain(`${BaseURL}/meetings`);
+    await expect(page.url()).toContain(`${BaseURL}/meetings`);
 
 });

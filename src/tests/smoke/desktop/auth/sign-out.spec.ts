@@ -4,7 +4,7 @@ import 'dotenv/config';
 
 const base_url = process.env.BASE_URL;
 
-test.use({ storageState: '../../../../fixtures/storage-state/first-user.json'});
+test.use({ storageState: 'src/fixtures/storage-state/first-user.json'});
 
 test('Sign Out', async({ page }) => {
    const logoutBy = new LogoutBy(page);

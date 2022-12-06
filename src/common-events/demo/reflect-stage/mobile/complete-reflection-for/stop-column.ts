@@ -10,14 +10,14 @@ export class CompleteReflectionForStopColumnOnMobileBy {
     }
 
     async FillingInStopField() {
-        this.page.click(stopFieldForMobile);
-        this.page.fill(stopFieldForMobile, randomStatement);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(stopFieldForMobile);
+        await this.page.fill(stopFieldForMobile, randomStatement);
+        await this.page.waitForLoadState('networkidle');
     }
 
     async SubmittingReflection() {
-        this.page.keyboard.press('Enter');
-        this.page.keyboard.press('Enter');
-        this.page.waitForLoadState('load');
+        await this.page.keyboard.press('Enter');
+        await this.page.keyboard.press('Enter');
+        await this.page.waitForLoadState('load');
     }
 }

@@ -11,7 +11,7 @@ export class GoToDemoDiscussionStageBy {
 
     async SkippingTopics() {
         await this.page.dblclick(nextTopicButton);
-        this.page.dblclick(nextTopicButton);
-        this.page.dblclick(nextTopicButton);
+        await this.page.dblclick(nextTopicButton);
+        await this.page.dblclick(nextTopicButton);
     }
 }

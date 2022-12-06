@@ -20,6 +20,8 @@ test('Create Account', async({ page }) => {
         await deleteAccountBy.FillingOutFields();
         await deleteAccountBy.ClickingOnDeleteAccountButton();
 
-        await expect.soft(page.url()).toContain(`${BaseURL}/resources`);
+        await page.waitForLoadState('networkidle');
+
+        await expect.soft(page.url()).toContain('https://www.parabol.co/resources/');
     }
 });

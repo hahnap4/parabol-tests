@@ -17,12 +17,12 @@ export class LoginAsUserOneBy {
 
     async FillingOutFields() {
         await this.page.goto(`${baseURL}`);
-        this.page.fill(emailField, `${username}`);
-        this.page.fill(passwordField, `${password}`);
+        await this.page.fill(emailField, `${username}`);
+        await this.page.fill(passwordField, `${password}`);
     }
 
     async ClickingSignInButton() {
         await this.page.click(signInButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle');
     }
 }

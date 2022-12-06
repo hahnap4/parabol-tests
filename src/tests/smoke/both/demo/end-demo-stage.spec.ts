@@ -16,6 +16,6 @@ test('Check Demo Summary after Ending Demo', async({ page }) => {
     const endDemoRetroMeetingBy = new EndDemoRetroMeetingBy(page);
     await endDemoRetroMeetingBy.ClickingOnEndDemoButton();
 
-   await expect(page.url()).toContain(`${BaseURL}/retrospective-demo-summary`);
+    await expect(page.url()).toContain(`${BaseURL}/retrospective-demo-summary`);
     
 });

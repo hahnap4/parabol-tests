@@ -9,6 +9,6 @@ export class GoToContinueColumnBy {
     }
 
     async GoingToTheThirdReflection() {
-        this.page.click(goToThirdReflection);
+        await this.page.click(goToThirdReflection);
     }
 }

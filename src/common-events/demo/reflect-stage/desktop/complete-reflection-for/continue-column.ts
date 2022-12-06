@@ -1,4 +1,4 @@
-import { continueField, thirdReflectionBox } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
+import { continueField } from '@pages/in-meeting/retro/desktop-specific-reflect-stage';
 import { randomStatement } from '@data/test_data.json';
 import { Page } from '@playwright/test';
 
@@ -10,14 +10,12 @@ export class CompleteReflectionForContinueColumnBy {
     }
 
     async FillingInContinueField() {
-        this.page.click(continueField);
-        this.page.fill(continueField, randomStatement);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(continueField);
+        await this.page.fill(continueField, randomStatement);
     }
 
     async SubmittingReflection() {
-        this.page.keyboard.press('Enter');
-        this.page.keyboard.press('Enter');
-        this.page.waitForSelector(thirdReflectionBox);
+        await this.page.keyboard.press('Enter');
+        await this.page.keyboard.press('Enter');
     }
 }

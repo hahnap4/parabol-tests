@@ -10,14 +10,14 @@ export class CompleteReflectionForContinueColumnOnMobileBy {
     }
 
     async FillingInContinueField() {
-        this.page.click(continueFieldForMobile);
-        this.page.fill(continueFieldForMobile, randomStatement);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(continueFieldForMobile);
+        await this.page.fill(continueFieldForMobile, randomStatement);
+        await this.page.waitForLoadState('networkidle');
     }
 
     async SubmittingReflection() {
-        this.page.keyboard.press('Enter');
-        this.page.keyboard.press('Enter');
-        this.page.waitForLoadState('load');
+        await this.page.keyboard.press('Enter');
+        await this.page.keyboard.press('Enter');
+        await this.page.waitForLoadState('load');
     }
 }

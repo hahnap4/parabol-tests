@@ -13,16 +13,17 @@ export class DeleteAccountBy {
 
     async GoingToMyProfilePage() {
         await this.page.click(userIconButton);
-        this.page.click(goToMySettingsButton);
+        await this.page.click(goToMySettingsButton);
     }
 
     async FillingOutFields() {
         await this.page.click(deleteAccountButton);
-        this.page.fill(reasonForDeletionField, reason);
+        await this.page.fill(reasonForDeletionField, reason);
     }
 
     async ClickingOnDeleteAccountButton() {
         await this.page.dblclick(goodbyeForeverButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.waitForLoadState('networkidle');
+        await this.page.waitForTimeout(1000);
     }
 }

@@ -1,5 +1,5 @@
 
-import { startDemoButton } from '@pages/in-meeting/demo/demo-specific';
+import { closeDemoTipsButton, startDemoButton } from '@pages/in-meeting/demo/demo-specific';
 import { Page } from '@playwright/test';
 import 'dotenv/config';
 
@@ -14,7 +14,12 @@ export class GoToDemoReflectStageBy {
 
     async StartingDemo() {
         await this.page.goto(`${baseURL}/retrospective-demo/reflect`);
-        this.page.click(startDemoButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(startDemoButton);
+        await this.page.waitForLoadState('networkidle');
+
+        const visibleTips = await this.page.isVisible(closeDemoTipsButton);
+        if (visibleTips === true) {
+            await this.page.click(closeDemoTipsButton);
+        }
     }
 }

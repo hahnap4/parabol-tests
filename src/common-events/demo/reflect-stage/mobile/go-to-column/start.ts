@@ -9,6 +9,6 @@ export class GoToStartColumnBy {
     }
 
     async GoingToTheFirstReflection() {
-        this.page.click(goToFirstReflection);
+        await this.page.click(goToFirstReflection);
     }
 }

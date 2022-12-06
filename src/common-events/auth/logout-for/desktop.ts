@@ -12,7 +12,7 @@ export class LogoutBy {
 
     async ClickingOnSignOutButton() {
         await this.page.click(userIconButton);
-        this.page.click(signOutButton);
-        this.page.waitForLoadState('networkidle');
+        await this.page.click(signOutButton);
+        await this.page.waitForLoadState('networkidle');
     }
 }

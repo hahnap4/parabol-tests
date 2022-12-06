@@ -2,40 +2,60 @@
   "cookies": [
     {
       "name": "_dd_s",
-      "value": "rum=1&id=94c3ab2c-3801-4144-8ccc-539daec4c557&created=1670277980901&expire=1670278884003",
+      "value": "rum=1&id=bcb78a09-1b18-4a56-8e67-4b993bf0f56a&created=1670307107065&expire=1670308007065",
       "domain": "action-staging.parabol.co",
       "path": "/",
-      "expires": 1670278884,
+      "expires": 1670308007,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Strict"
     },
     {
       "name": "_gcl_au",
-      "value": "1.1.132534510.1670277984",
+      "value": "1.1.994298231.1670307108",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1678053984,
+      "expires": 1678083107,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
+    },
+    {
+      "name": "_session_id",
+      "value": "48ba1e224549fcc8327f99e7bcb873b7",
+      "domain": "tracking.g2crowd.com",
+      "path": "/",
+      "expires": 1671516707.693739,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__cf_bm",
+      "value": "m76IwfcHkeqggYX._G0qF9nyZEkrms0cK4gYNWZSwxA-1670307107-0-AV3BLvFkQRgIApvshjVtVnJmXsOlZUYp9fgXLKcbKX5u2JOU5MXWG4H6VSeMw426gNqNvd7sHxOpN1Yt11NodG8=",
+      "domain": ".g2crowd.com",
+      "path": "/",
+      "expires": 1670308907.693798,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
     },
     {
       "name": "ajs_user_id",
       "value": "local|ddVv15EwX6",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1701813984,
+      "expires": 1701843107,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "ajs_anonymous_id",
-      "value": "f2145151-ba60-4c83-9725-64e215e6458d",
+      "value": "02c94dfa-1878-4387-bf23-853392533284",
       "domain": ".parabol.co",
       "path": "/",
-      "expires": 1701813984,
+      "expires": 1701843107,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
@@ -47,7 +67,7 @@
       "localStorage": [
         {
           "name": "Action:token",
-          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMjc3OTg0LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyODY5OTg0LCJyb2wiOm51bGx9.UtcmlsydZT10JCyx91g0cOIk1gPpPTXUJx-_mXEXZD0"
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJsb2NhbHxkZFZ2MTVFd1g2IiwidG1zIjpbImRkVnYxeHRkSHIiXSwiaWF0IjoxNjcwMzA3MTA3LCJhdWQiOiJhY3Rpb24iLCJpc3MiOiJodHRwczovL2FjdGlvbi1zdGFnaW5nLnBhcmFib2wuY28vIiwiZXhwIjoxNjcyODk5MTA3LCJyb2wiOm51bGx9.6f0kyD9wcccZ0ZZMAZNlEdKV6Sn4YFcPXTIgPdON7vM"
         },
         {
           "name": "ajs_user_id",
@@ -59,7 +79,7 @@
         },
         {
           "name": "ajs_anonymous_id",
-          "value": "\"f2145151-ba60-4c83-9725-64e215e6458d\""
+          "value": "\"02c94dfa-1878-4387-bf23-853392533284\""
         },
         {
           "name": "ajs_user_traits",
