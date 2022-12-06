@@ -4,12 +4,13 @@
       "test": "playwright test -c tests-out"
    },
    "dependencies": {
-      "@testla/screenplay": "^0.2.0",
       "adm-zip": "^0.5.9",
-      "dotenv": "^16.0.1"
+      "dotenv": "^16.0.1",
+      "eslint": "^8.29.0",
+      "prettier": "^2.8.0"
    },
    "devDependencies": {
       "@faker-js/faker": "^6.3.1",
-      "@playwright/test": "^1.23.0"
+      "@playwright/test": "^1.28.1"
    }
 }

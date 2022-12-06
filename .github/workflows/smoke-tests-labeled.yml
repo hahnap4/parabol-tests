@@ -1,0 +1,166 @@
+name: Browser Smoke Tests (Labeled)
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs: 
+  smoke-both-auth:
+    if: |
+      github.event.label.name == 'run smoke test suite'
+    runs-on: ubuntu-latest
+    name: Smoke Auth Tests - Desktop and Mobile
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./.github/actions/packages/build
+        with:
+          node-version: '14.x'
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
+
+      - name: Run tests
+        run: npx playwright test smoke/both/auth
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  smoke-both-demo:
+    if: |
+      github.event.label.name == 'run smoke test suite'
+    runs-on: ubuntu-latest
+    name: Smoke Demo Tests - Desktop and Mobile
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./.github/actions/packages/build
+        with:
+          node-version: '14.x'
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
+
+      - name: Run tests
+        run: npx playwright test smoke/desktop/auth
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  smoke-desktop-demo:
+    if: |
+      github.event.label.name == 'run smoke test suite'
+    runs-on: ubuntu-latest
+    name: Smoke Demo Tests - Desktop
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./.github/actions/packages/build
+        with:
+          node-version: '14.x'
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
+
+      - name: Run tests
+        run: npx playwright test smoke/desktop/demo
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  smoke-desktop-retro:
+    if: |
+      github.event.label.name == 'run smoke test suite'
+    runs-on: ubuntu-latest
+    name: Smoke Retro Tests - Desktop
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./.github/actions/packages/build
+        with:
+          node-version: '14.x'
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
+
+      - name: Run tests
+        run: npx playwright test smoke/desktop/retro
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
+
+  smoke-mobile-auth:
+    if: |
+      github.event.label.name == 'run smoke test suite'
+    runs-on: ubuntu-latest
+    name: Smoke Auth Tests - Mobile
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./.github/actions/packages/build
+        with:
+          node-version: '14.x'
+          secret_email: "${{ secrets.SECRET_EMAIL }}"
+          secret_password: "${{ secrets.SECRET_PASSWORD }}"
+          secret_second_email: "${{ secrets.SECRET_SECOND_EMAIL }}"
+          secret_second_password: "${{ secrets.SECRET_SECOND_PASSWORD }}"
+          create_email: "${{ secrets.CREATE_EMAIL }}"
+          create_password: "${{ secrets.CREATE_PASSWORD }}"
+          base_url: "${{ secrets.BASE_URL }}"
+
+      - name: Run tests
+        run: npx playwright test smoke/mobile/auth
+
+      - uses: actions/upload-artifact@v3.1.0
+        if: failure()
+        with:
+          name: test-failures
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30

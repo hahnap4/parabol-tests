@@ -1,15 +1,14 @@
 import type { PlaywrightTestConfig } from "@playwright/test";
 import { devices } from '@playwright/test';
-
-require('dotenv').config();
+import "dotenv";
 
 const base_url = process.env.BASE_URL;
 
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
+  globalSetup: process.env.CI ? undefined : require.resolve('./src/fixtures/both-users.ts'),
   reporter: [ ['html', { open: 'on-failure' }] ], 
   retries: process.env.CI ? 2 : 0, 
-  globalTeardown: process.env.CI ? undefined : './globalTeardown.ts',
   fullyParallel: true,
   timeout: process.env.CI ? 30000 : 60000, 
   expect: {
@@ -20,8 +19,7 @@ const config: PlaywrightTestConfig = {
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     headless: true, 
-    // @ts-ignore
-    baseURL: base_url,
+    baseURL: `${base_url}`,
     launchOptions: process.env.CI ? undefined : {
       // force-enable GPU hardware acceleration (even in headless mode)
       // "--use-gl=desktop" OR "--use-gl=egl"
