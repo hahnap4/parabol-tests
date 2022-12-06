@@ -44,17 +44,6 @@ The only tests we cannot cover are:
 _NOTE: We do recommend that you run the tests in a headless manner for faster execution time._
 
 ---
-**After running the tests...**
-
-When there is a failure, an HTML report with trace, video, and screenshots, will be made into a .zip file. So you can find the .zip file on Finder (if Mac) and then attach the file in Jira or Slack when needed.
-
-Please be sure to clear out the files in the following folders after running the tests: failedReports, playwright-report, and test-results.
-
-This way, it will keep the repo clean locally for yourself. 
-
-We already have a .gitignore file set up so that the files in those three folders will not be added to the repo commit.
-
----
 ## Label Triggered Test Runs
 
 Tests (and the audit) can run, based on the PR label.
